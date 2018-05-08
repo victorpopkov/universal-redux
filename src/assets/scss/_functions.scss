@@ -1,0 +1,19 @@
+//
+// Define SCSS functions here that simulate Ruby on Rails helper functions.
+//
+
+$path-assets: '../';
+$path-fonts: '../fonts/';
+$path-images: '../images/';
+
+@function asset-url($path) {
+  @return url('#{$path-assets + $path}');
+}
+
+@function font-url($path) {
+  @return url('#{$path-fonts + $path}');
+}
+
+@function image-url($path) {
+  @return url('#{$path-images + $path}');
+}

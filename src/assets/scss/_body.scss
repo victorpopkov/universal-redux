@@ -1,0 +1,17 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: $footer-height;
+}
+
+.footer {
+  bottom: 0;
+  height: $footer-height;
+  line-height: $footer-height;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}

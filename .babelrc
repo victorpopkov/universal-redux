@@ -1,0 +1,119 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions"
+          ]
+        }
+      }
+    ],
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "add-module-exports",
+    "transform-decorators-legacy",
+    "transform-react-display-name"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "typecheck",
+        [
+          "react-transform",
+          {
+            "transforms": [
+              {
+                "transform": "react-transform-catch-errors",
+                "imports": [
+                  "react",
+                  "redbox-react"
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          "react-css-modules",
+          {
+            "generateScopedName": "[local]___[hash:base64:5]",
+            "filetypes": {
+              ".scss": {
+                "syntax": "postcss-scss",
+                "plugins": [
+                  "postcss-nested"
+                ]
+              }
+            }
+          }
+        ],
+        [
+          "webpack-alias",
+          {
+            "config": "${PWD}/webpack/dev.config.js"
+          }
+        ],
+        [
+          "inline-react-svg",
+          {
+            "svgo": {
+              "plugins": [
+                {
+                  "removeAttrs": { "attrs": "(data-name)" }
+                },
+                {
+                  "cleanupIDs": true
+                }
+              ]
+
+            }
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "react-css-modules",
+          {
+            "generateScopedName": "[local]___[hash:base64:5]",
+            "filetypes": {
+              ".scss": {
+                "syntax": "postcss-scss",
+                "plugins": [
+                  "postcss-nested"
+                ]
+              }
+            }
+          }
+        ],
+        [
+          "webpack-alias",
+          {
+            "config": "${PWD}/webpack/prod.config.js"
+          }
+        ],
+        [
+          "inline-react-svg",
+          {
+            "svgo": {
+              "plugins": [
+                {
+                  "removeAttrs": { "attrs": "(data-name)" }
+                },
+                {
+                  "cleanupIDs": true
+                }
+              ]
+
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

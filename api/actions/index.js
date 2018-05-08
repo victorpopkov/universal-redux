@@ -1,0 +1,1 @@
+export markdownIndex from './markdown';

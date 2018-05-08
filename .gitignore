@@ -1,0 +1,20 @@
+### OSX ###
+.DS_Store
+
+### Intellij ###
+.idea/
+/out/
+
+### Node ###
+*.log
+.npm
+.yarn-integrity
+logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Webpack ###
+webpack-assets.json
+webpack-stats.json

@@ -80,7 +80,7 @@ export default class Home extends Component {
 
     return (
       <Container styleName="home" tag="main">
-        <Helmet title={packageJson.name} />
+        <Helmet title="Isomorphic web app boilerplate" />
         <Jumbotron styleName="jumbotron" tag="section">
           <ul className="mb-4" styleName="versions">
             <li>

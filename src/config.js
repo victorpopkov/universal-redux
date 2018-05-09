@@ -2,7 +2,7 @@ require('babel-polyfill');
 const packageJson = require('../package.json');
 
 const appName = packageJson.name;
-const appDescription = packageJson.name;
+const appDescription = packageJson.description;
 
 const environment = {
   development: {

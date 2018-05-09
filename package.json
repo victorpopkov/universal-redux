@@ -1,6 +1,6 @@
 {
   "name": "isomorphic-redux-reactstrap",
-  "description": "Ready to use isomorphic app boilerplate built using React, Redux and Reactstrap.",
+  "description": "Isomorphic web app boilerplate built using React, Redux and Reactstrap.",
   "author": "Victor Popkov <victor@popkov.com>",
   "license": "MIT",
   "version": "0.1.0",

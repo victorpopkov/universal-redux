@@ -34,8 +34,8 @@
     svg {
       display: inline-block;
       height: 96px;
-      margin-right: 10px;
       vertical-align: middle;
+      width: 96px;
     }
   }
 
@@ -53,6 +53,24 @@
     h4 {
       margin-bottom: 16px;
       margin-top: 1em;
+    }
+
+    ul,
+    ol {
+      overflow: hidden;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .home {
+
+    .versions {
+
+      svg {
+        height: 64px;
+        width: 64px;
+      }
     }
   }
 }

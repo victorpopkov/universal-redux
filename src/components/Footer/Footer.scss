@@ -27,8 +27,30 @@
     line-height: 20px;
   }
 
+  .buttons {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
   iframe {
     display: inline-block;
     vertical-align: middle;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .footer {
+    vertical-align: middle;
+
+    ul {
+      display: inline-block;
+      margin: 10px 0;
+    }
+
+    .buttons {
+      display: block;
+    }
   }
 }

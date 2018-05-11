@@ -1,28 +1,24 @@
 # isomorphic-redux-reactstrap
 
-![David dependencies Status](https://img.shields.io/david/victorpopkov/isomorphic-redux-reactstrap.svg)
-![David devDependencies Status](https://img.shields.io/david/dev/victorpopkov/isomorphic-redux-reactstrap.svg)
+![dependencies](https://img.shields.io/david/victorpopkov/isomorphic-redux-reactstrap.svg)
+![devDependencies](https://img.shields.io/david/dev/victorpopkov/isomorphic-redux-reactstrap.svg)
 
-Isomorphic web app boilerplate built using [React](https://github.com/facebook/react)
-and [Redux](https://github.com/reactjs/react-redux) in its core and bundled with
-[webpack](https://github.com/webpack/webpack). As a CSS framework, Bootstrap 4
-is used with all components provided by [Reactstrap](https://github.com/reactstrap/reactstrap)
-and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-loader).
+Isomorphic web app boilerplate built using [React](https://github.com/facebook/react) and [Redux](https://github.com/reactjs/react-redux) in its core and bundled with [webpack](https://github.com/webpack/webpack). As a CSS framework, Bootstrap 4 is used with all components provided by [Reactstrap](https://github.com/reactstrap/reactstrap) and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-loader).
 
 ## Features
 
--   [React Router v4](https://github.com/ReactTraining/react-router)
--   Based on the File-Type First (FTF) pattern
--   CSS Modules awesomeness using [babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)
--   Fully pre-configured [Bootstrap 4](https://getbootstrap.com/) ready to be
-used alongside with React
--   Hot Module Replacement (HMR) where possible
--   Inline any SVG as a React component using [babel-plugin-inline-react-svg](https://github.com/kesne/babel-plugin-inline-react-svg)
--   Possibility to build API to serve your own test data during development
--   Proxy between your API and the web app
--   Redux actions use [axios](https://github.com/axios/axios) for requests with
+- [React Router v4](https://github.com/ReactTraining/react-router)
+- Based on the File-Type First (FTF) pattern
+- CSS Modules awesomeness using [babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)
+- Fully pre-configured [Bootstrap 4](https://getbootstrap.com/) ready to be used
+alongside with React
+- Hot Module Replacement (HMR) where possible
+- Inline any SVG as a React component using [babel-plugin-inline-react-svg](https://github.com/kesne/babel-plugin-inline-react-svg)
+- Possibility to build API to serve your own test data during development
+- Proxy between your API and the web app
+- Redux actions use [axios](https://github.com/axios/axios) for requests with
 requests cancellation support
--   Redux related stuff is built with [Immutable.js](https://facebook.github.io/immutable-js/)
+- Redux related stuff is built with [Immutable.js](https://facebook.github.io/immutable-js/)
 in mind
 
 ## Running
@@ -31,21 +27,23 @@ in mind
 
 To start coding you just need to:
 
-1.  Clone the repository: `git@github.com:victorpopkov/isomorphic-redux-reactstrap.git`
-2.  Install packages: `yarn install` or `npm install`
-3.  Launch: `yarn dev` or `npm dev`
-4.  Visit in your browser: [http://localhost:3000](http://localhost:3000)
+1. Clone the repository:
+`git@github.com:victorpopkov/isomorphic-redux-reactstrap.git`
+2. Install packages: `yarn install` or `npm install`
+3. Launch: `yarn dev` or `npm dev`
+4. Visit in your browser: [http://localhost:3000](http://localhost:3000)
 
 ### Production
 
 In order to launch the production version you will need to build the project
 first before actually starting it:
 
-1.  Clone the repository: `git@github.com:victorpopkov/isomorphic-redux-reactstrap.git`
-2.  Install packages: `yarn install` or `npm install`
-3.  Build: `yarn build` or `npm build`
-3.  Launch: `yarn start` or `npm start`
-4.  Visit in your browser: [http://localhost:3000](http://localhost:3000)
+1. Clone the repository:
+`git@github.com:victorpopkov/isomorphic-redux-reactstrap.git`
+2. Install packages: `yarn install` or `npm install`
+3. Build: `yarn build` or `npm build`
+4. Launch: `yarn start` or `npm start`
+5. Visit in your browser: [http://localhost:3000](http://localhost:3000)
 
 ## Directory structure
 

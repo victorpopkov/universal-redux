@@ -5,6 +5,19 @@
 
 Isomorphic web app boilerplate built using [React](https://github.com/facebook/react) and [Redux](https://github.com/reactjs/react-redux) in its core and bundled with [webpack](https://github.com/webpack/webpack). As a CSS framework, Bootstrap 4 is used with all components provided by [Reactstrap](https://github.com/reactstrap/reactstrap) and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-loader).
 
+- [Features](#features)
+- [Running](#running)
+  - [Development](#development)
+    - [What happens during `yarn dev` launch?](#what-happens-during-yarn-dev-launch)
+      - [`watch-client`](#watch-client)
+      - [`start-dev`](#start-dev)
+      - [`start-dev-api`](#start-dev-api)
+  - [Production](#production)
+    - [What happens during `yarn start` launch?](#what-happens-during-yarn-start-launch)
+      - [`start-prod`](#start-prod)
+      - [`start-prod-api`](#start-prod-api)
+- [Directory structure](#directory-structure)
+
 ## Features
 
 - [React Router v4](https://github.com/ReactTraining/react-router)

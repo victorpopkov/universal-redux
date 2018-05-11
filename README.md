@@ -33,6 +33,36 @@ To start coding you just need to:
 3. Launch: `yarn dev` or `npm dev`
 4. Visit in your browser: [http://localhost:3000](http://localhost:3000)
 
+#### What happens during `yarn dev` launch?
+
+If you investigate the `package.json` you will find that running `yarn dev`
+starts 3 commands concurrently using [concurrently](https://github.com/kimmobrunfeldt/concurrently) package:
+
+##### `watch-client`
+
+Starts the [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+which handles live reloading and provides in-memory access to the webpack
+assets. The configurations you can find in `webpack/webpack-dev-server.js`.
+
+##### `start-dev`
+
+Starts a server with the environment set to `development` by executiong
+`bin/server.js` and uses `src/server.js` as an entry point. It starts an [Express](https://github.com/expressjs/express)
+server to handle server-side rendering (SSR), serve static assets. In addition
+it creates a proxy server to your API which can be accessed from [http://localhost:3000/api](http://localhost:3000/api/)
+URL by default.
+
+##### `start-dev-api`
+
+Starts a separate [Express](https://github.com/expressjs/express) API server for
+serving test data purposes during development and acts as a mock server. This is
+especially useful if you want to create tests. It executes `bin/api.js` and uses
+`api/api.js` as an entry point.
+
+> You can technically extend and create your own production API if you are not
+> planning to use a separate API. However, I would recommend to completely
+> separate your API and use this only as a mock server.
+
 ### Production
 
 In order to launch the production version you will need to build the project
@@ -44,6 +74,30 @@ first before actually starting it:
 3. Build: `yarn build` or `npm build`
 4. Launch: `yarn start` or `npm start`
 5. Visit in your browser: [http://localhost:3000](http://localhost:3000)
+
+#### What happens during `yarn start` launch?
+
+If you investigate `package.json` you will find that running `yarn start` starts
+3 commands concurrently using [concurrently](https://github.com/kimmobrunfeldt/concurrently)
+package:
+
+##### `start-prod`
+
+Starts a server with environment set to `production` by executiong
+`bin/server.js` and uses `src/server.js` as an entry point. It starts an [Express](https://github.com/expressjs/express)
+server to handle server-side rendering (SSR), serve static assets. In addition
+it creates a proxy server to your API which can be accessed from [http://localhost:8080/api](http://localhost:8080/api/)
+URL by default.
+
+##### `start-prod-api`
+
+> This command is used only for example purposes.
+
+Starts a separate [Express](https://github.com/expressjs/express) API server for
+serving data purposes. It executes `bin/api.js` and uses `api/api.js` as an
+entry point. I strongly recommend to completely remove it from your
+`package.json` and adapt your `yarn start` accordingly to run a single
+`start-prod` command.
 
 ## Directory structure
 

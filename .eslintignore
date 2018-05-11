@@ -1,7 +1,5 @@
+### Webpack ###
 webpack/*
-karma.conf.js
-tests.webpack.js
 
-# https://github.com/yannickcr/eslint-plugin-react/issues/1594
-src/components/Inputs/Year.js
-src/containers/Register/FieldsCars.js
+### Project related ###
+src/containers/Home/prism.js

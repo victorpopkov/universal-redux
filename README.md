@@ -46,18 +46,17 @@ To start coding you just need to:
 3. Launch: `yarn dev` or `npm dev`
 4. Visit in your browser: [http://localhost:3000](http://localhost:3000)
 
-#### What happens during `yarn dev` launch?
+Now let's look into the 3-d step a little closer. If you investigate the
+`package.json` you will find that running `yarn dev` will concurrently execute 3
+separate commands using the [concurrently](https://github.com/kimmobrunfeldt/concurrently) package:
 
-If you investigate the `package.json` you will find that running `yarn dev`
-starts 3 commands concurrently using [concurrently](https://github.com/kimmobrunfeldt/concurrently) package:
-
-##### `watch-client`
+#### `watch-client`
 
 Starts the [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 which handles live reloading and provides in-memory access to the webpack
 assets. The configurations you can find in `webpack/webpack-dev-server.js`.
 
-##### `start-dev`
+#### `start-dev`
 
 Starts a server with the environment set to `development` by executiong
 `bin/server.js` and uses `src/server.js` as an entry point. It starts an [Express](https://github.com/expressjs/express)
@@ -65,7 +64,7 @@ server to handle server-side rendering (SSR), serve static assets. In addition
 it creates a proxy server to your API which can be accessed from [http://localhost:3000/api](http://localhost:3000/api/)
 URL by default.
 
-##### `start-dev-api`
+#### `start-dev-api`
 
 Starts a separate [Express](https://github.com/expressjs/express) API server for
 serving test data purposes during development and acts as a mock server. This is
@@ -88,13 +87,11 @@ first before actually starting it:
 4. Launch: `yarn start` or `npm start`
 5. Visit in your browser: [http://localhost:8080](http://localhost:8080)
 
-#### What happens during `yarn start` launch?
+Following the tradition, let's look into the 4-th step a little closer by
+investigating `package.json` once more as we previously did for [Development](#development) section.
+Command `yarn start` concurrently starts 2 separate commands using the [concurrently](https://github.com/kimmobrunfeldt/concurrently) package:
 
-If you investigate `package.json` you will find that running `yarn start` starts
-3 commands concurrently using [concurrently](https://github.com/kimmobrunfeldt/concurrently)
-package:
-
-##### `start-prod`
+#### `start-prod`
 
 Starts a server with environment set to `production` by executiong
 `bin/server.js` and uses `src/server.js` as an entry point. It starts an [Express](https://github.com/expressjs/express)
@@ -102,7 +99,7 @@ server to handle server-side rendering (SSR), serve static assets. In addition
 it creates a proxy server to your API which can be accessed from [http://localhost:8080/api](http://localhost:8080/api/)
 URL by default.
 
-##### `start-prod-api`
+#### `start-prod-api`
 
 > This command is used only for example purposes.
 

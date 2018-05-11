@@ -86,7 +86,7 @@ first before actually starting it:
 2. Install packages: `yarn install` or `npm install`
 3. Build: `yarn build` or `npm build`
 4. Launch: `yarn start` or `npm start`
-5. Visit in your browser: [http://localhost:3000](http://localhost:3000)
+5. Visit in your browser: [http://localhost:8080](http://localhost:8080)
 
 #### What happens during `yarn start` launch?
 

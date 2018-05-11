@@ -50,7 +50,9 @@
     }
 
     h3,
-    h4 {
+    h4,
+    h5,
+    h6 {
       margin-bottom: 16px;
       margin-top: 1em;
     }
@@ -59,6 +61,28 @@
     ol {
       overflow: hidden;
     }
+
+    blockquote {
+      border-left: 4px solid $gray-300;
+      color: $gray-600;
+      padding: 0 ($grid-gutter-width / 2);
+    }
+
+    // scss-lint:disable NestingDepth, SelectorDepth, QualifyingElement
+    :not(pre) > code:not([class*="language-"]) {
+      background: transparentize($gray-900, .95);
+      border-radius: 3px;
+      color: darken($slategray, 30%);
+      font-size: .85em;
+      padding: .15em 0;
+
+      &::before,
+      &::after {
+        content: '\00a0';
+        letter-spacing: -.2em;
+      }
+    }
+    // scss-lint:enable NestingDepth, SelectorDepth, QualifyingElement
   }
 }
 

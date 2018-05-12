@@ -66,14 +66,11 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               importLoaders: 2,
-              sourceMap: true,
               localIdentName: '[local]___[hash:base64:5]',
+              modules: true,
+              sourceMap: true,
             },
-          },
-          {
-            loader: 'resolve-url-loader',
           },
           {
             loader: 'postcss-loader',
@@ -102,14 +99,18 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               importLoaders: 2,
-              sourceMap: true,
               localIdentName: '[local]___[hash:base64:5]',
+              modules: true,
+              sourceMap: true,
             },
           },
           {
             loader: 'resolve-url-loader',
+            options: {
+              attempts: 1,
+              sourceMap: true,
+            },
           },
           {
             loader: 'postcss-loader',

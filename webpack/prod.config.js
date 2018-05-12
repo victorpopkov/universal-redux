@@ -62,9 +62,6 @@ module.exports = {
               },
             },
             {
-              loader: 'resolve-url-loader',
-            },
-            {
               loader: 'postcss-loader',
             },
             {
@@ -84,21 +81,28 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                modules: true,
                 importLoaders: 2,
                 localIdentName: '[local]___[hash:base64:5]',
+                modules: true,
               },
             },
             {
               loader: 'resolve-url-loader',
+              options: {
+                attempts: 1,
+              },
             },
             {
               loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+              },
             },
             {
               loader: 'sass-loader',
               options: {
                 outputStyle: 'expanded',
+                sourceMap: true,
               },
             },
             {

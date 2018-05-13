@@ -25,7 +25,6 @@ const Html = ({ assets, component, store }) => {
         {/* styles (will be present only in production with webpack extract text plugin) */}
         {Object.keys(assets.styles).map((style, key) => (
           <link
-            charSet="utf-8"
             href={assets.styles[style]}
             key={key} // eslint-disable-line react/no-array-index-key
             media="screen, projection"
@@ -38,17 +37,13 @@ const Html = ({ assets, component, store }) => {
       </head>
       <body>
         <div dangerouslySetInnerHTML={{ __html: component }} id="content" />
+        <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_STATE__=${serialize(store.getState())};` }} />
         {Object.keys(assets.javascript).map((js, key) => (
           <script
-            charSet="utf-8"
             key={key} // eslint-disable-line react/no-array-index-key
             src={assets.javascript[js]}
           />
         ))}
-        <script
-          charSet="utf-8"
-          dangerouslySetInnerHTML={{ __html: `window.__data=${serialize(store.getState())};` }}
-        />
       </body>
     </html>
   );

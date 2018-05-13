@@ -11,11 +11,16 @@ import ApiClient from '@Helpers/ApiClient'; // eslint-disable-line sort-imports
 import createStore from '@ReduxStores';
 import routes from './routes';
 
+/* eslint-disable no-underscore-dangle */
+const preloadedState = window.__PRELOADED_STATE__;
+delete window.__PRELOADED_STATE__;
+/* eslint-enable no-underscore-dangle */
+
 const apiClient = new ApiClient();
 const dest = document.getElementById('content');
 const helpers = [apiClient];
 const history = createHistory();
-const store = createStore(history, apiClient, window.__data); // eslint-disable-line
+const store = createStore(history, apiClient, preloadedState);
 
 const reduxAsyncConnect = (
   <ReduxAsyncConnect helpers={helpers} routes={routes} />

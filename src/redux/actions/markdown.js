@@ -4,11 +4,7 @@ import {
   LOAD_MARKDOWN_SUCCESS,
 } from '@ReduxConstants/markdown';
 
-/*
- * Actions
- */
 export function isMarkdownLoaded(globalState) {
-  console.log(globalState);
   return globalState.getIn(['markdown', 'loaded']);
 }
 

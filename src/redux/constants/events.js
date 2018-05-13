@@ -1,5 +1,2 @@
 export const NOTIFY_PROGRESS_HIDE = 'redux/events/NOTIFY_PROGRESS_HIDE';
 export const NOTIFY_PROGRESS_SHOW = 'redux/events/NOTIFY_PROGRESS_SHOW';
-export const NOTIFY_SUBMISSION_ERROR = 'redux/events/NOTIFY_SUBMISSION_ERROR';
-export const NOTIFY_TOP_CENTER_ERROR = 'redux/events/NOTIFY_TOP_CENTER_ERROR';
-export const NOTIFY_TOP_CENTER_SUCCESS = 'redux/events/NOTIFY_TOP_CENTER_SUCCESS';

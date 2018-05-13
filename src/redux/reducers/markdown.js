@@ -25,7 +25,7 @@ const markdown = createReducer(fromJS({
   }),
   [LOAD_MARKDOWN_FAIL]: (state, action) => state.merge({
     loading: false,
-    loaded: false,
+    loaded: true,
     content: null,
     error: action.error,
   }),

@@ -1,6 +1,7 @@
 /* eslint-disable global-require, import/no-extraneous-dependencies */
 require('babel-polyfill');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const babelLoaderConfig = require('./babel-loader.config');
@@ -257,6 +258,12 @@ module.exports = {
     extensions: ['.json', '.js', '.jsx'],
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(pathSrc, 'assets/favicon/'),
+        to: path.resolve(pathBuild, 'assets/favicon/'),
+      },
+    ]),
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,

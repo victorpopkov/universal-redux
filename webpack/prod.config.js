@@ -1,6 +1,7 @@
 /* eslint-disable global-require, import/no-extraneous-dependencies */
 require('babel-polyfill');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -239,6 +240,12 @@ module.exports = {
   },
   plugins: [
     new CleanPlugin([pathBuild], { root: pathRoot }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(pathSrc, 'assets/favicon/'),
+        to: path.resolve(pathBuild, 'assets/favicon/'),
+      },
+    ]),
     new ExtractTextPlugin({
       filename: 'assets/css/[name]-[chunkhash].css',
       allChunks: true,

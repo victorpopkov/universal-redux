@@ -8,6 +8,7 @@ import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
 import createHistory from 'history/createMemoryHistory';
+import favicon from 'serve-favicon';
 import http from 'http';
 import httpProxy from 'http-proxy';
 import { parse as parseUrl } from 'url';
@@ -27,6 +28,10 @@ const proxy = httpProxy.createProxyServer({
   ws: false,
 });
 
+// paths
+const pathBuild = path.resolve(__dirname, '../build/');
+const pathFavicon = __DEVELOPMENT__ ? path.resolve(__dirname, 'assets/favicon/favicon.ico') : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
+
 app
   .use('/api', (req, res) => {
     proxy.web(req, res);
@@ -37,7 +42,8 @@ app
   }))
   .use(compression())
   .use(cookiesMiddleware())
-  .use(Express.static(path.resolve(__dirname, '../build')))
+  .use(Express.static(pathBuild))
+  .use(favicon(pathFavicon))
   .get('*', (req, res) => {
     // clear require() cache if in development mode (makes asset hot reloading work).
     if (__DEVELOPMENT__) {

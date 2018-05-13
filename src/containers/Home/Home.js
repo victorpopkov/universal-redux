@@ -22,13 +22,11 @@ import './Home.scss'; // eslint-disable-line sort-imports
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
-    const promises = [];
-
     if (!markdownActions.isMarkdownLoaded(getState())) {
-      promises.push(dispatch(markdownActions.loadMarkdown()));
+      return dispatch(markdownActions.loadMarkdown());
     }
 
-    return Promise.all(promises);
+    return Promise.resolve();
   },
 }],
 state => ({
@@ -48,36 +46,59 @@ export default class Home extends Component {
     this.reloadMarkdown = this.reloadMarkdown.bind(this);
   }
 
-  componentDidMount() {
-    this.reloadMarkdown();
+  componentDidUpdate() {
+    Prism.highlightAll();
   }
 
   reloadMarkdown() {
     const { loadMarkdown } = this.props;
 
-    return loadMarkdown().then(() =>
-      Prism.highlightAll());
+    return loadMarkdown();
+  }
+
+  renderReloadBtn() {
+    const { markdown } = this.props;
+
+    if (markdown.get('loading')) {
+      return (
+        <Button
+          color="secondary"
+          size="sm"
+          disabled
+          outline
+        >
+          Loading...
+        </Button>
+      );
+    }
+
+    return (
+      <Button
+        color="secondary"
+        size="sm"
+        outline
+        onClick={this.reloadMarkdown}
+      >
+        Reload
+      </Button>
+    );
+  }
+
+  renderMarkdown() {
+    const { markdown } = this.props;
+
+    if (markdown.get('loaded')) {
+      return (markdown.get('error')) ? (
+        <h2>{markdown.get('error')}</h2>
+      ) : (
+        <Markdown styleName="markdown">{markdown.get('content')}</Markdown>
+      );
+    }
+
+    return <h5>Loading…</h5>;
   }
 
   render() {
-    const { markdown } = this.props;
-
-    let reloadBtnValue = 'Reload';
-    let reloadBtnProps = {
-      color: 'secondary',
-      onClick: this.reloadMarkdown,
-      outline: true,
-      size: 'sm',
-    };
-
-    if (markdown.get('loading')) {
-      reloadBtnValue = 'Loading...';
-      reloadBtnProps = {
-        ...reloadBtnProps,
-        disabled: true,
-      };
-    }
-
     return (
       <Container styleName="home" tag="main">
         <Helmet title="Isomorphic web app boilerplate" />
@@ -124,10 +145,10 @@ export default class Home extends Component {
           <Col md={9}>
             <div className="d-flex align-items-center">
               <h5 className="flex-grow-1">README.md</h5>
-              <Button {...reloadBtnProps}>{reloadBtnValue}</Button>
+              {this.renderReloadBtn()}
             </div>
             <hr />
-            <Markdown styleName="markdown">{markdown.get('content')}</Markdown>
+            {this.renderMarkdown()}
           </Col>
         </Row>
       </Container>

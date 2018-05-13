@@ -1,6 +1,6 @@
 import { App, Home } from '@Containers';
 
-export default () => [{
+const routes = [{
   component: App,
   routes: [
     {
@@ -10,3 +10,5 @@ export default () => [{
     },
   ],
 }];
+
+export default routes;

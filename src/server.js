@@ -16,8 +16,8 @@ import path from 'path';
 import ApiClient from '@Helpers/ApiClient'; // eslint-disable-line sort-imports
 import Html from '@Helpers/Html';
 import config from '@Config';
+import createStore from '@ReduxStores';
 import routes from './routes';
-import stores from '@ReduxStores'; // eslint-disable-line import/first
 
 const targetUrl = `${config.apiSchema}://${config.apiHost}:${config.apiPort + config.apiPrefix}`;
 const app = new Express();
@@ -51,10 +51,11 @@ app
     }
 
     const url = req.originalUrl || req.url;
+    const apiClient = new ApiClient(req);
+    const helpers = [apiClient];
     const location = parseUrl(url);
-    const client = new ApiClient(req);
     const memoryHistory = createHistory(url);
-    const store = stores(memoryHistory, client, {}, req);
+    const store = createStore(memoryHistory, apiClient, {}, req);
 
     function hydrateOnClient() {
       res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
@@ -67,7 +68,13 @@ app
       hydrateOnClient();
     }
 
-    loadOnServer({ store, location })
+    // 1. load data
+    loadOnServer({
+      store,
+      location,
+      routes,
+      helpers,
+    })
       .then(() => {
         const context = {};
 
@@ -75,12 +82,12 @@ app
         const appHTML = ReactDOMServer.renderToString(
           <Provider key="provider" store={store}>
             <StaticRouter context={context} location={location}>
-              <ReduxAsyncConnect helpers={{ client }} routes={routes(store)} />
+              <ReduxAsyncConnect helpers={helpers} routes={routes} />
             </StaticRouter>
           </Provider>
         );
 
-        // handle redirects
+        // context.url will contain the URL to redirect to if a <Redirect> was used
         if (context.url) {
           req.header('Location', context.url);
           return res.send(302);

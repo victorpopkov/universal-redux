@@ -8,17 +8,17 @@ import createHistory from 'history/createBrowserHistory';
 import { hydrate } from 'react-dom';
 import ApiClient from '@Helpers/ApiClient'; // eslint-disable-line sort-imports
 // import DevTools from './containers/DevTools/DevTools';
+import createStore from '@ReduxStores';
 import routes from './routes';
-import stores from '@ReduxStores'; // eslint-disable-line import/first
 
 const apiClient = new ApiClient();
 const dest = document.getElementById('content');
-
+const helpers = [apiClient];
 const history = createHistory();
-const store = stores(history, apiClient, window.__data); // eslint-disable-line
+const store = createStore(history, apiClient, window.__data); // eslint-disable-line
 
 const reduxAsyncConnect = (
-  <ReduxAsyncConnect helpers={{ apiClient }} routes={routes(store)} />
+  <ReduxAsyncConnect helpers={helpers} routes={routes} />
 );
 
 hydrate(

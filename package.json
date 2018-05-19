@@ -96,6 +96,7 @@
     "http-proxy": "^1.17.0",
     "humps": "^2.0.1",
     "immutable": "^3.8.2",
+    "ip": "^1.1.5",
     "normalizr": "^3.2.4",
     "piping": "^1.0.0-rc.4",
     "pretty-error": "^2.1.1",

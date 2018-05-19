@@ -2,11 +2,13 @@
 require('babel-polyfill');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ip = require('ip');
 const path = require('path');
 const webpack = require('webpack');
 const babelLoaderConfig = require('./babel-loader.config');
 
-const host = (process.env.HOST || 'localhost');
+const ipAddress = ip.address();
+const host = (process.env.HOST || ipAddress);
 const port = (+process.env.PORT + 1) || 3001;
 
 // paths

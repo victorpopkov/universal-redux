@@ -5,6 +5,18 @@ import React from 'react';
 import serialize from 'serialize-javascript';
 
 /**
+ * Remove HTML whitespaces between tags from the specified content.
+ *
+ * @param string content
+ */
+export function removeWhitespaces(content) {
+  return content.replace(/>\s+</g, '><')
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+<\//g, '</');
+}
+
+/**
  * Wrapper component containing HTML metadata and boilerplate tags.
  * Used in server-side code only to wrap the string output of the
  * rendered route component.

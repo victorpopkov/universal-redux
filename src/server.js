@@ -89,8 +89,8 @@ app
 
         // context.url will contain the URL to redirect to if a <Redirect> was used
         if (context.url) {
-          req.header('Location', context.url);
-          return res.send(302);
+          res.header('Location', context.url);
+          return res.sendStatus(302);
         }
 
         // 3. render the Redux initial data into the server markup

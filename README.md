@@ -1,7 +1,7 @@
 # isomorphic-redux-reactstrap
 
-![dependencies](https://img.shields.io/david/victorpopkov/isomorphic-redux-reactstrap.svg)
-![devDependencies](https://img.shields.io/david/dev/victorpopkov/isomorphic-redux-reactstrap.svg)
+[![dependencies](https://david-dm.org/victorpopkov/isomorphic-redux-reactstrap/status.svg)](https://david-dm.org/victorpopkov/isomorphic-redux-reactstrap)
+[![devDependencies](https://david-dm.org/victorpopkov/isomorphic-redux-reactstrap/dev-status.svg)](https://david-dm.org/victorpopkov/isomorphic-redux-reactstrap?type=dev)
 
 Isomorphic web app boilerplate built using [React](https://github.com/facebook/react) and [Redux](https://github.com/reactjs/react-redux) in its core and bundled with [webpack](https://github.com/webpack/webpack). As a CSS framework, Bootstrap 4 is used with all components provided by [Reactstrap](https://github.com/reactstrap/reactstrap) and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-loader).
 

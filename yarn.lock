@@ -78,132 +78,139 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@webassemblyjs/ast@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.9.tgz#b2770182678691ab4949d593105c15d4074fedb6"
+"@webassemblyjs/ast@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.10.tgz#7f1e81149ca4e103c9e7cc321ea0dcb83a392512"
   dependencies:
-    "@webassemblyjs/helper-module-context" "1.5.9"
-    "@webassemblyjs/helper-wasm-bytecode" "1.5.9"
-    "@webassemblyjs/wast-parser" "1.5.9"
+    "@webassemblyjs/helper-module-context" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/wast-parser" "1.5.10"
     debug "^3.1.0"
     mamacro "^0.0.3"
 
-"@webassemblyjs/floating-point-hex-parser@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.5.9.tgz#ee56243f6ba30781ff6f92fe7f1c377255219a7c"
+"@webassemblyjs/floating-point-hex-parser@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.5.10.tgz#ae48705fd58927df62023f114520b8215330ff86"
 
-"@webassemblyjs/helper-api-error@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-api-error/-/helper-api-error-1.5.9.tgz#c80e204afe1ae102c23b0357f1ec25aeb61022a2"
+"@webassemblyjs/helper-api-error@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-api-error/-/helper-api-error-1.5.10.tgz#0baf9453ce2fd8db58f0fdb4fb2852557c71d5a7"
 
-"@webassemblyjs/helper-buffer@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-buffer/-/helper-buffer-1.5.9.tgz#90d99afcb0fdc1ee11bc403894f3ae37cd926a81"
+"@webassemblyjs/helper-buffer@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-buffer/-/helper-buffer-1.5.10.tgz#abee4284161e9cd6ba7619785ca277bfcb8052ce"
   dependencies:
     debug "^3.1.0"
 
-"@webassemblyjs/helper-code-frame@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.9.tgz#b56ac06a39c3e1cfefcc421ade1ee471a738a570"
+"@webassemblyjs/helper-code-frame@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.10.tgz#4e23c05431665f16322104580af7c06253d4b4e0"
   dependencies:
-    "@webassemblyjs/wast-printer" "1.5.9"
+    "@webassemblyjs/wast-printer" "1.5.10"
 
-"@webassemblyjs/helper-fsm@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-fsm/-/helper-fsm-1.5.9.tgz#8f996268eb07ee6728130a9e97fa3aac32772454"
+"@webassemblyjs/helper-fsm@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-fsm/-/helper-fsm-1.5.10.tgz#490bab613ea255a9272b764826d3cc9d15170676"
 
-"@webassemblyjs/helper-module-context@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-module-context/-/helper-module-context-1.5.9.tgz#69e2eea310f755a0b750b84f8af59f890f2046ac"
-
-"@webassemblyjs/helper-wasm-bytecode@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.5.9.tgz#467ba0f9e4d0e4a48bf1c5107b9f4abe3ca1171a"
-
-"@webassemblyjs/helper-wasm-section@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.5.9.tgz#aec9486ab5d56e3cb5252a7ed88777b6792ac624"
+"@webassemblyjs/helper-module-context@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-module-context/-/helper-module-context-1.5.10.tgz#6fca93585228bf33e6da076d0a1373db1fdd6580"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/helper-buffer" "1.5.9"
-    "@webassemblyjs/helper-wasm-bytecode" "1.5.9"
-    "@webassemblyjs/wasm-gen" "1.5.9"
+    mamacro "^0.0.3"
+
+"@webassemblyjs/helper-wasm-bytecode@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.5.10.tgz#90f6da93c7a186bfb2f587de442982ff533c4b44"
+
+"@webassemblyjs/helper-wasm-section@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.5.10.tgz#d64292a19f7f357c49719461065efdf7ec975d66"
+  dependencies:
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-buffer" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/wasm-gen" "1.5.10"
     debug "^3.1.0"
 
-"@webassemblyjs/ieee754@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/ieee754/-/ieee754-1.5.9.tgz#846856ece040c7debd5b5645b319c26523613bcf"
+"@webassemblyjs/ieee754@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/ieee754/-/ieee754-1.5.10.tgz#257cad440dd6c8a339402d31e035ba2e38e9c245"
   dependencies:
     ieee754 "^1.1.11"
 
-"@webassemblyjs/leb128@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/leb128/-/leb128-1.5.9.tgz#7249443a0fd7574a7e3c1c39532535c735390bbc"
+"@webassemblyjs/leb128@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/leb128/-/leb128-1.5.10.tgz#a8e4fe5f4b16daadb241fcc44d9735e9f27b05a3"
   dependencies:
     leb "^0.3.0"
 
-"@webassemblyjs/wasm-edit@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-edit/-/wasm-edit-1.5.9.tgz#9b8e054b2d305a7e0528088571c95904bd73df48"
+"@webassemblyjs/utf8@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/utf8/-/utf8-1.5.10.tgz#0b3b6bc86b7619c5dc7b2789db6665aa35689983"
+
+"@webassemblyjs/wasm-edit@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-edit/-/wasm-edit-1.5.10.tgz#0fe80f19e57f669eab1caa8c1faf9690b259d5b9"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/helper-buffer" "1.5.9"
-    "@webassemblyjs/helper-wasm-bytecode" "1.5.9"
-    "@webassemblyjs/helper-wasm-section" "1.5.9"
-    "@webassemblyjs/wasm-gen" "1.5.9"
-    "@webassemblyjs/wasm-opt" "1.5.9"
-    "@webassemblyjs/wasm-parser" "1.5.9"
-    "@webassemblyjs/wast-printer" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-buffer" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/helper-wasm-section" "1.5.10"
+    "@webassemblyjs/wasm-gen" "1.5.10"
+    "@webassemblyjs/wasm-opt" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
+    "@webassemblyjs/wast-printer" "1.5.10"
     debug "^3.1.0"
 
-"@webassemblyjs/wasm-gen@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-gen/-/wasm-gen-1.5.9.tgz#85e07c047fab917e06b18dee4d16342a2fd3c59c"
+"@webassemblyjs/wasm-gen@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-gen/-/wasm-gen-1.5.10.tgz#8b29ddd3651259408ae5d5c816a011fb3f3f3584"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/helper-wasm-bytecode" "1.5.9"
-    "@webassemblyjs/ieee754" "1.5.9"
-    "@webassemblyjs/leb128" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/ieee754" "1.5.10"
+    "@webassemblyjs/leb128" "1.5.10"
+    "@webassemblyjs/utf8" "1.5.10"
 
-"@webassemblyjs/wasm-opt@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-opt/-/wasm-opt-1.5.9.tgz#ccac17c41a044c167bc95d3e8645cf889a137ce5"
+"@webassemblyjs/wasm-opt@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-opt/-/wasm-opt-1.5.10.tgz#569e45ab1b2bf0a7706cdf6d1b51d1188e9e4c7b"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/helper-buffer" "1.5.9"
-    "@webassemblyjs/wasm-gen" "1.5.9"
-    "@webassemblyjs/wasm-parser" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-buffer" "1.5.10"
+    "@webassemblyjs/wasm-gen" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
     debug "^3.1.0"
 
-"@webassemblyjs/wasm-parser@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-parser/-/wasm-parser-1.5.9.tgz#ddab84da4957b64aafbc61e4ab706cc667082f32"
+"@webassemblyjs/wasm-parser@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-parser/-/wasm-parser-1.5.10.tgz#3e1017e49f833f46b840db7cf9d194d4f00037ff"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/helper-api-error" "1.5.9"
-    "@webassemblyjs/helper-wasm-bytecode" "1.5.9"
-    "@webassemblyjs/ieee754" "1.5.9"
-    "@webassemblyjs/leb128" "1.5.9"
-    "@webassemblyjs/wasm-parser" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-api-error" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/ieee754" "1.5.10"
+    "@webassemblyjs/leb128" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
 
-"@webassemblyjs/wast-parser@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-parser/-/wast-parser-1.5.9.tgz#193d24ccf4742a5f8f1915936680ab2314011df2"
+"@webassemblyjs/wast-parser@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-parser/-/wast-parser-1.5.10.tgz#1a3235926483c985a00ee8ebca856ffda9544934"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/floating-point-hex-parser" "1.5.9"
-    "@webassemblyjs/helper-api-error" "1.5.9"
-    "@webassemblyjs/helper-code-frame" "1.5.9"
-    "@webassemblyjs/helper-fsm" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/floating-point-hex-parser" "1.5.10"
+    "@webassemblyjs/helper-api-error" "1.5.10"
+    "@webassemblyjs/helper-code-frame" "1.5.10"
+    "@webassemblyjs/helper-fsm" "1.5.10"
     long "^3.2.0"
     mamacro "^0.0.3"
 
-"@webassemblyjs/wast-printer@1.5.9":
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-printer/-/wast-printer-1.5.9.tgz#16605d90a481c01a130b7c4edeb2bce503787eb4"
+"@webassemblyjs/wast-printer@1.5.10":
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-printer/-/wast-printer-1.5.10.tgz#adb38831ba45efd0a5c7971b666e179b64f68bba"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/wast-parser" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/wast-parser" "1.5.10"
     long "^3.2.0"
 
 abbrev@1:
@@ -234,8 +241,8 @@ acorn@^3.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
 acorn@^5.0.0, acorn@^5.5.0:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.6.1.tgz#c9e50c3e3717cf897f1b071ceadbb543bbc0a8d4"
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.6.2.tgz#b1da1d7be2ac1b4a327fb9eab851702c5045b4e7"
 
 adjust-sourcemap-loader@^1.1.0:
   version "1.2.0"
@@ -1657,12 +1664,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000847"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000847.tgz#ff4072a5468809fec0ae9ac3b4035ef891e5b144"
+  version "1.0.30000849"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000849.tgz#d452f53d7dcfb84e7f5fd34c077c30ad2b7b9c7b"
 
 caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000847:
-  version "1.0.30000847"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000847.tgz#be77f439be29bbc57ae08004b1e470b653b1ec1d"
+  version "1.0.30000849"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000849.tgz#7e1aa48e6d58917dcd70aabf7e7a33514a258f91"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -1992,10 +1999,10 @@ component-emitter@^1.2.1:
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
 
 compressible@~2.0.13:
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.13.tgz#0d1020ab924b2fdb4d6279875c7d6daba6baa7a9"
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.14.tgz#326c5f507fbb055f54116782b969a81b67a29da7"
   dependencies:
-    mime-db ">= 1.33.0 < 2"
+    mime-db ">= 1.34.0 < 2"
 
 compression@^1.7.2:
   version "1.7.2"
@@ -2543,7 +2550,7 @@ doctrine@1.5.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-doctrine@^2.0.2, doctrine@^2.1.0:
+doctrine@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
   dependencies:
@@ -2828,14 +2835,14 @@ eslint-plugin-jsx-a11y@^6.0.3:
     emoji-regex "^6.1.0"
     jsx-ast-utils "^2.0.0"
 
-eslint-plugin-react@^7.8.2:
-  version "7.8.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.8.2.tgz#e95c9c47fece55d2303d1a67c9d01b930b88a51d"
+eslint-plugin-react@^7.9.1:
+  version "7.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.9.1.tgz#101aadd15e7c7b431ed025303ac7b421a8e3dc15"
   dependencies:
-    doctrine "^2.0.2"
-    has "^1.0.1"
+    doctrine "^2.1.0"
+    has "^1.0.2"
     jsx-ast-utils "^2.0.1"
-    prop-types "^15.6.0"
+    prop-types "^15.6.1"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -3663,9 +3670,9 @@ has-values@^1.0.0:
     is-number "^3.0.0"
     kind-of "^4.0.0"
 
-has@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/has/-/has-1.0.2.tgz#1a64bfe4b52e67fb87b9822503d97c019fb6ba42"
+has@^1.0.1, has@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
   dependencies:
     function-bind "^1.1.1"
 
@@ -3980,9 +3987,9 @@ ipaddr.js@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
 
-irregular-plurals@^1.0.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/irregular-plurals/-/irregular-plurals-1.4.0.tgz#2ca9b033651111855412f16be5d77c62a458a766"
+irregular-plurals@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/irregular-plurals/-/irregular-plurals-2.0.0.tgz#39d40f05b00f656d0b7fa471230dd3b714af2872"
 
 is-absolute-url@^2.0.0:
   version "2.1.0"
@@ -4996,7 +5003,11 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-"mime-db@>= 1.33.0 < 2", mime-db@~1.33.0:
+"mime-db@>= 1.34.0 < 2":
+  version "1.34.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.34.0.tgz#452d0ecff5c30346a6dc1e64b1eaee0d3719ff9a"
+
+mime-db@~1.33.0:
   version "1.33.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.33.0.tgz#a3492050a5cb9b63450541e39d9788d2272783db"
 
@@ -5788,11 +5799,11 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plur@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/plur/-/plur-2.1.2.tgz#7482452c1a0f508e3e344eaec312c91c29dc655a"
+plur@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/plur/-/plur-3.0.1.tgz#268652d605f816699b42b86248de73c9acd06a7c"
   dependencies:
-    irregular-plurals "^1.0.0"
+    irregular-plurals "^2.0.0"
 
 pluralize@^7.0.0:
   version "7.0.0"
@@ -6533,9 +6544,9 @@ react@^16.4.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-reactstrap@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-6.0.1.tgz#944984ee8dc684c7dc09b8de9b722153a1ca7e95"
+reactstrap@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-6.1.0.tgz#7fe70db4c9804cd364bf6fd137172443d67636d9"
   dependencies:
     classnames "^2.2.3"
     lodash.isfunction "^3.0.9"
@@ -6809,19 +6820,19 @@ remark-cli@^5.0.0:
     unified-args "^5.0.0"
 
 remark-lint-blockquote-indentation@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-blockquote-indentation/-/remark-lint-blockquote-indentation-1.0.1.tgz#0b000dc4a2ca0c8576b07bb7101c5ab1b632dd99"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-blockquote-indentation/-/remark-lint-blockquote-indentation-1.0.2.tgz#e84ab0dc4bf468ca10c53f09e1cb8dd0c2f56a95"
   dependencies:
     mdast-util-to-string "^1.0.2"
-    plur "^2.1.2"
+    plur "^3.0.0"
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-code-block-style@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-code-block-style/-/remark-lint-code-block-style-1.0.1.tgz#412e9e778a148c80330707b4679e33e0c06608f5"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-code-block-style/-/remark-lint-code-block-style-1.0.2.tgz#f24ef71767d5933ed83de93a54a85faf9e02c197"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6829,8 +6840,8 @@ remark-lint-code-block-style@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-definition-case@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-definition-case/-/remark-lint-definition-case-1.0.1.tgz#85e169a015936ffcea7825976290359a49de33b0"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-definition-case/-/remark-lint-definition-case-1.0.2.tgz#f2455a254ed07ff5e742d3d364a7d2f663def5af"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6838,8 +6849,8 @@ remark-lint-definition-case@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-definition-spacing@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-definition-spacing/-/remark-lint-definition-spacing-1.0.1.tgz#0a9ecc7778046534e239b75402dc1eabb0894850"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-definition-spacing/-/remark-lint-definition-spacing-1.0.2.tgz#f2ae34c41a4cf56a2434c2a4a47c5163bb3cdc54"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6847,8 +6858,8 @@ remark-lint-definition-spacing@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-emphasis-marker@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-emphasis-marker/-/remark-lint-emphasis-marker-1.0.1.tgz#50e769c118e22675baf7f6838fdda7b7e986b3cb"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-emphasis-marker/-/remark-lint-emphasis-marker-1.0.2.tgz#df77c6b62b87a61ddf683e791d13ccfae050c318"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6856,8 +6867,8 @@ remark-lint-emphasis-marker@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-fenced-code-flag@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-fenced-code-flag/-/remark-lint-fenced-code-flag-1.0.1.tgz#d8af334b1a38a0ef127872710d27d4cea38b1cc5"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-fenced-code-flag/-/remark-lint-fenced-code-flag-1.0.2.tgz#614232ab7923fc0a3e8694b485bc7ae664c7046b"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6865,8 +6876,8 @@ remark-lint-fenced-code-flag@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-fenced-code-marker@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-fenced-code-marker/-/remark-lint-fenced-code-marker-1.0.1.tgz#e1d91cb3685194f1ba8d5b952f3fad16878ea7df"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-fenced-code-marker/-/remark-lint-fenced-code-marker-1.0.2.tgz#07959311cf7b9cbe35ae279ea3cb7823205cb29f"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6874,14 +6885,14 @@ remark-lint-fenced-code-marker@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-file-extension@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-file-extension/-/remark-lint-file-extension-1.0.1.tgz#80c0d2688d0fcee6eeb46f4727a415129d35eb42"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-file-extension/-/remark-lint-file-extension-1.0.2.tgz#c52c6e00c9d1f5e729f515c1bb9c23de9aef4983"
   dependencies:
     unified-lint-rule "^1.0.0"
 
 remark-lint-final-definition@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-final-definition/-/remark-lint-final-definition-1.0.1.tgz#6027a6a6f41a927f8af4f1b30c3a75e333f1086a"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-final-definition/-/remark-lint-final-definition-1.0.2.tgz#63e013c9f95c9b52197f19c6e0d14b622352e0f3"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6889,8 +6900,8 @@ remark-lint-final-definition@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-hard-break-spaces@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/remark-lint-hard-break-spaces/-/remark-lint-hard-break-spaces-1.0.2.tgz#c2f6ccb03dbeb1a6341d3e300f63a5b46b30d755"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/remark-lint-hard-break-spaces/-/remark-lint-hard-break-spaces-1.0.3.tgz#0485fc09265dcea436f5eb3420a3b6f616c6fad7"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6898,16 +6909,16 @@ remark-lint-hard-break-spaces@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-heading-increment@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-heading-increment/-/remark-lint-heading-increment-1.0.1.tgz#5acc4c4f757845479ff6aed9fceb8da96ccbb36b"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-heading-increment/-/remark-lint-heading-increment-1.0.2.tgz#5da0771232711a42acb66fa79c3c6686de402c3e"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-heading-style@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-heading-style/-/remark-lint-heading-style-1.0.1.tgz#ae3c6c986899a68e86fbc6ccf09ab2ef925801b8"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-heading-style/-/remark-lint-heading-style-1.0.2.tgz#87bdab061c9d259f50b5c51ce478d1c65bd31ae8"
   dependencies:
     mdast-util-heading-style "^1.0.2"
     unified-lint-rule "^1.0.0"
@@ -6915,8 +6926,8 @@ remark-lint-heading-style@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-link-title-style@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-link-title-style/-/remark-lint-link-title-style-1.0.1.tgz#c3170bbd481a693c689feb574ab1e024278038c6"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-link-title-style/-/remark-lint-link-title-style-1.0.2.tgz#f96f424ce90c79a7344e72078ca51f8461f4c3bc"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6925,28 +6936,28 @@ remark-lint-link-title-style@^1.0.0:
     vfile-location "^2.0.1"
 
 remark-lint-list-item-content-indent@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-list-item-content-indent/-/remark-lint-list-item-content-indent-1.0.1.tgz#0b980122b60ed9dd9e73c7923e2d97277102b2c4"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-list-item-content-indent/-/remark-lint-list-item-content-indent-1.0.2.tgz#2564f4b661c4a82a92ecf60a1c4a2b867355c654"
   dependencies:
-    plur "^2.1.2"
+    plur "^3.0.0"
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-list-item-indent@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-list-item-indent/-/remark-lint-list-item-indent-1.0.1.tgz#ee206b6fb432eb09ec1e32fede156affb1f68db3"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-list-item-indent/-/remark-lint-list-item-indent-1.0.2.tgz#f8208f333a25bbaafdeda707e73523d6bb0f90cf"
   dependencies:
-    plur "^2.1.2"
+    plur "^3.0.0"
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-list-item-spacing@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-list-item-spacing/-/remark-lint-list-item-spacing-1.1.1.tgz#d448a7b068daa241fba6da59341f387b36039862"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-list-item-spacing/-/remark-lint-list-item-spacing-1.1.2.tgz#55f0d38b0bc1b1c1a553c2d7418066ad1aed9d16"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6954,8 +6965,8 @@ remark-lint-list-item-spacing@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-maximum-heading-length@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-maximum-heading-length/-/remark-lint-maximum-heading-length-1.0.1.tgz#f2f6fe21edc780c323a563b620e1044fe0fff3a6"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-maximum-heading-length/-/remark-lint-maximum-heading-length-1.0.2.tgz#8588923a480d3f039d6c28ae60a6b03cf864b5c8"
   dependencies:
     mdast-util-to-string "^1.0.2"
     unified-lint-rule "^1.0.0"
@@ -6963,8 +6974,8 @@ remark-lint-maximum-heading-length@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-maximum-line-length@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/remark-lint-maximum-line-length/-/remark-lint-maximum-line-length-1.0.2.tgz#6fb13756339403c96119a0b97f63b2cb6564201a"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/remark-lint-maximum-line-length/-/remark-lint-maximum-line-length-1.1.0.tgz#d56e6d083bbba3b757ed95f4e4d24041df7f405e"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6972,8 +6983,8 @@ remark-lint-maximum-line-length@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-no-auto-link-without-protocol@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-auto-link-without-protocol/-/remark-lint-no-auto-link-without-protocol-1.0.1.tgz#9221985b9a1cc7c671d2769488acc9b836792a6f"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-auto-link-without-protocol/-/remark-lint-no-auto-link-without-protocol-1.0.2.tgz#4532087419b1b131b4057ecf0a3a446f0afc2c6e"
   dependencies:
     mdast-util-to-string "^1.0.2"
     unified-lint-rule "^1.0.0"
@@ -6982,8 +6993,8 @@ remark-lint-no-auto-link-without-protocol@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-no-blockquote-without-marker@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-blockquote-without-marker/-/remark-lint-no-blockquote-without-marker-2.0.1.tgz#5b8495f5a8d4174cf91fc7248f94475553ab4d87"
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-blockquote-without-marker/-/remark-lint-no-blockquote-without-marker-2.0.2.tgz#61b6a0a74fbfba8fd168ac0fcc2a673eb47b9880"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -6992,66 +7003,67 @@ remark-lint-no-blockquote-without-marker@^2.0.0:
     vfile-location "^2.0.1"
 
 remark-lint-no-consecutive-blank-lines@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-consecutive-blank-lines/-/remark-lint-no-consecutive-blank-lines-1.0.1.tgz#a545481d67731983c8986617d8d2b0ad92c97db3"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-consecutive-blank-lines/-/remark-lint-no-consecutive-blank-lines-1.0.2.tgz#ba7c8944335a80e67c811028732f12e521d07d93"
   dependencies:
-    plur "^2.1.2"
+    plur "^3.0.0"
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-duplicate-headings@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-duplicate-headings/-/remark-lint-no-duplicate-headings-1.0.1.tgz#24324dd7e2c703b285201cdf76d8689cd6b86e12"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-duplicate-headings/-/remark-lint-no-duplicate-headings-1.0.2.tgz#774b1c1e9f8d8313ca32f8b44a4ab3fcf2456e12"
   dependencies:
     mdast-util-to-string "^1.0.2"
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-position "^3.0.0"
+    unist-util-stringify-position "^1.1.2"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-emphasis-as-heading@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-emphasis-as-heading/-/remark-lint-no-emphasis-as-heading-1.0.1.tgz#749bf7c2dda9e055d18c6fba59c45b3eaa8d35db"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-emphasis-as-heading/-/remark-lint-no-emphasis-as-heading-1.0.2.tgz#a4616ad3f085e4db013132306312973b3fe76ac0"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-file-name-articles@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-articles/-/remark-lint-no-file-name-articles-1.0.1.tgz#1b0807562bf08369336f84e4296e56c5882df19e"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-articles/-/remark-lint-no-file-name-articles-1.0.2.tgz#a8187e44584e56ccc37fcd7bbc758e940a5b1829"
   dependencies:
     unified-lint-rule "^1.0.0"
 
 remark-lint-no-file-name-consecutive-dashes@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-consecutive-dashes/-/remark-lint-no-file-name-consecutive-dashes-1.0.1.tgz#1a124b9ec135ce24e9d35523df554b3e28bf322d"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-consecutive-dashes/-/remark-lint-no-file-name-consecutive-dashes-1.0.2.tgz#e8536f4c9f349965d9b4990a75a27857dac72488"
   dependencies:
     unified-lint-rule "^1.0.0"
 
 remark-lint-no-file-name-irregular-characters@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-irregular-characters/-/remark-lint-no-file-name-irregular-characters-1.0.1.tgz#a7d95fb69432d23fa0fe4fe6814184af1daf30b9"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-irregular-characters/-/remark-lint-no-file-name-irregular-characters-1.0.2.tgz#0dffe8f4dc7ffe79f634d4609a8f28261a981552"
   dependencies:
     unified-lint-rule "^1.0.0"
 
 remark-lint-no-file-name-mixed-case@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-mixed-case/-/remark-lint-no-file-name-mixed-case-1.0.1.tgz#be102ed38c2f289f3157629d09fc4db476fa3b61"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-mixed-case/-/remark-lint-no-file-name-mixed-case-1.0.2.tgz#965606ac41b53fef8a4c8d0c7bd1bed63e26a357"
   dependencies:
     unified-lint-rule "^1.0.0"
 
 remark-lint-no-file-name-outer-dashes@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-outer-dashes/-/remark-lint-no-file-name-outer-dashes-1.0.2.tgz#03c5a6ec4cfbb08fca2e3044d2efd9a72b1a6fa9"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-file-name-outer-dashes/-/remark-lint-no-file-name-outer-dashes-1.0.3.tgz#d5b217a8341ac79b4a378770488b3ccc8bc4a5b5"
   dependencies:
     unified-lint-rule "^1.0.0"
 
 remark-lint-no-heading-punctuation@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-heading-punctuation/-/remark-lint-no-heading-punctuation-1.0.1.tgz#1ab233e0ae951889d17b561396a89a83f514b128"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-heading-punctuation/-/remark-lint-no-heading-punctuation-1.0.2.tgz#c520d8614d641b05ac75c25502901df9218b4b5e"
   dependencies:
     mdast-util-to-string "^1.0.2"
     unified-lint-rule "^1.0.0"
@@ -7059,8 +7071,8 @@ remark-lint-no-heading-punctuation@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-no-inline-padding@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-inline-padding/-/remark-lint-no-inline-padding-1.0.1.tgz#13ef869daa8448fd4c381bda4ace05f2f9921141"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-inline-padding/-/remark-lint-no-inline-padding-1.0.2.tgz#aa189d88c0d3faa913007c2f04d72b20d84e577e"
   dependencies:
     mdast-util-to-string "^1.0.2"
     unified-lint-rule "^1.0.0"
@@ -7068,8 +7080,8 @@ remark-lint-no-inline-padding@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-no-literal-urls@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-literal-urls/-/remark-lint-no-literal-urls-1.0.1.tgz#840f113520f8392315be75f61e548e6394c038f6"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-literal-urls/-/remark-lint-no-literal-urls-1.0.2.tgz#1c60160a76bd9ddacd42819b43dadeb481a530df"
   dependencies:
     mdast-util-to-string "^1.0.2"
     unified-lint-rule "^1.0.0"
@@ -7078,41 +7090,42 @@ remark-lint-no-literal-urls@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-no-multiple-toplevel-headings@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-multiple-toplevel-headings/-/remark-lint-no-multiple-toplevel-headings-1.0.1.tgz#f4c0a05865e961826863d1f1a5d82fc80e772794"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-multiple-toplevel-headings/-/remark-lint-no-multiple-toplevel-headings-1.0.2.tgz#65f7288f66a1a14394f6c6f0910d36112f60e3eb"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-position "^3.0.0"
+    unist-util-stringify-position "^1.1.2"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-shell-dollars@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-shell-dollars/-/remark-lint-no-shell-dollars-1.0.1.tgz#6dde8f617ffc45c36b6334dc5725d26c17b47a37"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-shell-dollars/-/remark-lint-no-shell-dollars-1.0.2.tgz#361599631271f7237b2147e692be40e08975330c"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-shortcut-reference-image@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-shortcut-reference-image/-/remark-lint-no-shortcut-reference-image-1.0.1.tgz#75861042fdd1b2418141a3b0f46eaa8671470379"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-shortcut-reference-image/-/remark-lint-no-shortcut-reference-image-1.0.2.tgz#784011b832173ad9e87d4f40c90f935de0841764"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-shortcut-reference-link@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-shortcut-reference-link/-/remark-lint-no-shortcut-reference-link-1.0.2.tgz#caf7db8996aa5badab0ff3fc5ce43d65823b5d40"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-shortcut-reference-link/-/remark-lint-no-shortcut-reference-link-1.0.3.tgz#4210d37d234b427dd131eb11473a7a2d3719a819"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
     unist-util-visit "^1.1.1"
 
 remark-lint-no-table-indentation@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-no-table-indentation/-/remark-lint-no-table-indentation-1.0.1.tgz#9ecf7fc621ea2b353de4ea97e4f7ad0f912c5b8d"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-no-table-indentation/-/remark-lint-no-table-indentation-1.0.2.tgz#ee64d30e2c309c04807ef3f22954d4fcda4432a3"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7120,8 +7133,8 @@ remark-lint-no-table-indentation@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-ordered-list-marker-style@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-ordered-list-marker-style/-/remark-lint-ordered-list-marker-style-1.0.1.tgz#364ad33ebd31b141392aec41fc5eee77640155d7"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-ordered-list-marker-style/-/remark-lint-ordered-list-marker-style-1.0.2.tgz#ad7461306a7701fc931245300dfd7dbd9fbb589f"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7129,8 +7142,8 @@ remark-lint-ordered-list-marker-style@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-ordered-list-marker-value@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-ordered-list-marker-value/-/remark-lint-ordered-list-marker-value-1.0.1.tgz#81f92b5dc25dad34e900f6e13a9fd52a4d41f5bf"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-ordered-list-marker-value/-/remark-lint-ordered-list-marker-value-1.0.2.tgz#26f5f1ddfadb7c958f8e2c15cd3aa9f2be985be6"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7138,8 +7151,8 @@ remark-lint-ordered-list-marker-value@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-rule-style@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-rule-style/-/remark-lint-rule-style-1.0.1.tgz#8a53ec9a630acfc62cbc39976524744c9395063a"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-rule-style/-/remark-lint-rule-style-1.0.2.tgz#51f82acb1e6cdf76ea6107bb231d2336615fa98d"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7147,8 +7160,8 @@ remark-lint-rule-style@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-strong-marker@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-strong-marker/-/remark-lint-strong-marker-1.0.1.tgz#43a69404f5248b2d97cfd3915098c511bec7c1f1"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-strong-marker/-/remark-lint-strong-marker-1.0.2.tgz#6ce3670f79bf5978b7518af35e6072c8425f0f46"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7156,8 +7169,8 @@ remark-lint-strong-marker@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-table-cell-padding@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-table-cell-padding/-/remark-lint-table-cell-padding-1.0.1.tgz#e38acf2fdfaccbe9b0618ec844669cd2c3da02e3"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-table-cell-padding/-/remark-lint-table-cell-padding-1.0.2.tgz#addb6b8575ff6d805474e41dd2e5dc9aed5d4113"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7165,8 +7178,8 @@ remark-lint-table-cell-padding@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-table-pipe-alignment@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-table-pipe-alignment/-/remark-lint-table-pipe-alignment-1.0.1.tgz#c35ab9429b02ea360775d130fc9f09621a6d4e26"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-table-pipe-alignment/-/remark-lint-table-pipe-alignment-1.0.2.tgz#3d79927c18b5a5713079a7890a392b740e0bc45a"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7174,8 +7187,8 @@ remark-lint-table-pipe-alignment@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-table-pipes@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-table-pipes/-/remark-lint-table-pipes-1.0.1.tgz#a2cdae1920aca706bbe79fcdc277527ddd891ff0"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-table-pipes/-/remark-lint-table-pipes-1.0.2.tgz#a7e95c93d6908c2b515651aa44fc8c922626ad32"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7183,8 +7196,8 @@ remark-lint-table-pipes@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint-unordered-list-marker-style@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint-unordered-list-marker-style/-/remark-lint-unordered-list-marker-style-1.0.1.tgz#2963a7585b292377a8c58340cc0e916eb094432c"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint-unordered-list-marker-style/-/remark-lint-unordered-list-marker-style-1.0.2.tgz#2d631c3e7e0604e1d45d5586a0bbb21474bb89a4"
   dependencies:
     unified-lint-rule "^1.0.0"
     unist-util-generated "^1.1.0"
@@ -7192,8 +7205,8 @@ remark-lint-unordered-list-marker-style@^1.0.0:
     unist-util-visit "^1.1.1"
 
 remark-lint@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/remark-lint/-/remark-lint-6.0.1.tgz#68b10ec25d5145042f7cfa52649e20ef7bc91482"
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/remark-lint/-/remark-lint-6.0.2.tgz#f4ac45536e4fbf3c9a523dfa1cca874c598554de"
   dependencies:
     remark-message-control "^4.0.0"
 
@@ -7225,9 +7238,9 @@ remark-parse@^5.0.0:
     vfile-location "^2.0.0"
     xtend "^4.0.1"
 
-remark-preset-lint-markdown-style-guide@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/remark-preset-lint-markdown-style-guide/-/remark-preset-lint-markdown-style-guide-2.1.1.tgz#6064a358bc0eec7a5c6bdf2ed7446d4b52b2a7b8"
+remark-preset-lint-markdown-style-guide@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/remark-preset-lint-markdown-style-guide/-/remark-preset-lint-markdown-style-guide-2.1.2.tgz#a945814f4b014d3e6c0888fc034418bdfd77f44c"
   dependencies:
     remark-lint "^6.0.0"
     remark-lint-blockquote-indentation "^1.0.0"
@@ -7568,7 +7581,7 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-"safer-buffer@>= 2.1.2 < 3":
+"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
@@ -7581,9 +7594,9 @@ sass-graph@^2.2.4:
     scss-tokenizer "^0.2.3"
     yargs "^7.0.0"
 
-sass-loader@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-7.0.2.tgz#036c322890f2fa389df8373f79e890327b74d1fb"
+sass-loader@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-7.0.3.tgz#6ca10871a1cc7549f8143db5a9958242c4e4ca2a"
   dependencies:
     clone-deep "^2.0.1"
     loader-utils "^1.0.1"
@@ -7947,13 +7960,14 @@ ssh-pool@^4.1.0:
     whereis "^0.4.0"
 
 sshpk@^1.7.0:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.14.1.tgz#130f5975eddad963f1d56f92b9ac6c51fa9f83eb"
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.14.2.tgz#c6fc61648a3d9c4e764fd3fcdf4ea105e492ba98"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
     dashdash "^1.12.0"
     getpass "^0.1.1"
+    safer-buffer "^2.0.2"
   optionalDependencies:
     bcrypt-pbkdf "^1.0.0"
     ecc-jsbn "~0.1.1"
@@ -8514,8 +8528,8 @@ unified-engine@^5.1.0:
     xtend "^4.0.1"
 
 unified-lint-rule@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/unified-lint-rule/-/unified-lint-rule-1.0.2.tgz#419270d7de71436938cbcb34d8683f56a14d74b7"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/unified-lint-rule/-/unified-lint-rule-1.0.3.tgz#e302b0c4a7ac428c0980e049a500e59528001299"
   dependencies:
     wrapped "^1.0.1"
 
@@ -8597,7 +8611,7 @@ unist-util-remove-position@^1.0.0:
   dependencies:
     unist-util-visit "^1.1.0"
 
-unist-util-stringify-position@^1.0.0, unist-util-stringify-position@^1.1.1:
+unist-util-stringify-position@^1.0.0, unist-util-stringify-position@^1.1.1, unist-util-stringify-position@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/unist-util-stringify-position/-/unist-util-stringify-position-1.1.2.tgz#3f37fcf351279dcbca7480ab5889bb8a832ee1c6"
 
@@ -8701,11 +8715,17 @@ util.promisify@~1.0.0:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
 
-util@0.10.3, util@^0.10.3:
+util@0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:
     inherits "2.0.1"
+
+util@^0.10.3:
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/util/-/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
+  dependencies:
+    inherits "2.0.3"
 
 utila@~0.3:
   version "0.3.3"
@@ -8728,8 +8748,8 @@ v8-compile-cache@^2.0.0:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.0.0.tgz#526492e35fc616864284700b7043e01baee09f0a"
 
 v8flags@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-3.1.0.tgz#246a34a8158c0e1390dcb758e1140e5d004e230b"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-3.1.1.tgz#42259a1461c08397e37fe1d4f1cfb59cad85a053"
   dependencies:
     homedir-polyfill "^1.0.1"
 
@@ -8819,9 +8839,9 @@ watchpack@^1.5.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
-webpack-cli@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.0.1.tgz#1d894ed039268aa1a17a9b80f8810c637fd0df63"
+webpack-cli@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.0.2.tgz#e48c5662aff8ed5aac3db5f82f51d7f32e50459e"
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
@@ -8884,14 +8904,15 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.10.2.tgz#d6a4cc3e2fa748f96ca62a70f91eaaa939ef3858"
+webpack@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.11.0.tgz#b7b68b4fe8a8963a18370a05f84d38d59ada4fbf"
   dependencies:
-    "@webassemblyjs/ast" "1.5.9"
-    "@webassemblyjs/wasm-edit" "1.5.9"
-    "@webassemblyjs/wasm-opt" "1.5.9"
-    "@webassemblyjs/wasm-parser" "1.5.9"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-module-context" "1.5.10"
+    "@webassemblyjs/wasm-edit" "1.5.10"
+    "@webassemblyjs/wasm-opt" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
     acorn "^5.0.0"
     acorn-dynamic-import "^3.0.0"
     ajv "^6.1.0"

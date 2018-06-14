@@ -1672,12 +1672,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000853"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000853.tgz#32901a7d6b93a87d59f08aaee47ea8ff6ec90fdf"
+  version "1.0.30000855"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000855.tgz#34f88bf1577aa505395e48e412dc21f7dd41ef3b"
 
 caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000851:
-  version "1.0.30000853"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000853.tgz#505249fc78d60e20ad47af3c13706d6f9fd209fd"
+  version "1.0.30000855"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000855.tgz#d5a26a9093b932d6266bf4ed9294b41b84945d14"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -6483,9 +6483,9 @@ react-json-tree@^0.11.0:
     prop-types "^15.5.8"
     react-base16-styling "^0.5.1"
 
-react-markdown@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-3.3.2.tgz#35d305e8a29b640717b9dac4658a1caeafd44c94"
+react-markdown@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-3.3.3.tgz#1e57e63e9f4e87d2919a51d77815b803f4b7b5d6"
   dependencies:
     prop-types "^15.6.1"
     remark-parse "^5.0.0"

@@ -40,8 +40,8 @@ if (process.env.NODE_ENV !== 'production') {
 
   const fc = dest.firstChild;
   if (!dest || !fc || !fc.attributes) { // || !fc.attributes['data-react-checksum']
-    console.error('Server-side React render was discarded. ' +
-      'Make sure that your initial render does not contain any client-side code.');
+    console.error('Server-side React render was discarded. '
+      + 'Make sure that your initial render does not contain any client-side code.');
   }
 }
 

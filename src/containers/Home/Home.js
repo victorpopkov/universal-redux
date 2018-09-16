@@ -34,7 +34,7 @@ state => ({
 }), {
   loadMarkdown: markdownActions.loadMarkdown,
 })
-export default class Home extends Component {
+class Home extends Component {
   static propTypes = {
     loadMarkdown: PropTypes.func.isRequired,
     markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
@@ -107,20 +107,29 @@ export default class Home extends Component {
             <li>
               <LogoReact id="logo-react" />
               <UncontrolledTooltip placement="bottom" target="logo-react">
-                React {packageJson.dependencies.react}
+                React
+                {' '}
+                {packageJson.dependencies.react}
               </UncontrolledTooltip>
             </li>
             <li>
               <LogoRedux id="logo-redux" />
               <UncontrolledTooltip placement="bottom" target="logo-redux">
-                Redux {packageJson.dependencies.redux}
+                Redux
+                {' '}
+                {packageJson.dependencies.redux}
               </UncontrolledTooltip>
             </li>
             <li>
               <LogoReactstrap id="logo-reactstrap" />
               <UncontrolledTooltip placement="bottom" target="logo-reactstrap">
-                Bootstrap {packageJson.dependencies.bootstrap}<br />
-                Reactstrap {packageJson.dependencies.reactstrap}
+                Bootstrap
+                {' '}
+                {packageJson.dependencies.bootstrap}
+                <br />
+                Reactstrap
+                {' '}
+                {packageJson.dependencies.reactstrap}
               </UncontrolledTooltip>
             </li>
           </ul>
@@ -155,3 +164,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home;

@@ -1,118 +1,48 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [
-            "last 2 versions"
-          ]
-        }
-      }
-    ],
-    "react",
-    "stage-0"
+    ["@babel/env", { "targets": { "browsers": ["last 2 versions"] } }],
+    "@babel/react"
   ],
   "plugins": [
-    "transform-runtime",
-    "add-module-exports",
-    "transform-decorators-legacy",
-    "transform-react-display-name"
+    ["@babel/plugin-proposal-class-properties", { "loose": false }],
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-function-bind",
+    "@babel/plugin-syntax-export-default-from",
+    "@babel/plugin-transform-react-display-name",
+    "@babel/plugin-transform-runtime",
+    [
+      "inline-react-svg", {
+      "svgo": {
+        "plugins": [
+          { "removeAttrs": { "attrs": "(data-name)" } },
+          { "cleanupIDs": true }
+        ]
+      }
+    }
+    ],
+    [
+      "react-css-modules",
+      {
+        "generateScopedName": "[local]___[hash:base64:5]",
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss",
+            "plugins": ["postcss-nested"]
+          }
+        }
+      }
+    ]
   ],
   "env": {
     "development": {
       "plugins": [
-        "typecheck",
-        [
-          "react-transform",
-          {
-            "transforms": [
-              {
-                "transform": "react-transform-catch-errors",
-                "imports": [
-                  "react",
-                  "redbox-react"
-                ]
-              }
-            ]
-          }
-        ],
-        [
-          "react-css-modules",
-          {
-            "generateScopedName": "[local]___[hash:base64:5]",
-            "filetypes": {
-              ".scss": {
-                "syntax": "postcss-scss",
-                "plugins": [
-                  "postcss-nested"
-                ]
-              }
-            }
-          }
-        ],
-        [
-          "webpack-alias",
-          {
-            "config": "${PWD}/webpack/dev.config.js"
-          }
-        ],
-        [
-          "inline-react-svg",
-          {
-            "svgo": {
-              "plugins": [
-                {
-                  "removeAttrs": { "attrs": "(data-name)" }
-                },
-                {
-                  "cleanupIDs": true
-                }
-              ]
-
-            }
-          }
-        ]
+        ["webpack-alias", { "config": "${PWD}/webpack/dev.config.js" }]
       ]
     },
     "production": {
       "plugins": [
-        [
-          "react-css-modules",
-          {
-            "generateScopedName": "[local]___[hash:base64:5]",
-            "filetypes": {
-              ".scss": {
-                "syntax": "postcss-scss",
-                "plugins": [
-                  "postcss-nested"
-                ]
-              }
-            }
-          }
-        ],
-        [
-          "webpack-alias",
-          {
-            "config": "${PWD}/webpack/prod.config.js"
-          }
-        ],
-        [
-          "inline-react-svg",
-          {
-            "svgo": {
-              "plugins": [
-                {
-                  "removeAttrs": { "attrs": "(data-name)" }
-                },
-                {
-                  "cleanupIDs": true
-                }
-              ]
-
-            }
-          }
-        ]
+        ["webpack-alias", { "config": "${PWD}/webpack/prod.config.js" }]
       ]
     }
   }

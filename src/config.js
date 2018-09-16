@@ -1,4 +1,4 @@
-require('babel-polyfill');
+require('@babel/polyfill');
 
 const ip = require('ip');
 const packageJson = require('../package.json');

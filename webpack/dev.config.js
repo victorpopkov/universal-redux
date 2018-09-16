@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ip = require('ip');
 const path = require('path');
 const webpack = require('webpack');
-const babelLoaderConfig = require('./babel-loader.config');
 
 const ipAddress = ip.address();
 const host = (process.env.HOST || ipAddress);
@@ -51,7 +50,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            query: babelLoaderConfig.query,
           },
           {
             loader: 'eslint-loader',

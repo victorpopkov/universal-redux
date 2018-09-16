@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const Express = require('express');
 const webpack = require('webpack');
-const webpackConfig = require('./dev.config');
+const webpackConfig = require('./webpack.config.dev');
 const config = require('../src/config');
 
 const app = new Express();

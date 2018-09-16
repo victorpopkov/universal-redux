@@ -75,7 +75,7 @@
       }
     },
     "build": {
-      "command": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
+      "command": "webpack --verbose --colors --display-error-details --config webpack/webpack.config.prod.js",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "production"
@@ -191,7 +191,8 @@
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.3.0",
-    "webpack-hot-middleware": "^2.24.0"
+    "webpack-hot-middleware": "^2.24.0",
+    "webpack-merge": "^4.1.4"
   },
   "engines": {
     "node": ">= 8.4.0"

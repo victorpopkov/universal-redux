@@ -37,12 +37,12 @@
   "env": {
     "development": {
       "plugins": [
-        ["webpack-alias", { "config": "${PWD}/webpack/dev.config.js" }]
+        ["webpack-alias", { "config": "${PWD}/webpack/webpack.config.dev.js" }]
       ]
     },
     "production": {
       "plugins": [
-        ["webpack-alias", { "config": "${PWD}/webpack/prod.config.js" }]
+        ["webpack-alias", { "config": "${PWD}/webpack/webpack.config.prod.js" }]
       ]
     }
   }

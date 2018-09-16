@@ -12,12 +12,12 @@ and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-load
 - [Features](#features)
 - [Running](#running)
   - [Development](#development)
-    - [`watch:client`](#watch-client)
-    - [`start:dev`](#start-dev)
-    - [`start:dev:api`](#start-dev-api)
+    - [`watch:client`](#watchclient)
+    - [`start:dev`](#startdev)
+    - [`start:dev:api`](#startdevapi)
   - [Production](#production)
-    - [`start:prod`](#start-prod)
-    - [`start:prod:api`](#start-prod-api)
+    - [`start:prod`](#startprod)
+    - [`start:prod:api`](#startprodapi)
 - [Directory structure](#directory-structure)
 
 ## Features

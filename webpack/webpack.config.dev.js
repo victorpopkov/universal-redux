@@ -11,8 +11,8 @@ const host = (process.env.HOST || ipAddress);
 const port = (+process.env.PORT + 1) || 3001;
 
 module.exports = merge(common, {
-  devtool: 'inline-source-map',
   context: paths.root,
+  devtool: 'inline-source-map',
   entry: {
     vendor: [
       `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
@@ -25,11 +25,6 @@ module.exports = merge(common, {
     ],
   },
   mode: 'development',
-  output: {
-    filename: '[name].js',
-    path: paths.build,
-    publicPath: `http://${host}:${port}/`,
-  },
   module: {
     rules: [
       {
@@ -125,13 +120,12 @@ module.exports = merge(common, {
       },
     ],
   },
+  output: {
+    filename: '[name].js',
+    path: paths.build,
+    publicPath: `http://${host}:${port}/`,
+  },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(paths.src, 'assets/favicon/'),
-        to: path.resolve(paths.build, 'assets/favicon/'),
-      },
-    ]),
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,

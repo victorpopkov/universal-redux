@@ -21,11 +21,6 @@ module.exports = merge(common, {
     ],
   },
   mode: 'production',
-  output: {
-    filename: '[name]-[hash].js',
-    path: paths.build,
-    publicPath: '/',
-  },
   module: {
     rules: [
       {
@@ -105,14 +100,33 @@ module.exports = merge(common, {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: {
+            drop_console: true,
+            warnings: false,
+          },
+        },
+        sourceMap: true,
+      }),
+      new OptimizeCssAssetsPlugin({
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { discardComments: { removeAll: true } },
+        canPrint: false,
+      }),
+    ],
+  },
+  output: {
+    filename: '[name]-[hash].js',
+    path: paths.build,
+    publicPath: '/',
+  },
   plugins: [
     new CleanPlugin([paths.build], { root: paths.root }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(paths.src, 'assets/favicon/'),
-        to: path.resolve(paths.build, 'assets/favicon/'),
-      },
-    ]),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name]-[chunkhash].css',
       chunkFilename: 'assets/css/[id].css',
@@ -127,18 +141,5 @@ module.exports = merge(common, {
       __DEVTOOLS__: false,
     }),
     new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-          drop_console: true,
-          warnings: false,
-        },
-      },
-    }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: false,
-    }),
   ],
 });

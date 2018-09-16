@@ -1,6 +1,4 @@
 /* eslint-disable global-require, import/no-extraneous-dependencies */
-require('@babel/polyfill');
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ip = require('ip');
 const path = require('path');

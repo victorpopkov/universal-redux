@@ -1,6 +1,4 @@
 /* eslint-disable global-require, import/no-extraneous-dependencies */
-require('@babel/polyfill');
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

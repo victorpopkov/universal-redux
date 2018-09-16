@@ -151,8 +151,7 @@ entry point. I strongly recommend to completely remove it from your
 │   ├── prod.config.js              # `yarn start` (configs for production)
 │   ├── webpack-dev-server.js       # `yarn watch-client` (development server with HMR)
 │   └── webpack-isomorphic-tools.js # configs to enable basic SSR for assets
-├── postcss.config.js
-└── server.babel.js
+└── postcss.config.js
 ```
 
 ## License

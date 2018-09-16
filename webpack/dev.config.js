@@ -33,6 +33,7 @@ module.exports = {
       path.join(pathSrc, 'assets/scss/vendor.scss'),
     ],
     main: [
+      `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
       path.join(pathSrc, 'client.js'),
     ],
   },

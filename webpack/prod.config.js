@@ -91,7 +91,7 @@ module.exports = {
           {
             loader: 'resolve-url-loader',
             options: {
-              attempts: 1,
+              sourceMap: true,
             },
           },
           {

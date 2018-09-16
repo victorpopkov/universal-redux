@@ -3,7 +3,7 @@ require('babel-polyfill');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
@@ -51,69 +51,69 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 2,
-                localIdentName: '[local]___[hash:base64:5]',
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 2,
+              localIdentName: '[local]___[hash:base64:5]',
             },
-            {
-              loader: 'postcss-loader',
+          },
+          {
+            loader: 'postcss-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              outputStyle: 'expanded',
             },
-            {
-              loader: 'less-loader',
-              options: {
-                outputStyle: 'expanded',
-              },
-            },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2,
-                localIdentName: '[local]___[hash:base64:5]',
-                modules: true,
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              localIdentName: '[local]___[hash:base64:5]',
+              modules: true,
             },
-            {
-              loader: 'resolve-url-loader',
-              options: {
-                attempts: 1,
-              },
+          },
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              attempts: 1,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                outputStyle: 'expanded',
-                sourceMap: true,
-              },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              outputStyle: 'expanded',
+              sourceMap: true,
             },
-            {
-              loader: 'sass-resources-loader',
-              options: {
-                resources: path.join(pathSrc, 'assets/scss/sass-resources.scss'),
-              },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.join(pathSrc, 'assets/scss/sass-resources.scss'),
             },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.woff$/,
@@ -246,9 +246,9 @@ module.exports = {
         to: path.resolve(pathBuild, 'assets/favicon/'),
       },
     ]),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'assets/css/[name]-[chunkhash].css',
-      allChunks: true,
+      chunkFilename: 'assets/css/[id].css',
     }),
     new webpack.DefinePlugin({
       'process.env': {

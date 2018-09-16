@@ -44,8 +44,8 @@ To start coding you just need to:
 
 1. Clone the repository:
 `git@github.com:victorpopkov/isomorphic-redux-reactstrap.git`
-2. Install packages: `yarn install` or `npm install`
-3. Launch: `yarn dev` or `npm dev`
+2. Install packages: `yarn install`
+3. Launch: `yarn dev`
 4. Visit in your browser: [http://localhost:3000](http://localhost:3000)
 
 Now let's look into the 3-d step a little closer. If you investigate the
@@ -86,9 +86,9 @@ first before actually starting it:
 
 1. Clone the repository:
 `git@github.com:victorpopkov/isomorphic-redux-reactstrap.git`
-2. Install packages: `yarn install` or `npm install`
-3. Build: `yarn build` or `npm build`
-4. Launch: `yarn start` or `npm start`
+2. Install packages: `yarn install`
+3. Build: `yarn build`
+4. Launch: `yarn start`
 5. Visit in your browser: [http://localhost:8080](http://localhost:8080)
 
 Following the tradition, let's look into the 4-th step a little closer by

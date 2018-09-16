@@ -9,11 +9,10 @@ bootstrapVersion: 4
 useFlexbox: true
 
 # Webpack loaders, order matters
-styleLoaders:
-  - style-loader
-  - css-loader
-  - postcss-loader
-  - sass-loader
+# styleLoaders:
+#   - css-loader
+#   - postcss-loader
+#   - sass-loader
 
 # Extract styles to stand-alone css file
 # Different settings for different environments can be used,
@@ -24,8 +23,17 @@ styleLoaders:
 env:
   development:
     extractStyles: false
+    styleLoaders:
+      - style-loader
+      - css-loader
+      - postcss-loader
+      - sass-loader
   production:
     extractStyles: true
+    styleLoaders:
+      - css-loader
+      - postcss-loader
+      - sass-loader
 
 
 # Customize Bootstrap variables that get imported before the original Bootstrap variables.

@@ -36,8 +36,13 @@ state => ({
 })
 class Home extends Component {
   static propTypes = {
-    loadMarkdown: PropTypes.func.isRequired,
-    markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    loadMarkdown: PropTypes.func,
+    markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  };
+
+  static defaultProps = {
+    loadMarkdown: null,
+    markdown: null,
   };
 
   constructor(props) {
@@ -87,7 +92,7 @@ class Home extends Component {
   renderMarkdown() {
     const { markdown } = this.props;
 
-    if (markdown.get('loaded')) {
+    if (markdown && markdown.get('loaded')) {
       return (markdown.get('error')) ? (
         <h2>{markdown.get('error')}</h2>
       ) : (

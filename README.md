@@ -146,10 +146,11 @@ entry point. I strongly recommend to completely remove it from your
 │   ├── routes.js
 │   └── server.js
 ├── webpack/ # webpack related configs
-│   ├── babel-loader.config.js      # prepare .babelrc configs to be consumed by babel-loader
-│   ├── dev.config.js               # `yarn dev` (configs for development)
-│   ├── prod.config.js              # `yarn start` (configs for production)
-│   ├── webpack-dev-server.js       # `yarn watch-client` (development server with HMR)
+│   ├── paths.js
+│   ├── webpack.config.common.js    # common configs for all environments
+│   ├── webpack.config.dev.js       # development environment configs
+│   ├── webpack.config.prod.js      # production environment configs
+│   ├── webpack-dev-server.js       # development server with HMR configs
 │   └── webpack-isomorphic-tools.js # configs to enable basic SSR for assets
 └── postcss.config.js
 ```

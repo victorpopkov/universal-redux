@@ -1,7 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
+require('@babel/register');
+
 const Express = require('express');
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.dev');
+const webpackConfig = require('./webpack.config.client.dev.babel');
 const config = require('../config');
 
 const app = new Express();

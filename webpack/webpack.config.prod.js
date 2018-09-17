@@ -1,4 +1,3 @@
-const CleanPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -125,19 +124,9 @@ module.exports = merge(common, {
     publicPath: '/',
   },
   plugins: [
-    new CleanPlugin([paths.build], { root: paths.root }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name]-[chunkhash].css',
       chunkFilename: 'assets/css/[id].css',
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"',
-      },
-      __CLIENT__: true,
-      __SERVER__: false,
-      __DEVELOPMENT__: false,
-      __DEVTOOLS__: false,
     }),
     new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
   ],

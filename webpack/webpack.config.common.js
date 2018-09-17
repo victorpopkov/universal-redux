@@ -2,11 +2,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const paths = require('./paths');
 
-// Fix 'You must specify "assets" parameter' issue when running concurrently
-delete require.cache[require.resolve('./webpack-isomorphic-tools')];
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools'));
-
 const useFonts = [
   {
     loader: 'url-loader',
@@ -51,7 +46,7 @@ module.exports = {
         ],
       },
       {
-        test: webpackIsomorphicToolsPlugin.regularExpression('images'),
+        test: /\.(jpe?g|png|gif)$/,
         use: useImages,
       },
     ],
@@ -83,6 +78,5 @@ module.exports = {
         to: path.resolve(paths.build, 'assets/favicon/'),
       },
     ]),
-    webpackIsomorphicToolsPlugin,
   ],
 };

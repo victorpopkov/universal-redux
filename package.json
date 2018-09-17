@@ -10,34 +10,33 @@
   },
   "main": "bin/server.js",
   "scripts": {
-    "start": "npm-run-all --parallel start:prod start:prod:api",
-    "start:prod": "better-npm-run start:prod",
-    "start:prod:api": "better-npm-run start:prod:api",
-    "build": "better-npm-run build",
+    "build": "npm-run-all build:client build:server",
+    "build:client": "better-npm-run build:client",
+    "build:server": "better-npm-run build:server",
+    "dev": "npm-run-all universal-webpack:prepare development",
+    "development": "npm-run-all --parallel watch:client watch:server start:dev start:dev:api",
     "lint": "eslint -c .eslintrc src api; remark .",
-    "start:dev": "better-npm-run start:dev",
-    "start:dev:api": "better-npm-run start:dev:api",
+    "start": "npm-run-all --parallel start:prod start:prod:api",
+    "start:dev": "node ./bin/server.js",
+    "start:dev:api": "node ./bin/api.js",
+    "start:prod": "node ./bin/server.js",
+    "start:prod:api": "node ./bin/api.js",
+    "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
     "watch:client": "better-npm-run watch:client",
-    "dev": "npm-run-all --parallel watch:client start:dev start:dev:api"
+    "watch:server": "better-npm-run watch:server"
   },
   "betterScripts": {
-    "start:prod": {
-      "command": "node ./bin/server.js"
+    "build:client": {
+      "command": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose"
     },
-    "start:prod:api": {
-      "command": "node ./bin/api.js"
-    },
-    "start:dev": {
-      "command": "node ./bin/server.js"
-    },
-    "start:dev:api": {
-      "command": "node ./bin/api.js"
+    "build:server": {
+      "command": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose"
     },
     "watch:client": {
       "command": "node ./webpack/webpack-dev-server.js"
     },
-    "build": {
-      "command": "webpack --verbose --colors --display-error-details --config webpack/webpack.config.prod.js"
+    "watch:server": {
+      "command": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch"
     }
   },
   "dependencies": {
@@ -83,8 +82,7 @@
     "serve-favicon": "^2.5.0",
     "universal-cookie": "^3.0.4",
     "universal-cookie-express": "^3.0.4",
-    "url": "^0.11.0",
-    "webpack-isomorphic-tools": "^3.0.6"
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
@@ -146,6 +144,7 @@
     "svgo": "^1.0.5",
     "svgo-loader": "^2.2.0",
     "uglifyjs-webpack-plugin": "^2.0.0",
+    "universal-webpack": "^0.6.6",
     "url-loader": "^1.1.1",
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",

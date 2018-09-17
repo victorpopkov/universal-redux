@@ -19,108 +19,105 @@ import config from '@Config';
 import createStore from '@ReduxStores';
 import routes from './routes';
 
-const app = new Express();
-const server = new http.Server(app);
-const proxy = httpProxy.createProxyServer({
-  changeOrigin: true,
-  target: config.proxyApiTarget,
-  ws: false,
-});
+export default ({ chunks }) => {
+  const app = new Express();
+  const server = new http.Server(app);
+  const proxy = httpProxy.createProxyServer({
+    changeOrigin: true,
+    target: config.proxyApiTarget,
+    ws: false,
+  });
 
-// paths
-const pathBuild = path.resolve(__dirname, '../build/');
-const pathFavicon = __DEVELOPMENT__ ? path.resolve(__dirname, 'assets/favicon/favicon.ico') : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
+  // paths
+  const pathBuild = path.resolve(__dirname, '../build/');
+  const pathFavicon = __DEVELOPMENT__ ? path.resolve(__dirname, 'assets/favicon/favicon.ico') : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
 
-app
-  .use('/api', (req, res) => {
-    proxy.web(req, res);
-  })
-  .use(bodyParser.urlencoded({
-    extended: false,
-    type: 'application/x-www-form-urlencoded',
-  }))
-  .use(compression())
-  .use(cookiesMiddleware())
-  .use(Express.static(pathBuild))
-  .use(favicon(pathFavicon))
-  .get('*', (req, res) => {
-    // clear require() cache if in development mode (makes asset hot reloading work).
-    if (__DEVELOPMENT__) {
-      webpackIsomorphicTools.refresh();
-    }
-
-    const url = req.originalUrl || req.url;
-    const apiClient = new ApiClient(req);
-    const history = createHistory(url);
-    const location = parseUrl(url);
-    const store = createStore(history, apiClient, {}, req);
-
-    const helpers = {
-      apiClient,
-      history,
-    };
-
-    function hydrateOnClient() {
-      res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
-        assets={webpackIsomorphicTools.assets()}
-        store={store}
-      />)}`);
-    }
-
-    if (__DISABLE_SSR__) {
-      hydrateOnClient();
-    }
-
-    // 1. load data
-    loadOnServer({
-      store,
-      location,
-      routes,
-      helpers,
+  app
+    .use('/api', (req, res) => {
+      proxy.web(req, res);
     })
-      .then(() => {
-        const context = {};
+    .use(bodyParser.urlencoded({
+      extended: false,
+      type: 'application/x-www-form-urlencoded',
+    }))
+    .use(compression())
+    .use(cookiesMiddleware())
+    .use(Express.static(pathBuild))
+    .use(favicon(pathFavicon))
+    .get('*', (req, res) => {
+      const url = req.originalUrl || req.url;
+      const apiClient = new ApiClient(req);
+      const history = createHistory(url);
+      const location = parseUrl(url);
+      const store = createStore(history, apiClient, {}, req);
 
-        // 2. use `ReduxAsyncConnect` to render component tree
-        const appHTML = ReactDOMServer.renderToString(
-          <Provider key="provider" store={store}>
-            <StaticRouter context={context} location={location}>
-              <ReduxAsyncConnect helpers={helpers} routes={routes} />
-            </StaticRouter>
-          </Provider>
-        );
+      const helpers = {
+        apiClient,
+        history,
+      };
 
-        // context.url will contain the URL to redirect to if a <Redirect> was used
-        const { url: contextUrl } = context;
-
-        if (contextUrl) {
-          res.header('Location', contextUrl);
-          return res.sendStatus(302);
-        }
-
-        // 3. render the Redux initial data into the server markup
-        return res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
-          assets={webpackIsomorphicTools.assets()}
-          component={appHTML}
+      function hydrateOnClient() {
+        res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
+          assets={chunks()}
           store={store}
         />)}`);
-      });
-  });
+      }
 
-if (config.appPort) {
-  server.listen(config.appPort, (err) => {
-    if (err) {
-      console.error(err);
-    }
+      if (__SERVER__ && __DISABLE_SSR__) {
+        hydrateOnClient();
+      }
 
-    console.info(
-      '----\n==> %s is running, talking to API server (%s).',
-      config.app.title,
-      `${config.apiHost}:${config.apiPort}`
-    );
+      // 1. load data
+      loadOnServer({
+        store,
+        location,
+        routes,
+        helpers,
+      })
+        .then(() => {
+          const context = {};
 
-    console.info('==> Open http://%s:%s in a browser to view the app.', config.appHost, config.appPort);
-  });
-} else {
-  console.error('==> ERROR: No PORT environment variable has been specified');
-}
+          // 2. use `ReduxAsyncConnect` to render component tree
+          const appHTML = ReactDOMServer.renderToString(
+            <Provider key="provider" store={store}>
+              <StaticRouter context={context} location={location}>
+                <ReduxAsyncConnect helpers={helpers} routes={routes} />
+              </StaticRouter>
+            </Provider>
+          );
+
+          // context.url will contain the URL to redirect to if a <Redirect> was used
+          const { url: contextUrl } = context;
+
+          if (contextUrl) {
+            res.header('Location', contextUrl);
+            return res.sendStatus(302);
+          }
+
+          // 3. render the Redux initial data into the server markup
+          return res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
+            assets={chunks()}
+            component={appHTML}
+            store={store}
+          />)}`);
+        });
+    });
+
+  if (config.appPort) {
+    server.listen(config.appPort, (err) => {
+      if (err) {
+        console.error(err);
+      }
+
+      console.info(
+        '----\n==> %s is running, talking to API server (%s).',
+        config.app.title,
+        `${config.apiHost}:${config.apiPort}`
+      );
+
+      console.info('==> Open http://%s:%s in a browser to view the app.', config.appHost, config.appPort);
+    });
+  } else {
+    console.error('==> ERROR: No PORT environment variable has been specified');
+  }
+};

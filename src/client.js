@@ -18,9 +18,13 @@ delete window.__PRELOADED_STATE__;
 
 const apiClient = new ApiClient();
 const dest = document.getElementById('content');
-const helpers = [apiClient];
 const history = createHistory();
 const store = createStore(history, apiClient, preloadedState);
+
+const helpers = {
+  apiClient,
+  history,
+};
 
 const reduxAsyncConnect = (
   <ReduxAsyncConnect helpers={helpers} routes={routes} />

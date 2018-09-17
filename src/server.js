@@ -51,10 +51,14 @@ app
 
     const url = req.originalUrl || req.url;
     const apiClient = new ApiClient(req);
-    const helpers = [apiClient];
+    const history = createHistory(url);
     const location = parseUrl(url);
-    const memoryHistory = createHistory(url);
-    const store = createStore(memoryHistory, apiClient, {}, req);
+    const store = createStore(history, apiClient, {}, req);
+
+    const helpers = {
+      apiClient,
+      history,
+    };
 
     function hydrateOnClient() {
       res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
@@ -87,8 +91,10 @@ app
         );
 
         // context.url will contain the URL to redirect to if a <Redirect> was used
-        if (context.url) {
-          res.header('Location', context.url);
+        const { url: contextUrl } = context;
+
+        if (contextUrl) {
+          res.header('Location', contextUrl);
           return res.sendStatus(302);
         }
 

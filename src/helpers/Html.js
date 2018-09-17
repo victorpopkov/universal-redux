@@ -2,19 +2,11 @@
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
-import serialize from 'serialize-javascript';
 
-/**
- * Remove HTML whitespaces between tags from the specified content.
- *
- * @param string content
- */
-export function removeWhitespaces(content) {
-  return content.replace(/>\s+</g, '><')
-    .replace(/\n/g, ' ')
-    .replace(/\s+/g, ' ')
-    .replace(/\s+<\//g, '</');
-}
+const removeWhitespaces = content => content.replace(/>\s+</g, '><')
+  .replace(/\n/g, ' ')
+  .replace(/\s+/g, ' ')
+  .replace(/\s+<\//g, '</');
 
 /**
  * Wrapper component containing HTML metadata and boilerplate tags.
@@ -39,9 +31,7 @@ const Html = ({ assets, component, store }) => {
           <link
             href={assets.styles[style]}
             key={key} // eslint-disable-line react/no-array-index-key
-            media="screen, projection"
             rel="stylesheet"
-            type="text/css"
           />
         ))}
         {head.link.toComponent()}
@@ -49,7 +39,7 @@ const Html = ({ assets, component, store }) => {
       </head>
       <body>
         <div dangerouslySetInnerHTML={{ __html: component }} id="content" />
-        <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_STATE__=${serialize(store.getState())};` }} />
+        <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_STATE__=${JSON.stringify(store.getState().toJS())};` }} />
         {Object.keys(assets.javascript).map((js, key) => (
           <script
             key={key} // eslint-disable-line react/no-array-index-key
@@ -74,3 +64,7 @@ Html.defaultProps = {
 };
 
 export default Html;
+
+export {
+  removeWhitespaces,
+};

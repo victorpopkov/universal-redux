@@ -6,6 +6,7 @@
   "plugins": [
     ["@babel/plugin-proposal-class-properties", { "loose": false }],
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["webpack-alias", { "config": "${PWD}/webpack/webpack.config.common.js" }],
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-function-bind",
     "@babel/plugin-syntax-export-default-from",
@@ -33,17 +34,5 @@
         }
       }
     ]
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        ["webpack-alias", { "config": "${PWD}/webpack/webpack.config.dev.js" }]
-      ]
-    },
-    "production": {
-      "plugins": [
-        ["webpack-alias", { "config": "${PWD}/webpack/webpack.config.prod.js" }]
-      ]
-    }
-  }
+  ]
 }

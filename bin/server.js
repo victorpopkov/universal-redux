@@ -2,10 +2,14 @@
 require('@babel/polyfill');
 require('@babel/register');
 
+const dotenv = require('dotenv');
 const path = require('path');
 
-// paths
-const pathRoot = path.resolve(__dirname, '..');
+// dotenv
+const result = dotenv.config();
+if (result.error) {
+  throw result.error;
+}
 
 /**
  * Define isomorphic constants.
@@ -26,6 +30,6 @@ if (__DEVELOPMENT__ && !require('piping')({
 // https://github.com/halt-hammerzeit/webpack-isomorphic-tools
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../webpack/webpack-isomorphic-tools'))
-  .server(pathRoot, () => {
+  .server(path.resolve(__dirname, '..'), () => {
     require('../src/server');
   });

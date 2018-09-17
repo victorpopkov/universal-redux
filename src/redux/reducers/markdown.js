@@ -27,7 +27,7 @@ const markdown = createReducer(fromJS({
     loading: false,
     loaded: true,
     content: null,
-    error: action.error,
+    error: action.error.message,
   }),
 });
 

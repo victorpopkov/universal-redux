@@ -107,8 +107,8 @@ app
       });
   });
 
-if (config.port) {
-  server.listen(config.port, (err) => {
+if (config.appPort) {
+  server.listen(config.appPort, (err) => {
     if (err) {
       console.error(err);
     }
@@ -119,7 +119,7 @@ if (config.port) {
       `${config.apiHost}:${config.apiPort}`
     );
 
-    console.info('==> Open http://%s:%s in a browser to view the app.', config.host, config.port);
+    console.info('==> Open http://%s:%s in a browser to view the app.', config.appHost, config.appPort);
   });
 } else {
   console.error('==> ERROR: No PORT environment variable has been specified');

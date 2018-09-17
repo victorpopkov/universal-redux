@@ -6,11 +6,9 @@ const config = require('../config');
 
 const app = new Express();
 const compiler = webpack(webpackConfig);
-const host = config.host || 'localhost';
-const port = (Number(config.port) + 1) || 3001;
+const port = config.appDevServerPort;
 
 const serverOptions = {
-  contentBase: `http://${host}:${port}`,
   quiet: true,
   noInfo: true,
   hot: true,

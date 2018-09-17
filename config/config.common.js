@@ -7,11 +7,10 @@ const ipAddress = ip.address();
 const apiHost = process.env.API_HOST;
 const apiPort = Number.parseInt(process.env.API_PORT, 10) || 3030;
 const apiSchema = process.env.API_SCHEMA;
-const devServerContentBase = process.env.APP_DEV_SERVER_CONTENT_BASE;
-const devServerPort = Number.parseInt(process.env.APP_DEV_SERVER_PORT, 10) || 3001;
-const host = process.env.APP_HOST || ipAddress;
-const port = Number.parseInt(process.env.APP_PORT, 10) || 3000;
-const publicPath = process.env.APP_PUBLIC_PATH || '/';
+const appDevServerPort = Number.parseInt(process.env.APP_DEV_SERVER_PORT, 10) || 3001;
+const appHost = process.env.APP_HOST || ipAddress;
+const appPort = Number.parseInt(process.env.APP_PORT, 10) || 3000;
+const appPublicPath = process.env.APP_PUBLIC_PATH || '/';
 const proxyApiTarget = process.env.PROXY_API_TARGET;
 
 // Other
@@ -41,10 +40,9 @@ module.exports = {
   apiHost,
   apiPort,
   apiSchema,
-  devServerContentBase,
-  devServerPort,
-  host,
-  port,
-  publicPath,
+  appDevServerPort,
+  appHost,
+  appPort,
+  appPublicPath,
   proxyApiTarget,
 };

@@ -1,25 +1,21 @@
-const ip = require('ip');
 const merge = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
 const common = require('./webpack.config.common');
+const config = require('../config');
 const paths = require('./paths');
-
-const ipAddress = ip.address();
-const host = (process.env.HOST || ipAddress);
-const port = (+process.env.PORT + 1) || 3001;
 
 module.exports = merge(common, {
   context: paths.root,
   devtool: 'inline-source-map',
   entry: {
     vendor: [
-      `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
+      `webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true`,
       'bootstrap-loader',
       path.join(paths.src, 'assets/scss/vendor.scss'),
     ],
     main: [
-      `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
+      `webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true`,
       path.join(paths.src, 'client.js'),
     ],
   },
@@ -122,7 +118,7 @@ module.exports = merge(common, {
   output: {
     filename: '[name].js',
     path: paths.build,
-    publicPath: `http://${host}:${port}/`,
+    publicPath: config.appPublicPath,
   },
   plugins: [
     new webpack.DefinePlugin({

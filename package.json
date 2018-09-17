@@ -58,7 +58,6 @@
     "ip": "^1.1.5",
     "lodash": "^4.17.11",
     "normalizr": "^3.2.4",
-    "piping": "^1.0.0-rc.4",
     "pretty-error": "^2.1.1",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",

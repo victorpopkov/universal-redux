@@ -1,8 +1,8 @@
 import Express from 'express';
 import PrettyError from 'pretty-error';
 import bodyParser from 'body-parser';
-import * as actions from './actions/index'; // eslint-disable-line sort-imports
-import config from '../src/config';
+import * as actions from './actions'; // eslint-disable-line sort-imports
+import config from '@Config';
 import mapUrl from './utils/url';
 
 const pretty = new PrettyError();
@@ -44,6 +44,7 @@ if (config.apiPort) {
     if (err) {
       console.error(err);
     }
+
     console.info('----\n==> API is running on port %s', config.apiPort);
     console.info('==> Send requests to http://%s:%s', config.apiHost, config.apiPort);
   });

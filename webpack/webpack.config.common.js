@@ -62,7 +62,7 @@ module.exports = {
       'node_modules',
     ],
     alias: {
-      '@Config': path.resolve(paths.src, './config.js'),
+      '@Config': path.resolve(paths.root, './config'),
       '@Components': path.resolve(paths.src, './components'),
       '@Containers': path.resolve(paths.src, './containers'),
       '@Helpers': path.resolve(paths.src, './helpers'),

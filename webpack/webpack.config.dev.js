@@ -1,4 +1,3 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ip = require('ip');
 const merge = require('webpack-merge');
 const path = require('path');

@@ -19,12 +19,11 @@ import config from '@Config';
 import createStore from '@ReduxStores';
 import routes from './routes';
 
-const targetUrl = `${config.apiSchema}://${config.apiHost}:${config.apiPort + config.apiPrefix}`;
 const app = new Express();
 const server = new http.Server(app);
 const proxy = httpProxy.createProxyServer({
   changeOrigin: true,
-  target: targetUrl,
+  target: config.proxyApiTarget,
   ws: false,
 });
 

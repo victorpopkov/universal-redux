@@ -1,3 +1,4 @@
+import './Home.scss';
 import {
   Button,
   Col,
@@ -12,13 +13,11 @@ import Markdown from 'react-markdown';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
-import 'prismjs/components/prism-bash'; // eslint-disable-line sort-imports
-import * as duckMarkdown from '../markdown/duck/index';
+import * as duckMarkdown from '../markdown/duck/index'; // eslint-disable-line sort-imports
 import LogoReact from '../../assets/images/react.svg';
 import LogoReactstrap from '../../assets/images/reactstrap.svg';
 import LogoRedux from '../../assets/images/redux.svg';
 import packageJson from '../../../package.json';
-import './Home.scss'; // eslint-disable-line sort-imports
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -100,13 +99,14 @@ class Home extends Component {
       );
     }
 
-    return <h5>Loading…</h5>;
+    return <h5>Loading&hellip;</h5>;
   }
+
 
   render() {
     return (
       <Container styleName="home" tag="main">
-        <Helmet title="Isomorphic web app boilerplate" />
+        <Helmet title="Universal web app boilerplate" />
         <Jumbotron styleName="jumbotron" tag="section">
           <ul className="mb-4" styleName="versions">
             <li>

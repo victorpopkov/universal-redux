@@ -60,6 +60,12 @@
     ul,
     ol {
       overflow: hidden;
+
+      input[type="checkbox"] {
+        display: inline-block;
+        margin: 0 .5em .25em -1.6em;
+        vertical-align: middle;
+      }
     }
 
     blockquote {

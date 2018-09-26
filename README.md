@@ -69,25 +69,20 @@ first before actually starting it:
 ├── build/
 ├── config/
 ├── src/
+│   ├── app/ # app source
 │   ├── assets/ # global assets
 │   │   ├── images/
 │   │   └── scss/
-│   ├── components/ # React components (plain components that are not aware of state)
-│   ├── containers/ # React containers (components that interact with state)
 │   ├── helpers/
 │   │   ├── ApiClient.js # helper to use `axios` library
 │   │   └── Html.js      # helper for HTML Server-Side Rendering (SSR)
-│   ├── redux/ # Redux related stuff using File-Type First (FTF) pattern
-│   │   ├── actions/     # all our Redux actions
-│   │   ├── constants/   # all our Redux constants
-│   │   ├── events/      # all our events for `redux-notify` middleware
-│   │   ├── middlewares/ # all our Redux middlewares
-│   │   │   └── client.js # our tiny client middleware
-│   │   ├── reducers/    # all Redux reducers
-│   │   └── stores/      # all our Redux stores
+│   ├── middlewares
+│   │   └── client.js # our tiny client middleware
 │   ├── client.js
+│   ├── reducers.js
 │   ├── routes.js
-│   └── server.js
+│   ├── server.js
+│   └── store.js
 ├── webpack/ # webpack related configs
 │   ├── paths.js
 │   ├── universal-webpack-settings.json

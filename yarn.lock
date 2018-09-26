@@ -1230,6 +1230,10 @@ babel-plugin-inline-react-svg@^0.5.4:
     resolve "^1.8.1"
     svgo "^0.7.2"
 
+babel-plugin-prismjs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-prismjs/-/babel-plugin-prismjs-1.0.2.tgz#837bf6b32168b3ba624c054fc755946deb1b63fa"
+
 babel-plugin-react-css-modules@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-css-modules/-/babel-plugin-react-css-modules-3.4.2.tgz#4c1db8d4bc8b2973f6c689da7dbd56b0cb8f099c"

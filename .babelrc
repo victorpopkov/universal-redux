@@ -26,6 +26,14 @@
       }
     ],
     [
+      "prismjs",
+      {
+        "languages": ["bash", "markdown"],
+        "theme": "default",
+        "css": true
+      }
+    ],
+    [
       "react-css-modules",
       {
         "generateScopedName": "[local]___[hash:base64:5]",

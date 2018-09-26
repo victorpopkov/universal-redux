@@ -37,15 +37,15 @@ app.use((req, res) => {
   }
 });
 
-if (config.apiPort) {
-  app.listen(config.apiPort, (err) => {
+if (config.appApiPort) {
+  app.listen(config.appApiPort, (err) => {
     if (err) {
       console.error(err);
     }
 
-    console.info('----\n==> API is running on port %s', config.apiPort);
-    console.info('==> Send requests to http://%s:%s', config.apiHost, config.apiPort);
+    console.info('---\n==> API is running on port %s', config.appApiPort);
+    console.info('==> Send requests to %s', config.appApiTarget);
   });
 } else {
-  console.error('==> ERROR: No PORT environment variable has been specified');
+  console.error('==> ERROR: No APP_API_PORT environment variable has been specified');
 }

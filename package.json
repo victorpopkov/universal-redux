@@ -1,13 +1,21 @@
 {
-  "name": "isomorphic-redux-reactstrap",
-  "description": "Isomorphic web app boilerplate built using React, Redux and Reactstrap.",
-  "author": "Victor Popkov <victor@popkov.com>",
-  "license": "MIT",
+  "name": "universal-redux",
   "version": "0.1.0",
+  "description": "Universal React and Redux web app boilerplate bundled with webpack.",
+  "author": {
+    "name": "Victor Popkov",
+    "email": "victor@popkov.com"
+  },
   "repository": {
     "type": "git",
-    "url": "github:victorpopkov/isomorphic-redux-reactstrap"
+    "url": "github:victorpopkov/universal-redux"
   },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/victorpopkov/universal-redux/blob/master/LICENSE"
+    }
+  ],
   "main": "bin/server.js",
   "scripts": {
     "build": "npm-run-all build:client build:server",

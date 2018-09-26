@@ -10,9 +10,10 @@ const config = clientConfiguration(baseConfiguration, settings);
 config.plugins.push(
   new CleanPlugin([paths.build], { root: paths.root }),
   new webpack.DefinePlugin({
+    'process.env.NODE_ENV': 'production',
     __CLIENT__: true,
-    __DEVELOPMENT__: true,
-    __DEVTOOLS__: true,
+    __DEVELOPMENT__: false,
+    __DEVTOOLS__: false,
     __SERVER__: false,
   }),
 );

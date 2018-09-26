@@ -27,6 +27,6 @@ app
     if (err) {
       console.error(err);
     } else {
-      console.info('==> Webpack development server listening on port %s', port);
+      console.info('==> webpack-dev-server listening on port %s', port);
     }
   });

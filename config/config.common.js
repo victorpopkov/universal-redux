@@ -4,14 +4,15 @@ const packageJson = require('../package.json');
 const ipAddress = ip.address();
 
 // Environment variables
-const apiHost = process.env.API_HOST;
-const apiPort = Number.parseInt(process.env.API_PORT, 10) || 3030;
-const apiSchema = process.env.API_SCHEMA;
+const appApiPort = Number.parseInt(process.env.APP_API_PORT, 10) || 3030;
+const appApiProxyDisabled = !!Number.parseInt(process.env.APP_API_PROXY_DISABLED, 10) || false;
+const appApiProxyPath = process.env.APP_API_PROXY_PATH || '/api';
+const appApiProxyTarget = process.env.APP_API_PROXY_TARGET;
+const appApiTarget = process.env.APP_API_TARGET;
 const appDevServerPort = Number.parseInt(process.env.APP_DEV_SERVER_PORT, 10) || 3001;
 const appHost = process.env.APP_HOST || ipAddress;
 const appPort = Number.parseInt(process.env.APP_PORT, 10) || 3000;
 const appPublicPath = process.env.APP_PUBLIC_PATH || '/';
-const proxyApiTarget = process.env.PROXY_API_TARGET;
 
 // Other
 const appName = packageJson.name;
@@ -37,12 +38,13 @@ module.exports = {
       ],
     },
   },
-  apiHost,
-  apiPort,
-  apiSchema,
+  appApiPort,
+  appApiProxyDisabled,
+  appApiProxyPath,
+  appApiProxyTarget,
+  appApiTarget,
   appDevServerPort,
   appHost,
   appPort,
   appPublicPath,
-  proxyApiTarget,
 };

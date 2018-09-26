@@ -9,7 +9,12 @@ export default class ApiClient {
 
   formatUrl = (path) => {
     const adjustedPath = path[0] !== '/' ? `/${path}` : path;
-    return __SERVER__ ? `${config.proxyApiTarget + adjustedPath}` : `/api${adjustedPath}`;
+
+    if (config.appApiProxyDisabled || __SERVER__) {
+      return `${config.appApiTarget + adjustedPath}`;
+    }
+
+    return `${config.appApiProxyPath + adjustedPath}`;
   };
 
   constructor(req) {

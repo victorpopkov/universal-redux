@@ -26,7 +26,6 @@ const Html = ({ assets, component, store }) => {
         {head.base.toComponent()}
         {head.title.toComponent()}
         {head.meta.toComponent()}
-        {/* styles (will be present only in production with webpack extract text plugin) */}
         {Object.keys(assets.styles).map((style, key) => (
           <link
             href={assets.styles[style]}

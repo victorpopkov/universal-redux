@@ -1,4 +1,5 @@
 {
+  "compact": false,
   "presets": [
     ["@babel/env", { "targets": { "browsers": ["last 2 versions"] } }],
     "@babel/react"
@@ -13,14 +14,16 @@
     "@babel/plugin-transform-react-display-name",
     "@babel/plugin-transform-runtime",
     [
-      "inline-react-svg", {
-      "svgo": {
-        "plugins": [
-          { "removeAttrs": { "attrs": "(data-name)" } },
-          { "cleanupIDs": true }
-        ]
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            { "cleanupIDs": false },
+            { "removeAttrs": { "attrs": "(data-name)" } },
+            { "removeUselessStrokeAndFill": false }
+          ]
+        }
       }
-    }
     ],
     [
       "react-css-modules",
@@ -28,8 +31,8 @@
         "generateScopedName": "[local]___[hash:base64:5]",
         "filetypes": {
           ".scss": {
-            "syntax": "postcss-scss",
-            "plugins": ["postcss-nested"]
+            "plugins": ["postcss-nested"],
+            "syntax": "postcss-scss"
           }
         }
       }

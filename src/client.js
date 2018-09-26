@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 import { Provider } from 'react-redux';
 import React from 'react';
@@ -6,9 +5,8 @@ import ReactDOM from 'react-dom';
 import { ReduxAsyncConnect } from 'redux-connect';
 import createHistory from 'history/createBrowserHistory';
 import { hydrate } from 'react-dom';
-import ApiClient from '@Helpers/ApiClient'; // eslint-disable-line sort-imports
-// import DevTools from './containers/DevTools/DevTools';
-import createStore from '@ReduxStores';
+import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
+import createStore from './store';
 import routes from './routes';
 
 /* eslint-disable no-underscore-dangle */
@@ -44,8 +42,8 @@ if (process.env.NODE_ENV !== 'production') {
 
   const fc = dest.firstChild;
   if (!dest || !fc || !fc.attributes) { // || !fc.attributes['data-react-checksum']
-    console.error('Server-side React render was discarded. '
-      + 'Make sure that your initial render does not contain any client-side code.');
+    console.error('Server-side React render was discarded. Make sure that your initial render does '
+      + 'not contain any client-side code.');
   }
 }
 

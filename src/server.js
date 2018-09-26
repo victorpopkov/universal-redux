@@ -13,10 +13,10 @@ import http from 'http';
 import httpProxy from 'http-proxy';
 import { parse as parseUrl } from 'url';
 import path from 'path';
-import ApiClient from '@Helpers/ApiClient'; // eslint-disable-line sort-imports
-import Html from '@Helpers/Html';
+import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
+import Html from './helpers/Html';
 import config from '@Config';
-import createStore from '@ReduxStores';
+import createStore from './store';
 import routes from './routes';
 
 export default ({ chunks }) => {
@@ -24,7 +24,7 @@ export default ({ chunks }) => {
   const server = new http.Server(app);
   const proxy = httpProxy.createProxyServer({
     changeOrigin: true,
-    target: config.proxyApiTarget,
+    target: config.appApiProxyTarget,
     ws: false,
   });
 
@@ -32,10 +32,13 @@ export default ({ chunks }) => {
   const pathBuild = path.resolve(__dirname, '../build/');
   const pathFavicon = __DEVELOPMENT__ ? path.resolve(__dirname, 'assets/favicon/favicon.ico') : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
 
-  app
-    .use('/api', (req, res) => {
+  if (!config.appApiProxyDisabled) {
+    app.use(config.appApiProxyPath, (req, res) => {
       proxy.web(req, res);
-    })
+    });
+  }
+
+  app
     .use(bodyParser.urlencoded({
       extended: false,
       type: 'application/x-www-form-urlencoded',
@@ -109,15 +112,24 @@ export default ({ chunks }) => {
         console.error(err);
       }
 
-      console.info(
-        '----\n==> %s is running, talking to API server (%s).',
-        config.app.title,
-        `${config.apiHost}:${config.apiPort}`
-      );
+      if (!config.appApiProxyDisabled) {
+        console.info(
+          '---\n==> %s is running, talking to API server through proxy (%s => %s).',
+          config.app.title,
+          `${config.appApiProxyPath}`,
+          `${config.appApiProxyTarget}`
+        );
+      } else {
+        console.info(
+          '---\n==> %s is running, talking to API server directly (%s).',
+          config.app.title,
+          `${config.appApiTarget}`
+        );
+      }
 
       console.info('==> Open http://%s:%s in a browser to view the app.', config.appHost, config.appPort);
     });
   } else {
-    console.error('==> ERROR: No PORT environment variable has been specified');
+    console.error('==> ERROR: No APP_PORT environment variable has been specified.');
   }
 };

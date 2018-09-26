@@ -1,0 +1,9 @@
+const LOAD_MARKDOWN = 'app/markdown/LOAD_MARKDOWN';
+const LOAD_MARKDOWN_FAIL = 'app/markdown/LOAD_MARKDOWN_FAIL';
+const LOAD_MARKDOWN_SUCCESS = 'app/markdown/LOAD_MARKDOWN_SUCCESS';
+
+export default {
+  LOAD_MARKDOWN,
+  LOAD_MARKDOWN_FAIL,
+  LOAD_MARKDOWN_SUCCESS,
+};

@@ -1,14 +1,9 @@
-import { App, Home } from '@Containers';
+import App from './app/App';
+import home from './app/home/routes';
 
-const routes = [{
+export default [{
   component: App,
   routes: [
-    {
-      path: '/',
-      exact: true,
-      component: Home,
-    },
+    ...home,
   ],
 }];
-
-export default routes;

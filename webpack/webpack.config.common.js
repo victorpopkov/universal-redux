@@ -1,4 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const DotenvPlugin = require('dotenv-webpack');
+const config = require('../config');
 const path = require('path');
 const paths = require('./paths');
 
@@ -8,7 +10,7 @@ const useFonts = [
     options: {
       limit: 512,
       name: 'assets/fonts/[name].[ext]',
-      publicPath: '../',
+      publicPath: config.appPublicPath,
     },
   },
 ];
@@ -19,7 +21,7 @@ const useImages = [
     options: {
       limit: 512,
       name: 'assets/images/[name].[ext]',
-      publicPath: '../',
+      publicPath: config.appPublicPath,
     },
   },
 ];
@@ -37,7 +39,7 @@ module.exports = {
         use: useFonts,
       },
       {
-        test: /images\/.*\.svg$/,
+        test: /\.svg$/,
         use: [
           ...useImages,
           {
@@ -51,23 +53,19 @@ module.exports = {
       },
     ],
   },
+  output: {
+    filename: '[name].js',
+    path: paths.build,
+    publicPath: config.appPublicPath,
+  },
   resolve: {
     modules: [
       'src',
       'node_modules',
     ],
     alias: {
-      '@Config': path.resolve(paths.root, './config'),
-      '@Components': path.resolve(paths.src, './components'),
-      '@Containers': path.resolve(paths.src, './containers'),
-      '@Helpers': path.resolve(paths.src, './helpers'),
-      '@ReduxActions': path.resolve(paths.src, './redux/actions'),
-      '@ReduxConstants': path.resolve(paths.src, './redux/constants'),
-      '@ReduxEvents': path.resolve(paths.src, './redux/events'),
-      '@ReduxMiddlewares': path.resolve(paths.src, './redux/middlewares'),
-      '@ReduxReducers': path.resolve(paths.src, './redux/reducers'),
-      '@ReduxStores': path.resolve(paths.src, './redux/stores'),
-      '@ReduxUtils': path.resolve(paths.src, './redux/utils'),
+      '@Config': path.resolve(paths.root, 'config/'),
+      '@Root': path.resolve(paths.root),
     },
     extensions: ['.json', '.js', '.jsx'],
   },
@@ -78,5 +76,9 @@ module.exports = {
         to: path.resolve(paths.build, 'assets/favicon/'),
       },
     ]),
+    new DotenvPlugin({
+      path: path.resolve(paths.root, '.env'),
+      systemvars: true,
+    }),
   ],
 };

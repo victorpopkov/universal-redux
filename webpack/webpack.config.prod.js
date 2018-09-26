@@ -8,7 +8,7 @@ const common = require('./webpack.config.common');
 const paths = require('./paths');
 
 module.exports = merge(common, {
-  context: paths.root,
+  devtool: 'hidden-source-map',
   entry: {
     vendor: [
       'bootstrap-loader',
@@ -120,8 +120,6 @@ module.exports = merge(common, {
   },
   output: {
     filename: '[name]-[hash].js',
-    path: paths.build,
-    publicPath: '/',
   },
   plugins: [
     new MiniCssExtractPlugin({

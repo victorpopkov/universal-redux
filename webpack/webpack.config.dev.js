@@ -2,11 +2,9 @@ const merge = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
 const common = require('./webpack.config.common');
-const config = require('../config');
 const paths = require('./paths');
 
 module.exports = merge(common, {
-  context: paths.root,
   devtool: 'inline-source-map',
   entry: {
     vendor: [
@@ -114,11 +112,6 @@ module.exports = merge(common, {
         ],
       },
     ],
-  },
-  output: {
-    filename: '[name].js',
-    path: paths.build,
-    publicPath: config.appPublicPath,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

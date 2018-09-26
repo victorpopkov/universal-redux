@@ -33,7 +33,7 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.css/,
         use: [
           {
             loader: 'style-loader',
@@ -51,15 +51,14 @@ module.exports = merge(common, {
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: 'resolve-url-loader',
             options: {
               sourceMap: true,
             },
           },
           {
-            loader: 'less-loader',
+            loader: 'postcss-loader',
             options: {
-              outputStyle: 'expanded',
               sourceMap: true,
             },
           },
@@ -98,9 +97,9 @@ module.exports = merge(common, {
           {
             loader: 'sass-loader',
             options: {
+              includePaths: [],
               outputStyle: 'expanded',
               sourceMap: true,
-              includePaths: [],
             },
           },
           {

@@ -31,7 +31,7 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.css/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -39,18 +39,22 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               importLoaders: 2,
               localIdentName: '[local]___[hash:base64:5]',
+              modules: true,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              sourceMap: true,
             },
           },
           {
             loader: 'postcss-loader',
-          },
-          {
-            loader: 'less-loader',
             options: {
-              outputStyle: 'expanded',
+              sourceMap: true,
             },
           },
         ],
@@ -67,6 +71,7 @@ module.exports = merge(common, {
               importLoaders: 2,
               localIdentName: '[local]___[hash:base64:5]',
               modules: true,
+              sourceMap: true,
             },
           },
           {

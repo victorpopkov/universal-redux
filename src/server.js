@@ -3,7 +3,7 @@ import Express from 'express';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import StaticRouter from 'react-router-dom/StaticRouter';
+import { StaticRouter as Router } from 'react-router-dom';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
@@ -83,9 +83,9 @@ export default ({ chunks }) => {
           // 2. use `ReduxAsyncConnect` to render component tree
           const appHTML = ReactDOMServer.renderToString(
             <Provider key="provider" store={store}>
-              <StaticRouter context={context} location={location}>
+              <Router context={context} location={location}>
                 <ReduxAsyncConnect helpers={helpers} routes={routes} />
-              </StaticRouter>
+              </Router>
             </Provider>
           );
 

@@ -1,10 +1,9 @@
-import BrowserRouter from 'react-router-dom/BrowserRouter';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ReduxAsyncConnect } from 'redux-connect';
+import { BrowserRouter as Router } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import { hydrate } from 'react-dom';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
 import createStore from './store';
 import routes from './routes';
@@ -28,11 +27,11 @@ const reduxAsyncConnect = (
   <ReduxAsyncConnect helpers={helpers} routes={routes} />
 );
 
-hydrate(
+ReactDOM.hydrate(
   <Provider key="provider" store={store}>
-    <BrowserRouter>
+    <Router>
       {reduxAsyncConnect}
-    </BrowserRouter>
+    </Router>
   </Provider>,
   dest
 );
@@ -51,9 +50,9 @@ if (process.env.NODE_ENV !== 'production') {
 if (__DEVTOOLS__ && !window.devToolsExtension) {
   ReactDOM.render(
     <Provider key="provider" store={store}>
-      <BrowserRouter>
+      <Router>
         {reduxAsyncConnect}
-      </BrowserRouter>
+      </Router>
     </Provider>,
     dest,
   );

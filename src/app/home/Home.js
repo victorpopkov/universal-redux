@@ -14,9 +14,9 @@ import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
 import * as duckMarkdown from '../markdown/duck/index'; // eslint-disable-line sort-imports
-import LogoReact from '../../assets/images/react.svg';
-import LogoReactstrap from '../../assets/images/reactstrap.svg';
-import LogoRedux from '../../assets/images/redux.svg';
+import LogoReact from './logo_react.svg';
+import LogoReactstrap from './logo_reactstrap.svg';
+import LogoRedux from './logo_redux.svg';
 import packageJson from '../../../package.json';
 
 @asyncConnect([{

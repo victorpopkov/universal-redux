@@ -44,6 +44,12 @@ module.exports = {
           ...useImages,
           {
             loader: 'svgo-loader',
+            options: {
+              plugins: [
+                { cleanupIDs: false },
+                { removeAttrs: { attrs: '(data-name)' } },
+              ],
+            },
           },
         ],
       },

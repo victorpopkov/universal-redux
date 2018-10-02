@@ -14,9 +14,6 @@ module.exports = merge(common, {
       'bootstrap-loader',
       path.join(paths.src, 'assets/scss/vendor.scss'),
     ],
-    main: [
-      path.join(paths.src, 'client.js'),
-    ],
   },
   mode: 'production',
   module: {
@@ -117,9 +114,13 @@ module.exports = merge(common, {
         sourceMap: true,
       }),
       new OptimizeCssAssetsPlugin({
-        cssProcessor: require('cssnano'),
-        cssProcessorOptions: { discardComments: { removeAll: true } },
         canPrint: false,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: {
+          discardComments: {
+            removeAll: true,
+          },
+        },
       }),
     ],
   },

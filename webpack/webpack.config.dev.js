@@ -1,3 +1,4 @@
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
@@ -8,13 +9,9 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   entry: {
     vendor: [
-      `webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true`,
+      'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
       'bootstrap-loader',
       path.join(paths.src, 'assets/scss/vendor.scss'),
-    ],
-    main: [
-      `webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true`,
-      path.join(paths.src, 'client.js'),
     ],
   },
   mode: 'development',
@@ -113,6 +110,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    new StyleLintPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(/webpack-stats\.json$/),
   ],

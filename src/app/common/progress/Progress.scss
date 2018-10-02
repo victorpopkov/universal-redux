@@ -1,9 +1,7 @@
 $progress-color: $black;
 $progress-height: 2px;
 
-// scss-lint:disable NestingDepth
 :global {
-
   .loader-60devs {
     height: $progress-height;
     left: 0;
@@ -41,7 +39,6 @@ $progress-height: 2px;
     }
 
     &[data-state="running"] {
-
       &::before {
         content: '';
         height: 100%;

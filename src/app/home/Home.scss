@@ -40,7 +40,6 @@
   }
 
   .markdown {
-
     h1,
     h2 {
       border-bottom: 1px solid rgba($black, .1);
@@ -74,7 +73,6 @@
       padding: 0 ($grid-gutter-width / 2);
     }
 
-    // scss-lint:disable NestingDepth, SelectorDepth, QualifyingElement
     :not(pre) > code:not([class*="language-"]) {
       background: transparentize($gray-900, .95);
       border-radius: 3px;
@@ -88,15 +86,12 @@
         letter-spacing: -.2em;
       }
     }
-    // scss-lint:enable NestingDepth, SelectorDepth, QualifyingElement
   }
 }
 
 @include media-breakpoint-down(sm) {
   .home {
-
     .versions {
-
       svg {
         height: 64px;
         width: 64px;

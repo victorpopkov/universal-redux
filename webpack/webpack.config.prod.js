@@ -10,6 +10,9 @@ const paths = require('./paths');
 module.exports = merge(common, {
   devtool: 'hidden-source-map',
   entry: {
+    client: [
+      path.join(paths.src, 'client.js'),
+    ],
     vendor: [
       'bootstrap-loader',
       path.join(paths.src, 'assets/scss/vendor.scss'),

@@ -8,6 +8,10 @@ const paths = require('./paths');
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   entry: {
+    client: [
+      'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
+      path.join(paths.src, 'client.js'),
+    ],
     vendor: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
       'bootstrap-loader',

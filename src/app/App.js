@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
+import { hot } from 'react-hot-loader';
 import renderRoutes from 'react-router-config/renderRoutes';
 import { Footer, Navbar, Progress } from './common'; // eslint-disable-line sort-imports
 import config from '@Config';
 
+@hot(module)
 // eslint-disable-next-line react/prefer-stateless-function
-export default class App extends Component {
+class App extends Component {
   static propTypes = {
     route: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
   };
@@ -25,3 +27,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;

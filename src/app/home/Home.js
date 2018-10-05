@@ -13,6 +13,7 @@ import Markdown from 'react-markdown';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
+import { hot } from 'react-hot-loader';
 import * as duckMarkdown from '../markdown/duck/index'; // eslint-disable-line sort-imports
 import LogoReact from './logo_react.svg';
 import LogoReactstrap from './logo_reactstrap.svg';
@@ -33,6 +34,7 @@ state => ({
 }), {
   loadMarkdown: duckMarkdown.duckOperations.loadMarkdown,
 })
+@hot(module)
 class Home extends Component {
   static propTypes = {
     loadMarkdown: PropTypes.func,

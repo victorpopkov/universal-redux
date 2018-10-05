@@ -142,6 +142,7 @@
     "postcss-nested": "^4.1.0",
     "postcss-scss": "^2.0.0",
     "react-a11y": "^1.0.1",
+    "react-hot-loader": "^4.3.11",
     "redbox-react": "^1.6.0",
     "redux-devtools": "^3.4.1",
     "redux-devtools-dock-monitor": "^1.1.3",

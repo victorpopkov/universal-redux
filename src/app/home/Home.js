@@ -1,4 +1,3 @@
-import './Home.scss';
 import {
   Button,
   Col,
@@ -19,6 +18,7 @@ import LogoReact from './logo_react.svg';
 import LogoReactstrap from './logo_reactstrap.svg';
 import LogoRedux from './logo_redux.svg';
 import packageJson from '../../../package.json';
+import styles from './Home.scss';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -55,6 +55,30 @@ class Home extends Component {
   componentDidUpdate() {
     Prism.highlightAll();
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  markdownListItem = (props) => {
+    let checkbox = null;
+    if (props.checked !== null) {
+      const { checked } = props; // eslint-disable-line react/prop-types
+
+      checkbox = React.createElement('input', {
+        disabled: true,
+        readOnly: true,
+        type: 'checkbox',
+        checked,
+      });
+    }
+
+    return React.createElement(
+      'li',
+      {
+        className: styles['task-list-item'],
+      },
+      checkbox,
+      props.children,
+    );
+  };
 
   reloadMarkdown() {
     const { loadMarkdown } = this.props;
@@ -97,7 +121,14 @@ class Home extends Component {
       return (markdown.get('error')) ? (
         <h2>{markdown.get('error')}</h2>
       ) : (
-        <Markdown styleName="markdown">{markdown.get('content')}</Markdown>
+        <Markdown
+          renderers={{
+            listItem: this.markdownListItem,
+          }}
+          styleName="markdown"
+        >
+          {markdown.get('content')}
+        </Markdown>
       );
     }
 

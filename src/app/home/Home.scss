@@ -60,6 +60,10 @@
     ol {
       overflow: hidden;
 
+      .task-list-item {
+        list-style: none;
+      }
+
       input[type="checkbox"] {
         display: inline-block;
         margin: 0 .5em .25em -1.6em;

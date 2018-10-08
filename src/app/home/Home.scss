@@ -77,6 +77,20 @@
       padding: 0 ($grid-gutter-width / 2);
     }
 
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid $gray-400;
+      padding: 6px 13px;
+    }
+
+    tr:nth-child(2n) {
+      background: $gray-100;
+    }
+
     :not(pre) > code:not([class*="language-"]) {
       background: transparentize($gray-900, .95);
       border-radius: 3px;

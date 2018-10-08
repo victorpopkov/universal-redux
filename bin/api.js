@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 // dotenv
 const result = dotenv.config();
 if (result.error) {
-  throw result.error;
+  console.info('==> Failed to load .env');
 }
 
 require('../api/api');

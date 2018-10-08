@@ -10,7 +10,7 @@ const settings = require('../webpack/universal-webpack-settings');
 // dotenv
 const result = dotenv.config();
 if (result.error) {
-  throw result.error;
+  console.info('==> Failed to load .env');
 }
 
 startServer(configuration, settings);

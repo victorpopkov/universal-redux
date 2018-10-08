@@ -1,16 +1,18 @@
 const packageJson = require('../package.json');
 
+const removeTrailingSlash = s => s.replace(/\/$/, '');
+
 // Environment variables
 const appApiPort = Number.parseInt(process.env.APP_API_PORT, 10) || 3030;
 const appApiProxyDisabled = !!Number.parseInt(process.env.APP_API_PROXY_DISABLED, 10) || false;
-const appApiProxyPath = process.env.APP_API_PROXY_PATH || '/api';
-const appApiProxyTarget = process.env.APP_API_PROXY_TARGET || 'http://localhost:3030';
-const appApiTarget = process.env.APP_API_TARGET || 'http://localhost:3030';
-const appBasePath = process.env.APP_BASE_PATH || '';
+const appApiProxyPath = process.env.APP_API_PROXY_PATH ? removeTrailingSlash(process.env.APP_API_PROXY_PATH) : '/api';
+const appApiProxyTarget = process.env.APP_API_PROXY_TARGET ? removeTrailingSlash(process.env.APP_API_PROXY_TARGET) : 'http://localhost:3030';
+const appApiTarget = process.env.APP_API_TARGET ? removeTrailingSlash(process.env.APP_API_TARGET) : 'http://localhost:3030';
+const appBasePath = process.env.APP_BASE_PATH ? removeTrailingSlash(process.env.APP_BASE_PATH) : '';
 const appDevServerPort = Number.parseInt(process.env.APP_DEV_SERVER_PORT, 10) || 3001;
 const appHost = process.env.APP_HOST || '0.0.0.0';
 const appPort = Number.parseInt(process.env.APP_PORT, 10) || 3000;
-const appPublicPath = process.env.APP_PUBLIC_PATH || '/';
+const appPublicPath = process.env.APP_PUBLIC_PATH ? `${removeTrailingSlash(process.env.APP_PUBLIC_PATH)}/` : '/';
 
 // Other
 const appName = packageJson.name;

@@ -13,6 +13,8 @@ and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-load
 - [Running](#running)
   - [Development](#development)
   - [Production](#production)
+- [Configurations](#configurations)
+  - [Environment variables](#environment-variables)
 - [Directory structure](#directory-structure)
 
 ## Features
@@ -41,7 +43,7 @@ To start coding you just need to:
 1. Clone the repository:
 `git@github.com:victorpopkov/universal-redux.git`
 2. Install packages: `yarn install`
-3. Add .env
+3. Add `.env`
 4. Launch: `yarn dev`
 5. Visit in your browser (by default: [http://localhost:3000](http://localhost:3000))
 
@@ -53,10 +55,32 @@ first before actually starting it:
 1. Clone the repository:
 `git@github.com:victorpopkov/universal-redux.git`
 2. Install packages: `yarn install`
-3. Add .env
+3. Add `.env`
 4. Build: `yarn build`
 5. Launch: `yarn start`
 6. Visit in your browser (by default: [http://localhost:8080](http://localhost:8080))
+
+## Configurations
+
+All app-specific configurations can be found in the `/config` root directory.
+Most of them are just the references to the environment variables which can be
+both system-wide and `.env` specific (take into account that any values in the
+`.env` will override the system-wide ones).
+
+### Environment variables
+
+| Environment variable     | Default value           | Description                                                                                                                                                                                                                                         |
+|--------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `APP_API_PORT`           | `3030`                  | The API port.                                                                                                                                                                                                                                       |
+| `APP_API_PROXY_DISABLED` | `0`                     | The API proxy is disabled or not. When the value is set to `1` all other `APP_API_PROXY_*` variables can be safely removed as the app will talk to the API directly.                                                                                |
+| `APP_API_PROXY_PATH`     | `/api`                  | The API proxy path.                                                                                                                                                                                                                                 |
+| `APP_API_PROXY_TARGET`   | `http://localhost:3030` | The API proxy target (**without a trailing slash**) used by the [http-proxy](https://github.com/nodejitsu/node-http-proxy). By default, it points to the current project API. _Change this value if you are using an external API through a proxy._ |
+| `APP_API_TARGET`         | `http://localhost:3030` | The API target (**without a trailing slash**). _Change this value if you are using an external API._                                                                                                                                                |
+| `APP_BASE_PATH`          | `/`                     | The app base path (**without a trailing slash**).                                                                                                                                                                                                   |
+| `APP_DEV_SERVER_PORT`    | `3001`                  | The [webpack-dev-server](https://github.com/webpack/webpack-dev-server) port.                                                                                                                                                                       |
+| `APP_HOST`               | `0.0.0.0`               | The app host.                                                                                                                                                                                                                                       |
+| `APP_PORT`               | `3000`                  | The app port.                                                                                                                                                                                                                                       |
+| `APP_PUBLIC_PATH`        | `/`                     | The app public path (**with a trailing slash**) to serve static assets and scripts.                                                                                                                                                                 |
 
 ## Directory structure
 

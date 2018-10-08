@@ -177,7 +177,7 @@ class Home extends Component {
               <div className="buttons">
                 <Button
                   color="primary"
-                  href="https://github.com/victorpopkov/isomorphic-redux-reactstrap"
+                  href={`https://github.com/victorpopkov/${packageJson.name}`}
                   size="lg"
                   tag="a"
                   outline

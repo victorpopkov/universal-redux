@@ -59,6 +59,8 @@ class Home extends Component {
   // eslint-disable-next-line class-methods-use-this
   markdownListItem = (props) => {
     let checkbox = null;
+    let elementProps = {};
+
     if (props.checked !== null) {
       const { checked } = props; // eslint-disable-line react/prop-types
 
@@ -68,13 +70,15 @@ class Home extends Component {
         type: 'checkbox',
         checked,
       });
+
+      elementProps = {
+        className: styles['task-list-item'],
+      };
     }
 
     return React.createElement(
       'li',
-      {
-        className: styles['task-list-item'],
-      },
+      elementProps,
       checkbox,
       props.children,
     );

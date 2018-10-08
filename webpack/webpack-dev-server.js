@@ -10,13 +10,13 @@ const compiler = webpack(webpackConfig);
 const port = config.appDevServerPort;
 
 const serverOptions = {
-  quiet: true,
-  noInfo: true,
+  headers: { 'Access-Control-Allow-Origin': '*' },
   hot: true,
   inline: true,
   lazy: false,
+  noInfo: true,
   publicPath: webpackConfig.output.publicPath,
-  headers: { 'Access-Control-Allow-Origin': '*' },
+  quiet: true,
   stats: { colors: true },
 };
 

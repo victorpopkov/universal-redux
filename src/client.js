@@ -5,6 +5,7 @@ import { ReduxAsyncConnect } from 'redux-connect';
 import { BrowserRouter as Router } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
+import config from '@Config';
 import createStore from './store';
 import routes from './routes';
 
@@ -29,7 +30,7 @@ const reduxAsyncConnect = (
 
 ReactDOM.hydrate(
   <Provider key="provider" store={store}>
-    <Router>
+    <Router basename={config.appBasePath}>
       {reduxAsyncConnect}
     </Router>
   </Provider>,

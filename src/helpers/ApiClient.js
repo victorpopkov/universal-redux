@@ -14,7 +14,7 @@ export default class ApiClient {
       return `${config.appApiTarget + adjustedPath}`;
     }
 
-    return `${config.appApiProxyPath + adjustedPath}`;
+    return `${config.appBasePath + config.appApiProxyPath + adjustedPath}`;
   };
 
   constructor(req) {

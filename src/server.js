@@ -22,17 +22,19 @@ import routes from './routes';
 export default ({ chunks }) => {
   const app = new Express();
   const server = new http.Server(app);
-  const proxy = httpProxy.createProxyServer({
-    changeOrigin: true,
-    target: config.appApiProxyTarget,
-    ws: false,
-  });
 
   // paths
   const pathBuild = path.resolve(__dirname, '../build/');
   const pathFavicon = __DEVELOPMENT__ ? path.resolve(__dirname, 'assets/favicon/favicon.ico') : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
 
+  let proxy = null;
   if (!config.appApiProxyDisabled) {
+    proxy = httpProxy.createProxyServer({
+      changeOrigin: true,
+      target: config.appApiProxyTarget,
+      ws: false,
+    });
+
     app.use(config.appApiProxyPath, (req, res) => {
       proxy.web(req, res);
     });
@@ -83,7 +85,7 @@ export default ({ chunks }) => {
           // 2. use `ReduxAsyncConnect` to render component tree
           const appHTML = ReactDOMServer.renderToString(
             <Provider key="provider" store={store}>
-              <Router context={context} location={location}>
+              <Router basename={config.appBasePath} context={context} location={location}>
                 <ReduxAsyncConnect helpers={helpers} routes={routes} />
               </Router>
             </Provider>
@@ -112,7 +114,7 @@ export default ({ chunks }) => {
         console.error(err);
       }
 
-      if (!config.appApiProxyDisabled) {
+      if (proxy) {
         console.info(
           '---\n==> %s is running, talking to API server through proxy (%s => %s).',
           config.app.title,

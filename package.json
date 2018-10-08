@@ -2,6 +2,7 @@
   "name": "universal-redux",
   "version": "0.1.0",
   "description": "Universal React and Redux web app boilerplate bundled with webpack.",
+  "homepage": "http://github.victorpopkov.com/universal-redux/",
   "author": {
     "name": "Victor Popkov",
     "email": "victor@popkov.com"
@@ -126,7 +127,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "file-loader": "^2.0.0",
     "json-loader": "^0.5.7",

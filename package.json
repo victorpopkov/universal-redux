@@ -1,36 +1,10 @@
 {
   "name": "universal-redux",
-  "version": "0.1.0",
   "description": "Universal React and Redux web app boilerplate bundled with webpack.",
-  "homepage": "http://github.victorpopkov.com/universal-redux/",
+  "version": "0.1.0",
   "author": {
     "name": "Victor Popkov",
     "email": "victor@popkov.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "github:victorpopkov/universal-redux"
-  },
-  "license": "MIT",
-  "main": "bin/server.js",
-  "scripts": {
-    "build": "npm-run-all build:*",
-    "build:client": "better-npm-run build:client",
-    "build:server": "better-npm-run build:server",
-    "dev": "npm-run-all universal-webpack:prepare development",
-    "development": "npm-run-all --parallel watch:* start:dev:*",
-    "lint": "npm-run-all --continue-on-error lint:*",
-    "lint:eslint": "eslint -c .eslintrc ./src/ ./api/",
-    "lint:remark": "remark .",
-    "lint:stylelint": "stylelint ./src/**/*.css ./src/**/*.scss",
-    "start": "npm-run-all --parallel start:prod:*",
-    "start:dev:server": "nodemon ./bin/server.js --watch ./src --watch ./build --no-update-notifier",
-    "start:dev:api": "node ./bin/api.js",
-    "start:prod:server": "node ./bin/server.js",
-    "start:prod:api": "node ./bin/api.js",
-    "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
-    "watch:client": "better-npm-run watch:client",
-    "watch:server": "better-npm-run watch:server"
   },
   "betterScripts": {
     "build:client": {
@@ -168,5 +142,31 @@
   },
   "engines": {
     "node": ">= 10.0.0"
+  },
+  "homepage": "http://github.victorpopkov.com/universal-redux/",
+  "license": "MIT",
+  "main": "bin/server.js",
+  "repository": {
+    "type": "git",
+    "url": "github:victorpopkov/universal-redux"
+  },
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:client": "better-npm-run build:client",
+    "build:server": "better-npm-run build:server",
+    "dev": "npm-run-all universal-webpack:prepare development",
+    "development": "npm-run-all --parallel watch:* start:dev:*",
+    "lint": "npm-run-all --continue-on-error lint:*",
+    "lint:eslint": "eslint -c .eslintrc ./src/ ./api/",
+    "lint:remark": "remark .",
+    "lint:stylelint": "stylelint ./src/**/*.css ./src/**/*.scss",
+    "start": "npm-run-all --parallel start:prod:*",
+    "start:dev:api": "node ./bin/api.js",
+    "start:dev:server": "nodemon ./bin/server.js --watch ./src --watch ./build --no-update-notifier",
+    "start:prod:api": "node ./bin/api.js",
+    "start:prod:server": "node ./bin/server.js",
+    "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
+    "watch:client": "better-npm-run watch:client",
+    "watch:server": "better-npm-run watch:server"
   }
 }

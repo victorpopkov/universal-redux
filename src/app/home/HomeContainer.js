@@ -2,9 +2,7 @@ import {
   Button,
   Col,
   Container,
-  Jumbotron,
   Row,
-  UncontrolledTooltip,
 } from 'reactstrap';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -14,11 +12,8 @@ import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
 import { hot } from 'react-hot-loader';
 import * as duckMarkdown from '../markdown/duck/index'; // eslint-disable-line sort-imports
-import LogoReact from './logo_react.svg';
-import LogoReactstrap from './logo_reactstrap.svg';
-import LogoRedux from './logo_redux.svg';
-import packageJson from '../../../package.json';
-import styles from './Home.scss';
+import { Jumbotron, Sidebar } from '../common';
+import styles from './HomeContainer.scss';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -35,7 +30,7 @@ state => ({
   loadMarkdown: duckMarkdown.duckOperations.loadMarkdown,
 })
 @hot(module)
-class Home extends Component {
+class HomeContainer extends Component {
   static propTypes = {
     loadMarkdown: PropTypes.func,
     markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -55,6 +50,21 @@ class Home extends Component {
   componentDidUpdate() {
     Prism.highlightAll();
   }
+
+  markdownHeading = (props) => {
+    const { children, level } = props; // eslint-disable-line react/prop-types
+
+    if (level === 1) {
+      return (
+        <div className="d-flex align-items-center" styleName="heading">
+          {React.createElement(`h${level}`, {}, children)}
+          {this.renderReloadBtn()}
+        </div>
+      );
+    }
+
+    return React.createElement(`h${level}`, {}, children);
+  };
 
   // eslint-disable-next-line class-methods-use-this
   markdownListItem = (props) => {
@@ -127,6 +137,7 @@ class Home extends Component {
       ) : (
         <Markdown
           renderers={{
+            heading: this.markdownHeading,
             listItem: this.markdownListItem,
           }}
           styleName="markdown"
@@ -139,72 +150,22 @@ class Home extends Component {
     return <h5>Loading&hellip;</h5>;
   }
 
-
   render() {
     return (
-      <Container styleName="home" tag="main">
+      <main role="main" styleName="home">
         <Helmet title="Universal web app boilerplate" />
-        <Jumbotron styleName="jumbotron" tag="section">
-          <ul className="mb-4" styleName="versions">
-            <li>
-              <LogoReact id="logo-react" />
-              <UncontrolledTooltip placement="bottom" target="logo-react">
-                React
-                {' '}
-                {packageJson.dependencies.react}
-              </UncontrolledTooltip>
-            </li>
-            <li>
-              <LogoRedux id="logo-redux" />
-              <UncontrolledTooltip placement="bottom" target="logo-redux">
-                Redux
-                {' '}
-                {packageJson.dependencies.redux}
-              </UncontrolledTooltip>
-            </li>
-            <li>
-              <LogoReactstrap id="logo-reactstrap" />
-              <UncontrolledTooltip placement="bottom" target="logo-reactstrap">
-                Bootstrap
-                {' '}
-                {packageJson.dependencies.bootstrap}
-                <br />
-                Reactstrap
-                {' '}
-                {packageJson.dependencies.reactstrap}
-              </UncontrolledTooltip>
-            </li>
-          </ul>
-          <Row className="justify-content-center">
-            <Col md={6}>
-              <p className="lead">{packageJson.description}</p>
-              <div className="buttons">
-                <Button
-                  color="primary"
-                  href={`https://github.com/victorpopkov/${packageJson.name}`}
-                  size="lg"
-                  tag="a"
-                  outline
-                >
-                  View on GitHub
-                </Button>
-              </div>
+        <Jumbotron />
+        <Container>
+          <Row>
+            <Col md={9}>
+              {this.renderMarkdown()}
             </Col>
+            <Sidebar />
           </Row>
-        </Jumbotron>
-        <Row className="justify-content-center">
-          <Col md={9}>
-            <div className="d-flex align-items-center">
-              <h5 className="flex-grow-1">README.md</h5>
-              {this.renderReloadBtn()}
-            </div>
-            <hr />
-            {this.renderMarkdown()}
-          </Col>
-        </Row>
-      </Container>
+        </Container>
+      </main>
     );
   }
 }
 
-export default Home;
+export default HomeContainer;

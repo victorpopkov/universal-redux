@@ -1,9 +1,9 @@
-import Home from './Home';
+import HomeContainer from './HomeContainer';
 
 export default [
   {
     path: '/',
     exact: true,
-    component: Home,
+    component: HomeContainer,
   },
 ];

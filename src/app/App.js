@@ -17,7 +17,7 @@ class App extends Component {
     const { route: { routes } } = this.props;
 
     return (
-      <div>
+      <div className="app">
         <Helmet {...config.app.head} />
         <Progress />
         <Navbar />

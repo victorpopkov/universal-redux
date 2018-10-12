@@ -1,23 +1,36 @@
-html {
+html,
+body {
+  height: 100%;
   min-height: 100%;
   position: relative;
-}
-
-body {
-  margin-bottom: $footer-height;
-}
-
-.footer {
-  bottom: 0;
-  height: $footer-height;
-  line-height: $footer-height;
-  position: absolute;
-  text-align: center;
   width: 100%;
 }
 
-@include media-breakpoint-down(sm) {
-  .footer {
-    line-height: normal;
+#content {
+  align-items: stretch;
+  display: flex;
+  justify-content: stretch;
+  min-height: 100%;
+  width: 100%;
+
+  .app {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+  }
+
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+  }
+
+  footer {
+    flex-grow: 0;
   }
 }

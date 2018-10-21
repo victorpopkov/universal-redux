@@ -165,6 +165,7 @@
     "start:dev:server": "nodemon ./bin/server.js --watch ./src --watch ./build --no-update-notifier",
     "start:prod:api": "node ./bin/api.js",
     "start:prod:server": "node ./bin/server.js",
+    "test": "npm-run-all --continue-on-error lint:*",
     "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
     "watch:client": "better-npm-run watch:client",
     "watch:server": "better-npm-run watch:server"

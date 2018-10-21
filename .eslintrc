@@ -2,8 +2,8 @@
   "extends": "airbnb",
   "env": {
     "browser": true,
-    "node": true,
-    "mocha": true
+    "jest": true,
+    "node": true
   },
   "globals": {
     "__DEVELOPMENT__": true,
@@ -11,8 +11,7 @@
     "__SERVER__": true,
     "__DISABLE_SSR__": true,
     "__DEVTOOLS__": true,
-    "socket": true,
-    "webpackIsomorphicTools": true
+    "socket": true
   },
   "parser": "babel-eslint",
   "plugins": [

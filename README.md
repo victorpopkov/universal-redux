@@ -1,7 +1,8 @@
 # universal-redux
 
-[![dependencies Status](https://david-dm.org/victorpopkov/universal-redux/status.svg)](https://david-dm.org/victorpopkov/universal-redux)
-[![devDependencies Status](https://david-dm.org/victorpopkov/universal-redux/dev-status.svg)](https://david-dm.org/victorpopkov/universal-redux?type=dev)
+[![David](https://img.shields.io/david/victorpopkov/universal-redux.svg)](https://david-dm.org/victorpopkov/universal-redux)
+[![David](https://img.shields.io/david/dev/victorpopkov/universal-redux.svg)](https://david-dm.org/victorpopkov/universal-redux?type=dev)
+[![Travis (.org)](https://img.shields.io/travis/victorpopkov/universal-redux.svg)](https://travis-ci.org/victorpopkov/universal-redux)
 
 Universal [React](https://github.com/facebook/react) and
 [Redux](https://github.com/reactjs/react-redux) web app boilerplate bundled with
@@ -74,8 +75,8 @@ both system-wide and `.env` specific (take into account that any values in the
 | `APP_API_PORT`           | `3030`                  | The API port.                                                                                                                                                                                                                                       |
 | `APP_API_PROXY_DISABLED` | `0`                     | The API proxy is disabled or not. When the value is set to `1` all other `APP_API_PROXY_*` variables can be safely removed as the app will talk to the API directly.                                                                                |
 | `APP_API_PROXY_PATH`     | `/api`                  | The API proxy path.                                                                                                                                                                                                                                 |
-| `APP_API_PROXY_TARGET`   | `http://localhost:3030` | The API proxy target (**without a trailing slash**) used by the [http-proxy](https://github.com/nodejitsu/node-http-proxy). By default, it points to the current project API. _Change this value if you are using an external API through a proxy._ |
-| `APP_API_TARGET`         | `http://localhost:3030` | The API target (**without a trailing slash**). _Change this value if you are using an external API._                                                                                                                                                |
+| `APP_API_PROXY_TARGET`   | `http://localhost:3030` | The API proxy target (**without a trailing slash**) used by the [http-proxy](https://github.com/nodejitsu/node-http-proxy). By default, it points to the current project API. *Change this value if you are using an external API through a proxy.* |
+| `APP_API_TARGET`         | `http://localhost:3030` | The API target (**without a trailing slash**). *Change this value if you are using an external API.*                                                                                                                                                |
 | `APP_BASE_PATH`          | `/`                     | The app base path (**without a trailing slash**).                                                                                                                                                                                                   |
 | `APP_DEV_SERVER_PORT`    | `3001`                  | The [webpack-dev-server](https://github.com/webpack/webpack-dev-server) port.                                                                                                                                                                       |
 | `APP_HOST`               | `0.0.0.0`               | The app host.                                                                                                                                                                                                                                       |

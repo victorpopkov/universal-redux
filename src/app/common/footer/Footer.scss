@@ -2,7 +2,7 @@
   margin-top: $grid-gutter-width;
   text-align: center;
 
-  :global .container {
+  :global(.container) {
     box-shadow: 0 -1px 0 transparentize($black, .9);
   }
 

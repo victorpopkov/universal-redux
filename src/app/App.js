@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
-import renderRoutes from 'react-router-config/renderRoutes';
+import { renderRoutes } from 'react-router-config';
 import { Footer, Navbar, Progress } from './common'; // eslint-disable-line sort-imports
-import config from '@Config';
+import config from '../../config';
 
 @hot(module)
 // eslint-disable-next-line react/prefer-stateless-function

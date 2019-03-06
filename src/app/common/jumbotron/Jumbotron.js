@@ -53,7 +53,7 @@ const Jumbotron = () => (
         </li>
       </ul>
       <Row className="justify-content-center">
-        <Col md={6}>
+        <Col md={12}>
           <p className="lead">{config.package.description}</p>
           <div className="buttons">
             <Button

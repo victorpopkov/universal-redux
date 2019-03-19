@@ -3,13 +3,13 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import Cookies from 'universal-cookie';
 import { createLogger } from 'redux-logger';
 import notify from 'redux-notify';
-import { persistState } from 'redux-devtools'; // eslint-disable-line import/no-extraneous-dependencies
-import { routerMiddleware as router } from 'react-router-redux';
+import { persistState } from 'redux-devtools';
+import { routerMiddleware } from 'connected-react-router/immutable';
 import thunk from 'redux-thunk';
 import DevTools from './app/common/dev-tools/DevTools'; // eslint-disable-line sort-imports
 import client from './middlewares/client';
+import createRootReducer from './reducers';
 import events from './app/events';
-import reducers from './reducers';
 
 export default (history, apiClient, data, req) => {
   const cookies = (req && req.universalCookies) || new Cookies();
@@ -17,7 +17,7 @@ export default (history, apiClient, data, req) => {
   const middlewares = [
     client(apiClient),
     notify(events),
-    router(history),
+    routerMiddleware(history),
     thunk.withExtraArgument({ cookies, history }),
   ];
 
@@ -40,7 +40,7 @@ export default (history, apiClient, data, req) => {
     finalCreateStore = applyMiddleware(...middlewares)(createStore);
   }
 
-  const store = finalCreateStore(reducers, fromJS(data));
+  const store = finalCreateStore(createRootReducer(history), fromJS(data));
 
   if (__DEVELOPMENT__ && module.hot) {
     module.hot.accept('./reducers', () => {

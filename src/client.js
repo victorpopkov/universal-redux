@@ -1,12 +1,13 @@
+import { ConnectedRouter } from 'connected-react-router/immutable';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ReduxAsyncConnect } from 'redux-connect';
 import { BrowserRouter as Router } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
-import config from '@Config';
-import createStore from './store';
+import config from '../config';
+import configureStore from './configureStore';
 import routes from './routes';
 
 /* eslint-disable no-underscore-dangle */
@@ -16,8 +17,8 @@ delete window.__PRELOADED_STATE__;
 
 const apiClient = new ApiClient();
 const dest = document.getElementById('content');
-const history = createHistory();
-const store = createStore(history, apiClient, preloadedState);
+const history = createBrowserHistory();
+const store = configureStore(history, apiClient, preloadedState);
 
 const helpers = {
   apiClient,
@@ -51,9 +52,11 @@ if (process.env.NODE_ENV !== 'production') {
 if (__DEVTOOLS__ && !window.devToolsExtension) {
   ReactDOM.render(
     <Provider key="provider" store={store}>
-      <Router>
-        {reduxAsyncConnect}
-      </Router>
+      <ConnectedRouter history={history}>
+        <Router>
+          {reduxAsyncConnect}
+        </Router>
+      </ConnectedRouter>
     </Provider>,
     dest,
   );

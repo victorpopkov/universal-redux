@@ -1,4 +1,5 @@
 import { ReduxAsyncConnect, loadOnServer } from 'redux-connect';
+import { ConnectedRouter } from 'connected-react-router/immutable';
 import Express from 'express';
 import { Provider } from 'react-redux';
 import React from 'react';
@@ -7,7 +8,7 @@ import { StaticRouter as Router } from 'react-router-dom';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
-import createHistory from 'history/createMemoryHistory';
+import { createMemoryHistory } from 'history';
 import favicon from 'serve-favicon';
 import http from 'http';
 import httpProxy from 'http-proxy';
@@ -15,8 +16,8 @@ import { parse as parseUrl } from 'url';
 import path from 'path';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
 import Html from './helpers/Html';
-import config from '@Config';
-import createStore from './store';
+import config from '../config';
+import configureStore from './configureStore';
 import routes from './routes';
 
 export default ({ chunks }) => {
@@ -52,9 +53,9 @@ export default ({ chunks }) => {
     .get('*', (req, res) => {
       const url = req.originalUrl || req.url;
       const apiClient = new ApiClient(req);
-      const history = createHistory(url);
+      const history = createMemoryHistory(url);
       const location = parseUrl(url);
-      const store = createStore(history, apiClient, {}, req);
+      const store = configureStore(history, apiClient, {}, req);
 
       const helpers = {
         apiClient,
@@ -85,9 +86,11 @@ export default ({ chunks }) => {
           // 2. use `ReduxAsyncConnect` to render component tree
           const appHTML = ReactDOMServer.renderToString(
             <Provider key="provider" store={store}>
-              <Router basename={config.appBasePath} context={context} location={location}>
-                <ReduxAsyncConnect helpers={helpers} routes={routes} />
-              </Router>
+              <ConnectedRouter history={history}>
+                <Router basename={config.appBasePath} context={context} location={location}>
+                  <ReduxAsyncConnect helpers={helpers} routes={routes} />
+                </Router>
+              </ConnectedRouter>
             </Provider>
           );
 

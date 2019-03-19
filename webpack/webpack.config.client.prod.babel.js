@@ -1,14 +1,13 @@
-const CleanPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 import { clientConfiguration } from 'universal-webpack';
 import webpack from 'webpack';
 import baseConfiguration from './webpack.config.prod';
-import paths from './paths';
 import settings from './universal-webpack-settings';
 
 const config = clientConfiguration(baseConfiguration, settings);
 
 config.plugins.push(
-  new CleanPlugin([paths.build], { root: paths.root }),
+  new CleanWebpackPlugin(),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': 'production',
     __CLIENT__: true,

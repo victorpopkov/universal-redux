@@ -41,7 +41,7 @@ module.exports = merge(common, {
             options: {
               importLoaders: 2,
               localIdentName: '[local]___[hash:base64:5]',
-              modules: true,
+              modules: 'local',
               sourceMap: true,
             },
           },
@@ -70,7 +70,7 @@ module.exports = merge(common, {
             options: {
               importLoaders: 2,
               localIdentName: '[local]___[hash:base64:5]',
-              modules: true,
+              modules: 'local',
               sourceMap: true,
             },
           },

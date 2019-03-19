@@ -45,9 +45,10 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
+              exportOnlyLocals: true,
               importLoaders: 2,
               localIdentName: '[local]___[hash:base64:5]',
-              modules: true,
+              modules: 'local',
               sourceMap: true,
             },
           },
@@ -77,9 +78,10 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
+              exportOnlyLocals: true,
               importLoaders: 2,
               localIdentName: '[local]___[hash:base64:5]',
-              modules: true,
+              modules: 'local',
               sourceMap: true,
             },
           },

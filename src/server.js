@@ -4,11 +4,10 @@ import Express from 'express';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { StaticRouter as Router } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
-import { createMemoryHistory } from 'history';
 import favicon from 'serve-favicon';
 import http from 'http';
 import httpProxy from 'http-proxy';
@@ -17,7 +16,7 @@ import path from 'path';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
 import Html from './helpers/Html';
 import config from '../config';
-import configureStore from './configureStore';
+import configureStore from './store/configureStore';
 import routes from './routes';
 
 export default ({ chunks }) => {
@@ -53,21 +52,23 @@ export default ({ chunks }) => {
     .get('*', (req, res) => {
       const url = req.originalUrl || req.url;
       const apiClient = new ApiClient(req);
-      const history = createMemoryHistory(url);
       const location = parseUrl(url);
-      const store = configureStore(history, apiClient, {}, req);
+
+      const { history, store } = configureStore(apiClient, {}, req, location);
 
       const helpers = {
         apiClient,
         history,
       };
 
-      function hydrateOnClient() {
-        res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
-          assets={chunks()}
-          store={store}
-        />)}`);
-      }
+      const hydrateOnClient = () => {
+        res.send(`<!doctype html>\n${ReactDOMServer.renderToString(
+          <Html
+            assets={chunks()}
+            store={store}
+          />
+        )}`);
+      };
 
       if (__SERVER__ && __DISABLE_SSR__) {
         hydrateOnClient();
@@ -87,9 +88,9 @@ export default ({ chunks }) => {
           const appHTML = ReactDOMServer.renderToString(
             <Provider key="provider" store={store}>
               <ConnectedRouter history={history}>
-                <Router basename={config.appBasePath} context={context} location={location}>
+                <StaticRouter basename={config.appBasePath} context={context} location={location}>
                   <ReduxAsyncConnect helpers={helpers} routes={routes} />
-                </Router>
+                </StaticRouter>
               </ConnectedRouter>
             </Provider>
           );
@@ -103,11 +104,13 @@ export default ({ chunks }) => {
           }
 
           // 3. render the Redux initial data into the server markup
-          return res.send(`<!doctype html>\n${ReactDOMServer.renderToString(<Html
-            assets={chunks()}
-            component={appHTML}
-            store={store}
-          />)}`);
+          return res.send(`<!doctype html>\n${ReactDOMServer.renderToString(
+            <Html
+              assets={chunks()}
+              component={appHTML}
+              store={store}
+            />
+          )}`);
         });
     });
 

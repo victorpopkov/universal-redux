@@ -4,10 +4,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ReduxAsyncConnect } from 'redux-connect';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
 import config from '../config';
-import configureStore from './configureStore';
+import configureStore from './store/configureStore';
 import routes from './routes';
 
 /* eslint-disable no-underscore-dangle */
@@ -17,8 +16,8 @@ delete window.__PRELOADED_STATE__;
 
 const apiClient = new ApiClient();
 const dest = document.getElementById('content');
-const history = createBrowserHistory();
-const store = configureStore(history, apiClient, preloadedState);
+
+const { store, history } = configureStore(apiClient, preloadedState);
 
 const helpers = {
   apiClient,
@@ -31,9 +30,11 @@ const reduxAsyncConnect = (
 
 ReactDOM.hydrate(
   <Provider key="provider" store={store}>
-    <Router basename={config.appBasePath}>
-      {reduxAsyncConnect}
-    </Router>
+    <ConnectedRouter history={history}>
+      <Router basename={config.appBasePath}>
+        {reduxAsyncConnect}
+      </Router>
+    </ConnectedRouter>
   </Provider>,
   dest
 );

@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.2",
+    "@babel/runtime": "^7.4.3",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "4.3.1",
@@ -65,16 +65,16 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/plugin-proposal-function-bind": "^7.2.0",
     "@babel/plugin-syntax-export-default-from": "^7.2.0",
     "@babel/plugin-transform-react-display-name": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.4.0",
-    "@babel/polyfill": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
     "autoprefixer": "^9.5.0",
@@ -120,7 +120,7 @@
     "redux-logger": "^3.0.6",
     "remark-cli": "^6.0.1",
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
-    "resolve-url-loader": "^3.0.1",
+    "resolve-url-loader": "^3.1.0",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^2.0.0",
     "style-loader": "^0.23.1",
@@ -136,7 +136,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-middleware": "^3.6.1",
+    "webpack-dev-middleware": "^3.6.2",
     "webpack-hot-middleware": "^2.24.3",
     "webpack-merge": "^4.2.1"
   },

@@ -8,16 +8,32 @@
   },
   "betterScripts": {
     "build:client": {
-      "command": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose"
+      "command": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production"
+      }
     },
     "build:server": {
-      "command": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose"
+      "command": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production"
+      }
     },
     "watch:client": {
-      "command": "node ./webpack/webpack-dev-server.js"
+      "command": "node ./webpack/webpack-dev-server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "development"
+      }
     },
     "watch:server": {
-      "command": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch"
+      "command": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "development"
+      }
     }
   },
   "dependencies": {

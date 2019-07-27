@@ -1,9 +1,5 @@
 import './Footer.scss';
-import {
-  Col,
-  Container,
-  Row,
-} from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import config from '@Config';
 

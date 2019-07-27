@@ -11,28 +11,32 @@
       "command": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose",
       "env": {
         "NODE_ENV": "production",
-        "BABEL_ENV": "production"
+        "BABEL_ENV": "production",
+        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
       }
     },
     "build:server": {
       "command": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose",
       "env": {
         "NODE_ENV": "production",
-        "BABEL_ENV": "production"
+        "BABEL_ENV": "production",
+        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
       }
     },
     "watch:client": {
       "command": "node ./webpack/webpack-dev-server.js",
       "env": {
         "NODE_ENV": "development",
-        "BABEL_ENV": "development"
+        "BABEL_ENV": "development",
+        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
       }
     },
     "watch:server": {
       "command": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch",
       "env": {
         "NODE_ENV": "development",
-        "BABEL_ENV": "development"
+        "BABEL_ENV": "development",
+        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
       }
     }
   },
@@ -108,12 +112,12 @@
     "cssnano": "^4.1.10",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0",
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-loader": "^2.2.1",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.1.0",
     "json-loader": "^0.5.7",
     "less": "^3.9.0",

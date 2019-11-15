@@ -115,8 +115,8 @@ module.exports = merge(common, {
         uglifyOptions: {
           compress: {
             drop_console: true,
-            warnings: false,
           },
+          warnings: false,
         },
         sourceMap: true,
       }),

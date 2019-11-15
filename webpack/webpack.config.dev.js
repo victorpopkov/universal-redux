@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
@@ -37,9 +38,9 @@ module.exports = merge(common, {
         test: /\.css/,
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              sourceMap: true,
+              hmr: true,
             },
           },
           {
@@ -71,9 +72,9 @@ module.exports = merge(common, {
         test: /\.scss$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              sourceMap: true,
+              hmr: true,
             },
           },
           {
@@ -118,6 +119,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new StyleLintPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(/webpack-stats\.json$/),

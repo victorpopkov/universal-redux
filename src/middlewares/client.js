@@ -22,7 +22,7 @@ export default client => () => next => (action) => { // { dispatch, getState }
   actionPromise
     .then(
       result => next({ ...rest, result, type: SUCCESS }),
-      error => next({ ...rest, error, type: FAILURE })
+      error => next({ ...rest, error, type: FAILURE }),
     )
     .catch((error) => {
       console.error('MIDDLEWARE ERROR:', error);

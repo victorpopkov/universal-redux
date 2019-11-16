@@ -36,7 +36,7 @@ ReactDOM.hydrate(
       </Router>
     </ConnectedRouter>
   </Provider>,
-  dest
+  dest,
 );
 
 if (process.env.NODE_ENV !== 'production') {

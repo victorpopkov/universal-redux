@@ -15,7 +15,7 @@ const devTools = (middlewares) => {
   return compose(
     applyMiddleware(...middlewares),
     window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument(), // DevTools
-    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
+    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
   );
 };
 

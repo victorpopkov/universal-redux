@@ -24,23 +24,13 @@ import styles from './HomeContainer.scss';
     return Promise.resolve();
   },
 }],
-state => ({
+(state) => ({
   markdown: state.get('markdown'),
 }), {
   loadMarkdown: duckMarkdown.duckOperations.loadMarkdown,
 })
 @hot(module)
 class HomeContainer extends Component {
-  static propTypes = {
-    loadMarkdown: PropTypes.func,
-    markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  };
-
-  static defaultProps = {
-    loadMarkdown: null,
-    markdown: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -167,5 +157,15 @@ class HomeContainer extends Component {
     );
   }
 }
+
+HomeContainer.propTypes = {
+  loadMarkdown: PropTypes.func,
+  markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+};
+
+HomeContainer.defaultProps = {
+  loadMarkdown: null,
+  markdown: null,
+};
 
 export default HomeContainer;

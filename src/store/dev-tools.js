@@ -7,7 +7,7 @@ import DevTools from '../app/common/dev-tools/DevTools'; // eslint-disable-line 
 const devTools = (middlewares) => {
   const logger = createLogger({
     collapsed: (getState, action, logEntry) => !logEntry.error,
-    stateTransformer: state => ((Iterable.isIterable(state)) ? state.toJS() : state),
+    stateTransformer: (state) => ((Iterable.isIterable(state)) ? state.toJS() : state),
   });
 
   middlewares.push(logger);

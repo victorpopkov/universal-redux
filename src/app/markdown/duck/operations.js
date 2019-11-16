@@ -7,7 +7,7 @@ export function loadMarkdown() {
       types.LOAD_MARKDOWN_SUCCESS,
       types.LOAD_MARKDOWN_FAIL,
     ],
-    promise: client => client.get('/markdown.json'),
+    promise: (client) => client.get('/markdown.json'),
   };
 }
 

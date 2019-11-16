@@ -24,7 +24,7 @@ class Navbar extends Component {
   }
 
   toggleNavbar() {
-    this.setState(state => ({
+    this.setState((state) => ({
       collapsed: !state.collapsed,
     }));
   }

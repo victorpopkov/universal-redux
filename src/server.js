@@ -74,7 +74,6 @@ export default ({ chunks }) => {
         hydrateOnClient();
       }
 
-      // 1. load data
       loadOnServer({
         store,
         location,
@@ -84,7 +83,6 @@ export default ({ chunks }) => {
         .then(() => {
           const context = {};
 
-          // 2. use `ReduxAsyncConnect` to render component tree
           const appHTML = ReactDOMServer.renderToString(
             <Provider key="provider" store={store}>
               <ConnectedRouter history={history}>
@@ -103,7 +101,6 @@ export default ({ chunks }) => {
             return res.sendStatus(302);
           }
 
-          // 3. render the Redux initial data into the server markup
           return res.send(`<!doctype html>\n${ReactDOMServer.renderToString(
             <Html
               assets={chunks()}

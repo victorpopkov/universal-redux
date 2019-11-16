@@ -9,16 +9,13 @@ import config from '../../config';
 @hot(module)
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
-  static propTypes = {
-    route: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-  };
-
   render() {
     const { route: { routes } } = this.props;
+    const { link, meta, titleTemplate } = config.app.head;
 
     return (
       <div className="app">
-        <Helmet {...config.app.head} />
+        <Helmet link={link} meta={meta} titleTemplate={titleTemplate} />
         <Progress />
         <Navbar />
         {renderRoutes(routes)}
@@ -27,5 +24,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  route: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+};
 
 export default App;

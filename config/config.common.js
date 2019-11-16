@@ -1,6 +1,6 @@
 const packageJson = require('../package.json');
 
-const removeTrailingSlash = s => s.replace(/\/$/, '');
+const removeTrailingSlash = (s) => s.replace(/\/$/, '');
 
 // Environment variables
 const appApiPort = Number.parseInt(process.env.APP_API_PORT, 10) || 3030;

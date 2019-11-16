@@ -4,7 +4,7 @@
  * @param client
  * @returns {function(): function(*=): Function}
  */
-export default client => () => next => (action) => { // { dispatch, getState }
+export default (client) => () => (next) => (action) => { // { dispatch, getState }
   const { promise, types, ...rest } = action;
 
   // if (typeof action === 'function') {
@@ -21,8 +21,8 @@ export default client => () => next => (action) => { // { dispatch, getState }
   const actionPromise = promise(client);
   actionPromise
     .then(
-      result => next({ ...rest, result, type: SUCCESS }),
-      error => next({ ...rest, error, type: FAILURE }),
+      (result) => next({ ...rest, result, type: SUCCESS }),
+      (error) => next({ ...rest, error, type: FAILURE }),
     )
     .catch((error) => {
       console.error('MIDDLEWARE ERROR:', error);

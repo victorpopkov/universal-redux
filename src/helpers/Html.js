@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const removeWhitespaces = content => content.replace(/>\s+</g, '><')
+const removeWhitespaces = (content) => content.replace(/>\s+</g, '><')
   .replace(/\n/g, ' ')
   .replace(/\s+/g, ' ')
   .replace(/\s+<\//g, '</');

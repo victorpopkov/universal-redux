@@ -20,7 +20,7 @@ export default class ApiClient {
   constructor(req) {
     const cookies = (req && req.universalCookies) || new Cookies();
 
-    ApiClient.methods.forEach(method => ( // eslint-disable-line no-return-assign
+    ApiClient.methods.forEach((method) => ( // eslint-disable-line no-return-assign
       this[method] = (path, {
         params,
         data,

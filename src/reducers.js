@@ -5,10 +5,10 @@ import { fromJS } from 'immutable';
 import * as appReducers from './app/reducers'; // eslint-disable-line sort-imports
 
 // Set the mutability/immutability functions
-setToImmutableStateFunc(mutableState => fromJS(mutableState));
-setToMutableStateFunc(immutableState => immutableState.toJS());
+setToImmutableStateFunc((mutableState) => fromJS(mutableState));
+setToMutableStateFunc((immutableState) => immutableState.toJS());
 
-export default history => combineReducers({
+export default (history) => combineReducers({
   reduxAsyncConnect: immutableReducer,
   router: connectRouter(history),
   ...appReducers,

@@ -8,7 +8,7 @@ export default createReducer(fromJS({
   content: null,
   error: null,
 }), {
-  [types.LOAD_MARKDOWN]: state => state.merge({
+  [types.LOAD_MARKDOWN]: (state) => state.merge({
     loading: true,
     error: null,
   }),

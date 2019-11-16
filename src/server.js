@@ -66,7 +66,7 @@ export default ({ chunks }) => {
           <Html
             assets={chunks()}
             store={store}
-          />
+          />,
         )}`);
       };
 
@@ -90,7 +90,7 @@ export default ({ chunks }) => {
                   <ReduxAsyncConnect helpers={helpers} routes={routes} />
                 </StaticRouter>
               </ConnectedRouter>
-            </Provider>
+            </Provider>,
           );
 
           // context.url will contain the URL to redirect to if a <Redirect> was used
@@ -106,7 +106,7 @@ export default ({ chunks }) => {
               assets={chunks()}
               component={appHTML}
               store={store}
-            />
+            />,
           )}`);
         });
     });
@@ -122,13 +122,13 @@ export default ({ chunks }) => {
           '---\n==> %s is running, talking to API server through proxy (%s => %s).',
           config.app.title,
           `${config.appApiProxyPath}`,
-          `${config.appApiProxyTarget}`
+          `${config.appApiProxyTarget}`,
         );
       } else {
         console.info(
           '---\n==> %s is running, talking to API server directly (%s).',
           config.app.title,
-          `${config.appApiTarget}`
+          `${config.appApiTarget}`,
         );
       }
 

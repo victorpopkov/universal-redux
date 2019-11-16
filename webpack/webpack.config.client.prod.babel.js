@@ -1,4 +1,4 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 import { clientConfiguration } from 'universal-webpack';
 import webpack from 'webpack';
 import baseConfiguration from './webpack.config.prod';

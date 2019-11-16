@@ -152,7 +152,7 @@
     "svgo": "^1.2.0",
     "svgo-loader": "^2.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "universal-webpack": "^0.6.11",
+    "universal-webpack": "^0.6.12",
     "url-loader": "^2.1.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",

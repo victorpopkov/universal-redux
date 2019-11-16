@@ -10937,10 +10937,10 @@ universal-cookie@^3.0.7, universal-cookie@^3.1.0:
     cookie "^0.3.1"
     object-assign "^4.1.0"
 
-universal-webpack@^0.6.11:
-  version "0.6.11"
-  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.6.11.tgz#400f61a2f7eff0663ea3733aa9a602a1123b864d"
-  integrity sha512-sKfswDgdMbyup4tf51Zr1/2CSRnj6lEk7Nt3IczCRNafiaHDbT7DmEBn9UitnJ9GnCPzAXEDRzZid9fVxcMrwA==
+universal-webpack@^0.6.12:
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.6.12.tgz#4775f623fbe5a01f4d5f17c39230d04fdcdba310"
+  integrity sha512-dgHb6NCVHnt89iGiPwB9HYcODxbxDeowUlizSP8MiRJMXpka6dk/Jz0xvW1X6mquIYNQFD9+GYFxVEvHRitA+g==
   dependencies:
     colors "^1.1.2"
     fs-extra "^0.30.0"

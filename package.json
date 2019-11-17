@@ -57,7 +57,7 @@
     "immutable": "^4.0.0-rc.12",
     "ip": "^1.1.5",
     "lodash": "^4.17.11",
-    "normalizr": "^3.3.0",
+    "normalizr": "^3.4.1",
     "pretty-error": "^2.1.1",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",

@@ -56,7 +56,7 @@
     "humps": "^2.0.1",
     "immutable": "^4.0.0-rc.12",
     "ip": "^1.1.5",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "normalizr": "^3.4.1",
     "pretty-error": "^2.1.1",
     "prismjs": "^1.17.1",

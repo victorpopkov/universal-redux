@@ -59,7 +59,7 @@
     "lodash": "^4.17.11",
     "normalizr": "^3.4.1",
     "pretty-error": "^2.1.1",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-cookie": "^4.0.1",

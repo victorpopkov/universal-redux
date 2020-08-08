@@ -178,6 +178,7 @@
     "development": "npm-run-all --parallel watch:* start:dev:*",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint -c .eslintrc ./src/ ./api/",
+    "lint:prettier": "prettier --check .",
     "lint:remark": "remark .",
     "lint:stylelint": "stylelint ./src/**/*.css ./src/**/*.scss",
     "start": "npm-run-all --parallel start:prod:*",

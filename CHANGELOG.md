@@ -9,10 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Integration with "Code Climate" for code quality and test coverage reports
-- Integration with "Codecov" for test coverage reports
-- Integration with "Travis CI" for building and testing
-- This `CHANGELOG.md`
+- **[maintenance]** Integration with "Code Climate" for code quality and test coverage reports
+- **[maintenance]** Integration with "Codecov" for test coverage reports
+- **[maintenance]** Integration with "Travis CI" for building and testing
+- **[maintenance]** This `CHANGELOG.md`
 
 ### Changed
 
@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- Babel `@babel/plugin-proposal-decorators` plugin order in the Babel configs
+- Plugin `@babel/plugin-proposal-decorators` order in the Babel configurations
 
 ## 0.1.0 - 2018-10-12
 

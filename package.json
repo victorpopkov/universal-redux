@@ -6,40 +6,6 @@
     "name": "Victor Popkov",
     "email": "victor@popkov.com"
   },
-  "betterScripts": {
-    "build:client": {
-      "command": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose",
-      "env": {
-        "NODE_ENV": "production",
-        "BABEL_ENV": "production",
-        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
-      }
-    },
-    "build:server": {
-      "command": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose",
-      "env": {
-        "NODE_ENV": "production",
-        "BABEL_ENV": "production",
-        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
-      }
-    },
-    "watch:client": {
-      "command": "node ./webpack/webpack-dev-server.js",
-      "env": {
-        "NODE_ENV": "development",
-        "BABEL_ENV": "development",
-        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
-      }
-    },
-    "watch:server": {
-      "command": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch",
-      "env": {
-        "NODE_ENV": "development",
-        "BABEL_ENV": "development",
-        "UNIVERSAL_WEBPACK_CSS_LOADER_V3": true
-      }
-    }
-  },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/register": "^7.7.0",
@@ -52,6 +18,7 @@
     "compression": "^1.7.4",
     "connected-react-router": "^6.5.2",
     "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "history": "^4.10.1",
@@ -107,7 +74,6 @@
     "babel-plugin-prismjs": "^1.1.1",
     "babel-plugin-react-css-modules": "^5.2.6",
     "babel-plugin-webpack-alias": "^2.1.2",
-    "better-npm-run": "^0.1.1",
     "bootstrap-loader": "^3.0.3",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.5",
@@ -171,24 +137,24 @@
     "url": "github:victorpopkov/universal-redux"
   },
   "scripts": {
-    "build": "npm-run-all build:*",
-    "build:client": "better-npm-run build:client",
-    "build:server": "better-npm-run build:server",
-    "dev": "npm-run-all universal-webpack:prepare development",
+    "build": "env-cmd npm-run-all build:*",
+    "build:client": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose",
+    "build:server": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose",
+    "dev": "env-cmd npm-run-all universal-webpack:prepare development",
     "development": "npm-run-all --parallel watch:* start:dev:*",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint -c .eslintrc ./src/ ./api/",
     "lint:prettier": "prettier --check .",
     "lint:remark": "remark .",
     "lint:stylelint": "stylelint ./src/**/*.css ./src/**/*.scss",
-    "start": "npm-run-all --parallel start:prod:*",
+    "start": "env-cmd npm-run-all --parallel start:prod:*",
     "start:dev:api": "node ./bin/api.js",
     "start:dev:server": "nodemon ./bin/server.js --watch ./src --watch ./build --no-update-notifier",
     "start:prod:api": "node ./bin/api.js",
     "start:prod:server": "node ./bin/server.js",
     "test": "npm-run-all --continue-on-error lint:*",
     "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
-    "watch:client": "better-npm-run watch:client",
-    "watch:server": "better-npm-run watch:server"
+    "watch:client": "node ./webpack/webpack-dev-server.js",
+    "watch:server": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch"
   }
 }

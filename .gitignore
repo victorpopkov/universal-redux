@@ -112,6 +112,9 @@ temp/
 ### WebStorm ###
 .idea/
 
+### VisualStudioCode ###
+.vscode/
+
 ### Project ###
 build/
 webpack-assets.json

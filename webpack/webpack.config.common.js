@@ -1,5 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const DotenvPlugin = require('dotenv-webpack');
+const Dotenv = require('dotenv-webpack');
 const config = require('../config');
 const path = require('path');
 const paths = require('./paths');
@@ -65,10 +65,7 @@ module.exports = {
     publicPath: config.appPublicPath,
   },
   resolve: {
-    modules: [
-      'src',
-      'node_modules',
-    ],
+    modules: ['node_modules', 'src'],
     alias: {
       '@Config': path.resolve(paths.root, 'config/'),
       '@Root': path.resolve(paths.root),
@@ -82,11 +79,11 @@ module.exports = {
         to: path.resolve(paths.build, 'assets/favicon/'),
       },
     ]),
-    new DotenvPlugin({
+    new Dotenv({
       path: path.resolve(paths.root, '.env'),
-      safe: path.resolve(paths.root, '.env.dist'),
+      safe: false,
+      silent: true,
       systemvars: true,
-      silent: true
     }),
   ],
 };

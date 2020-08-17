@@ -13,15 +13,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **[maintenance]** Integration with "Codecov" for test coverage reports
 - **[maintenance]** Integration with "Travis CI" for building and testing
 - **[maintenance]** This `CHANGELOG.md`
+- Script `lint:prettier` in `package.json`
 
 ### Changed
 
 - Dependencies to match the latest ones
 - Website homepage badges
 
+### Removed
+
+- Dependency `better-npm-run` in favour of `env-cmd`
+- Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
+
 ### Fixed
 
-- Plugin `@babel/plugin-proposal-decorators` order in the Babel configurations
+- **[maintenance]** Author email in `package.json`
+- Differentiation between some `dependencies` and `devDependencies` in `package.json`
+- Plugin `@babel/plugin-proposal-decorators` order in Babel configurations
+- Plugin `dotenv-webpack` webpack common configurations
 
 ## 0.1.0 - 2018-10-12
 

@@ -44,7 +44,7 @@ To start coding you just need to:
 1. Clone the repository:
 `git@github.com:victorpopkov/universal-redux.git`
 2. Install packages: `yarn install`
-3. Add `.env`
+3. Rename `.env.dev` to `.env`
 4. Launch: `yarn dev`
 5. Visit in your browser (by default: [http://localhost:3000](http://localhost:3000))
 
@@ -56,7 +56,7 @@ first before actually starting it:
 1. Clone the repository:
 `git@github.com:victorpopkov/universal-redux.git`
 2. Install packages: `yarn install`
-3. Add `.env`
+3. Rename `.env.prod` to `.env`
 4. Build: `yarn build`
 5. Launch: `yarn start`
 6. Visit in your browser (by default: [http://localhost:8080](http://localhost:8080))

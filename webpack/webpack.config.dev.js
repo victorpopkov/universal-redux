@@ -112,7 +112,10 @@ module.exports = merge(common, {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.join(paths.src, 'assets/scss/sass-resources.scss'),
+              resources: path.join(
+                paths.src,
+                'assets/scss/sass-resources.scss',
+              ),
             },
           },
         ],

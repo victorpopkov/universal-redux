@@ -3,7 +3,9 @@ export default (availableActions = {}, urlParts = []) => {
   let urlPartsMod = urlParts;
 
   // remove '.json' from last URL part
-  urlPartsMod[urlPartsMod.length - 1] = urlPartsMod[urlPartsMod.length - 1].replace(/\.json$/, '');
+  urlPartsMod[urlPartsMod.length - 1] = urlPartsMod[
+    urlPartsMod.length - 1
+  ].replace(/\.json$/, '');
 
   // test for empty input
   if (urlParts.length === 0 || Object.keys(availableActions).length === 0) {
@@ -29,7 +31,12 @@ export default (availableActions = {}, urlParts = []) => {
     return notFound;
   };
 
-  const actionAndParams = urlPartsMod.reduce(reducer, { action: availableActions, params: [] });
+  const actionAndParams = urlPartsMod.reduce(reducer, {
+    action: availableActions,
+    params: [],
+  });
 
-  return (typeof actionAndParams.action === 'function') ? actionAndParams : notFound;
+  return typeof actionAndParams.action === 'function'
+    ? actionAndParams
+    : notFound;
 };

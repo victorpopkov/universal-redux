@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Integration with "Code Climate" for code quality and test coverage reports
 - **[maintenance]** Integration with "Codecov" for test coverage reports
-- **[maintenance]** Integration with "Travis CI" for building and testing
 - **[maintenance]** This `CHANGELOG.md`
 - Script `lint:prettier` in `package.json`
 

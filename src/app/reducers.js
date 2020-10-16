@@ -10,8 +10,4 @@ const entities = (state = fromJS({}), action) => {
   return state;
 };
 
-export {
-  entities,
-  event,
-  markdown,
-};
+export { entities, event, markdown };

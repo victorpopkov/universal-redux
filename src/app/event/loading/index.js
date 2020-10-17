@@ -3,9 +3,7 @@ import * as duckEvent from './duck';
 
 export default [
   {
-    catch: [
-      duck.duckTypes.LOAD_MARKDOWN,
-    ],
+    catch: [duck.duckTypes.LOAD_MARKDOWN],
     dispatch: [duckEvent.duckOperations.notifyProgressShow],
   },
   {

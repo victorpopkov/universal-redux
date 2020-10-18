@@ -11,12 +11,7 @@ const Error404 = () => (
     <Container className="text-center">
       <h1>404</h1>
       <h2>Page Not Found</h2>
-      <Button
-        color="secondary"
-        tag={Link}
-        to="/"
-        outline
-      >
+      <Button color="secondary" tag={Link} to="/" outline>
         <span>&larr; Back to Homepage</span>
       </Button>
     </Container>

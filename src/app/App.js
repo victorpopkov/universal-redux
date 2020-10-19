@@ -10,7 +10,9 @@ import config from '../../config';
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
-    const { route: { routes } } = this.props;
+    const {
+      route: { routes },
+    } = this.props;
     const { link, meta, titleTemplate } = config.app.head;
 
     return (

@@ -143,7 +143,7 @@
     "dev": "env-cmd npm-run-all universal-webpack:prepare development",
     "development": "npm-run-all --parallel watch:* start:dev:*",
     "lint": "npm-run-all --continue-on-error lint:*",
-    "lint:eslint": "eslint -c .eslintrc ./src/ ./api/",
+    "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx ./src/ ./api/",
     "lint:prettier": "prettier --check .",
     "lint:remark": "remark .",
     "lint:stylelint": "stylelint ./src/**/*.css ./src/**/*.scss",

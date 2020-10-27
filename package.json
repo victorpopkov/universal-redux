@@ -127,7 +127,7 @@
     "webpack-merge": "^4.2.2"
   },
   "engines": {
-    "node": ">= 10.0.0"
+    "node": ">=14.*"
   },
   "homepage": "http://github.victorpopkov.com/universal-redux/",
   "license": "MIT",

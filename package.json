@@ -98,6 +98,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.2.1",
     "postcss-scss": "^2.0.0",
+    "prettier": "^2.2.1",
     "react-a11y": "^1.1.0",
     "react-hot-loader": "^4.12.18",
     "redbox-react": "^1.6.0",

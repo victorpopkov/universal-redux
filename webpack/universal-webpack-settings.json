@@ -1,6 +1,6 @@
 {
   "server": {
-    "input": "./src/server.js",
+    "input": "./src/server.jsx",
     "output": "./build/server.js"
   }
 }

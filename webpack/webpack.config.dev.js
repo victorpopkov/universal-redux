@@ -11,7 +11,7 @@ module.exports = merge(common, {
   entry: {
     client: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
-      path.join(paths.src, 'client.js'),
+      path.join(paths.src, 'client.jsx'),
     ],
     vendor: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',

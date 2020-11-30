@@ -90,7 +90,7 @@
     "eslint-plugin-react": "^7.21.5",
     "file-loader": "^6.2.0",
     "json-loader": "^0.5.7",
-    "less": "^3.10.3",
+    "less": "^3.12.2",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.1",

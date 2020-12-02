@@ -16,12 +16,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
+- **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
 - Dependencies to match the latest ones
 - Extension `JS` to `JSX` where appropriate
 - Website homepage badges
 
 ### Removed
 
+- **[maintenance]** Integration with remark in favour of Prettier
 - Dependency `better-npm-run` in favour of `env-cmd`
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
 

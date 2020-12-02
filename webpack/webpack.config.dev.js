@@ -1,3 +1,4 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const merge = require('webpack-merge');
@@ -28,9 +29,6 @@ module.exports = merge(common, {
         use: [
           {
             loader: 'babel-loader',
-          },
-          {
-            loader: 'eslint-loader',
           },
         ],
       },
@@ -117,6 +115,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    new ESLintPlugin(),
     new MiniCssExtractPlugin(),
     new StyleLintPlugin(),
     new webpack.HotModuleReplacementPlugin(),

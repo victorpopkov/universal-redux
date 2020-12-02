@@ -39,9 +39,6 @@ module.exports = merge(common, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
           },
           {
             loader: 'css-loader',
@@ -73,9 +70,6 @@ module.exports = merge(common, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
           },
           {
             loader: 'css-loader',

@@ -1,4 +1,4 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const config = require('../config');
 const path = require('path');
@@ -73,12 +73,14 @@ module.exports = {
     extensions: ['.json', '.js', '.jsx'],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(paths.src, 'assets/favicon/'),
-        to: path.resolve(paths.build, 'assets/favicon/'),
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(paths.src, 'assets/favicon/'),
+          to: path.resolve(paths.build, 'assets/favicon/'),
+        },
+      ],
+    }),
     new Dotenv({
       path: path.resolve(paths.root, '.env'),
       safe: false,

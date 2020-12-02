@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
 import { renderRoutes } from 'react-router-config';
 import { Footer, Navbar, Progress } from './common'; // eslint-disable-line sort-imports
 import config from '../../config';

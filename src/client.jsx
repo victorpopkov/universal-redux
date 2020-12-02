@@ -31,9 +31,7 @@ const reduxAsyncConnect = (
 ReactDOM.hydrate(
   <Provider key="provider" store={store}>
     <ConnectedRouter history={history}>
-      <Router basename={config.appBasePath}>
-        {reduxAsyncConnect}
-      </Router>
+      <Router basename={config.appBasePath}>{reduxAsyncConnect}</Router>
     </ConnectedRouter>
   </Provider>,
   dest,
@@ -43,9 +41,12 @@ if (process.env.NODE_ENV !== 'production') {
   window.React = React; // enable debugger
 
   const fc = dest.firstChild;
-  if (!dest || !fc || !fc.attributes) { // || !fc.attributes['data-react-checksum']
-    console.error('Server-side React render was discarded. Make sure that your initial render does '
-      + 'not contain any client-side code.');
+  if (!dest || !fc || !fc.attributes) {
+    // || !fc.attributes['data-react-checksum']
+    console.error(
+      'Server-side React render was discarded. Make sure that your initial render does ' +
+        'not contain any client-side code.',
+    );
   }
 }
 
@@ -54,9 +55,7 @@ if (__DEVTOOLS__ && !window.devToolsExtension) {
   ReactDOM.render(
     <Provider key="provider" store={store}>
       <ConnectedRouter history={history}>
-        <Router>
-          {reduxAsyncConnect}
-        </Router>
+        <Router>{reduxAsyncConnect}</Router>
       </ConnectedRouter>
     </Provider>,
     dest,

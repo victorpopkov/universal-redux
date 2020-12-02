@@ -3,7 +3,7 @@ import { Button, Container } from 'reactstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
 
 const Error404 = () => (
   <main role="main" styleName="error">

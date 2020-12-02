@@ -1,8 +1,8 @@
 import Express from 'express';
 import PrettyError from 'pretty-error';
 import bodyParser from 'body-parser';
+import config from '@Config'; // eslint-disable-line import/no-unresolved
 import * as actions from './actions'; // eslint-disable-line sort-imports
-import config from '@Config';
 import mapUrl from './utils/url';
 
 const pretty = new PrettyError();

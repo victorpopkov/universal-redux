@@ -12,8 +12,8 @@ import events from '../app/events';
 export default (apiClient, data, req, location) => {
   const history = __SERVER__
     ? createMemoryHistory({
-      initialEntries: [location],
-    })
+        initialEntries: [location],
+      })
     : createBrowserHistory();
 
   const cookies = (req && req.universalCookies) || new Cookies();
@@ -28,15 +28,12 @@ export default (apiClient, data, req, location) => {
   let finalCreateStore;
   if (__DEVELOPMENT__ && __CLIENT__ && __DEVTOOLS__) {
     const devTools = require('./dev-tools').default; // eslint-disable-line global-require
-    finalCreateStore = (devTools(middlewares))(createStore);
+    finalCreateStore = devTools(middlewares)(createStore);
   } else {
     finalCreateStore = applyMiddleware(...middlewares)(createStore);
   }
 
-  const store = finalCreateStore(
-    createRootReducer(history),
-    fromJS(data),
-  );
+  const store = finalCreateStore(createRootReducer(history), fromJS(data));
 
   if (__DEVELOPMENT__ && module.hot) {
     module.hot.accept('../reducers', () => {

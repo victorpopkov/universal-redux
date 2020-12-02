@@ -13,12 +13,16 @@ $progress-height: 2px;
     z-index: 10000;
 
     &-progress {
-      background: linear-gradient(to bottom, lighten($progress-color, 25%) 0%, $progress-color 100%);
+      background: linear-gradient(
+        to bottom,
+        lighten($progress-color, 25%) 0%,
+        $progress-color 100%
+      );
       height: $progress-height;
       transform: translateX(-100%);
       transition-duration: 12s;
       transition-property: transform, opacity;
-      transition-timing-function: cubic-bezier(.04, .9, .11, .9);
+      transition-timing-function: cubic-bezier(0.04, 0.9, 0.11, 0.9);
       width: 100%;
 
       &::after {
@@ -34,11 +38,11 @@ $progress-height: 2px;
       }
     }
 
-    &[data-state="hidden"] {
+    &[data-state='hidden'] {
       display: none;
     }
 
-    &[data-state="running"] {
+    &[data-state='running'] {
       &::before {
         content: '';
         height: 100%;
@@ -54,7 +58,7 @@ $progress-height: 2px;
       }
     }
 
-    &[data-state="finishing"] {
+    &[data-state='finishing'] {
       opacity: 0;
 
       .loader-60devs-progress {

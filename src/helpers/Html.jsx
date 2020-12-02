@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const removeWhitespaces = (content) => content.replace(/>\s+</g, '><')
-  .replace(/\n/g, ' ')
-  .replace(/\s+/g, ' ')
-  .replace(/\s+<\//g, '</');
+const removeWhitespaces = (content) =>
+  content
+    .replace(/>\s+</g, '><')
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+<\//g, '</');
 
 /**
  * Wrapper component containing HTML metadata and boilerplate tags.
@@ -38,7 +40,13 @@ const Html = ({ assets, component, store }) => {
       </head>
       <body>
         <div dangerouslySetInnerHTML={{ __html: component }} id="content" />
-        <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_STATE__=${JSON.stringify(store.getState().toJS())};` }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__PRELOADED_STATE__=${JSON.stringify(
+              store.getState().toJS(),
+            )};`,
+          }}
+        />
         {Object.keys(assets.javascript).map((js, key) => (
           <script
             key={key} // eslint-disable-line react/no-array-index-key
@@ -64,6 +72,4 @@ Html.defaultProps = {
 
 export default Html;
 
-export {
-  removeWhitespaces,
-};
+export { removeWhitespaces };

@@ -20,8 +20,7 @@ and bundled using [bootstrap-loader](https://github.com/shakacode/bootstrap-load
 
 ## Features
 
-- [x] Based on the [Ducks](https://github.com/erikras/ducks-modular-redux)
-pattern
+- [x] Based on the [Ducks](https://github.com/erikras/ducks-modular-redux) pattern
 - [x] Configurable through .env ([dotenv](https://github.com/motdotla/dotenv))
 - [x] CSS Modules awesomeness using [babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)
 - [x] Fully isomorphic ([universal-webpack](https://github.com/catamphetamine/universal-webpack))
@@ -29,10 +28,8 @@ pattern
 - [x] Hot Module Replacement (HMR)
 - [x] Inline SVGs as React components ([babel-plugin-inline-react-svg](https://github.com/kesne/babel-plugin-inline-react-svg))
 - [x] React Router v4 ([react-router](https://github.com/ReactTraining/react-router))
-- [x] Redux actions use [axios](https://github.com/axios/axios) for requests
-with requests cancellation support
-- [x] Redux related stuff is built with [Immutable.js](https://facebook.github.io/immutable-js/)
-in mind
+- [x] Redux actions use [axios](https://github.com/axios/axios) for requests with requests cancellation support
+- [x] Redux related stuff is built with [Immutable.js](https://facebook.github.io/immutable-js/) in mind
 - [x] Serve API directly or using proxy
 
 ## Running
@@ -41,8 +38,7 @@ in mind
 
 To start coding you just need to:
 
-1. Clone the repository:
-`git@github.com:victorpopkov/universal-redux.git`
+1. Clone the repository: `git@github.com:victorpopkov/universal-redux.git`
 2. Install packages: `yarn install`
 3. Rename `.env.dev` to `.env`
 4. Launch: `yarn dev`
@@ -53,8 +49,7 @@ To start coding you just need to:
 In order to launch the production version you will need to build the project
 first before actually starting it:
 
-1. Clone the repository:
-`git@github.com:victorpopkov/universal-redux.git`
+1. Clone the repository: `git@github.com:victorpopkov/universal-redux.git`
 2. Install packages: `yarn install`
 3. Rename `.env.prod` to `.env`
 4. Build: `yarn build`
@@ -71,12 +66,12 @@ both system-wide and `.env` specific (take into account that any values in the
 ### Environment variables
 
 | Environment variable     | Default value           | Description                                                                                                                                                                                                                                         |
-|--------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `APP_API_PORT`           | `3030`                  | The API port.                                                                                                                                                                                                                                       |
 | `APP_API_PROXY_DISABLED` | `0`                     | The API proxy is disabled or not. When the value is set to `1` all other `APP_API_PROXY_*` variables can be safely removed as the app will talk to the API directly.                                                                                |
 | `APP_API_PROXY_PATH`     | `/api`                  | The API proxy path.                                                                                                                                                                                                                                 |
-| `APP_API_PROXY_TARGET`   | `http://localhost:3030` | The API proxy target (**without a trailing slash**) used by the [http-proxy](https://github.com/nodejitsu/node-http-proxy). By default, it points to the current project API. *Change this value if you are using an external API through a proxy.* |
-| `APP_API_TARGET`         | `http://localhost:3030` | The API target (**without a trailing slash**). *Change this value if you are using an external API.*                                                                                                                                                |
+| `APP_API_PROXY_TARGET`   | `http://localhost:3030` | The API proxy target (**without a trailing slash**) used by the [http-proxy](https://github.com/nodejitsu/node-http-proxy). By default, it points to the current project API. _Change this value if you are using an external API through a proxy._ |
+| `APP_API_TARGET`         | `http://localhost:3030` | The API target (**without a trailing slash**). _Change this value if you are using an external API._                                                                                                                                                |
 | `APP_BASE_PATH`          | `/`                     | The app base path (**without a trailing slash**).                                                                                                                                                                                                   |
 | `APP_DEV_SERVER_PORT`    | `3001`                  | The [webpack-dev-server](https://github.com/webpack/webpack-dev-server) port.                                                                                                                                                                       |
 | `APP_HOST`               | `0.0.0.0`               | The app host.                                                                                                                                                                                                                                       |
@@ -87,7 +82,7 @@ both system-wide and `.env` specific (take into account that any values in the
 
 ```bash
 .
-├── api/                         
+├── api/
 ├── bin/
 │   ├── api.js
 │   └── server.js

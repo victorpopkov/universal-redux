@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 
 - **[maintenance]** Integration with remark in favour of Prettier
+- **[maintenance]** Obsolete dependency `eslint-loader` in favour of `eslint-webpack-plugin`
 - Dependency `better-npm-run` in favour of `env-cmd`
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
 

@@ -135,10 +135,10 @@ module.exports = merge(common, {
     filename: '[name]-[hash].js',
   },
   plugins: [
+    new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name]-[chunkhash].css',
       chunkFilename: 'assets/css/[id].css',
     }),
-    new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
   ],
 });

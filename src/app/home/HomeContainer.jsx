@@ -6,6 +6,7 @@ import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
 import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
+import gfm from 'remark-gfm';
 import * as duckMarkdown from '../markdown/duck/index'; // eslint-disable-line sort-imports
 import { Jumbotron, Sidebar } from '../common';
 import styles from './HomeContainer.scss';
@@ -111,6 +112,7 @@ class HomeContainer extends Component {
         <h2>{markdown.get('error')}</h2>
       ) : (
         <Markdown
+          plugins={[gfm]}
           renderers={{
             heading: this.markdownHeading,
             listItem: this.markdownListItem,

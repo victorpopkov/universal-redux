@@ -25,7 +25,9 @@ export default ({ chunks }) => {
 
   // paths
   const pathBuild = path.resolve(__dirname, '../build/');
-  const pathFavicon = __DEVELOPMENT__ ? path.resolve(__dirname, 'assets/favicon/favicon.ico') : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
+  const pathFavicon = __DEVELOPMENT__
+    ? path.resolve(__dirname, 'assets/favicon/favicon.ico')
+    : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
 
   let proxy = null;
   if (!config.appApiProxyDisabled) {
@@ -41,10 +43,12 @@ export default ({ chunks }) => {
   }
 
   app
-    .use(bodyParser.urlencoded({
-      extended: false,
-      type: 'application/x-www-form-urlencoded',
-    }))
+    .use(
+      bodyParser.urlencoded({
+        extended: false,
+        type: 'application/x-www-form-urlencoded',
+      }),
+    )
     .use(compression())
     .use(cookiesMiddleware())
     .use(Express.static(pathBuild))
@@ -62,12 +66,11 @@ export default ({ chunks }) => {
       };
 
       const hydrateOnClient = () => {
-        res.send(`<!doctype html>\n${ReactDOMServer.renderToString(
-          <Html
-            assets={chunks()}
-            store={store}
-          />,
-        )}`);
+        res.send(
+          `<!doctype html>\n${ReactDOMServer.renderToString(
+            <Html assets={chunks()} store={store} />,
+          )}`,
+        );
       };
 
       if (__SERVER__ && __DISABLE_SSR__) {
@@ -79,36 +82,37 @@ export default ({ chunks }) => {
         location,
         routes,
         helpers,
-      })
-        .then(() => {
-          const context = {};
+      }).then(() => {
+        const context = {};
 
-          const appHTML = ReactDOMServer.renderToString(
-            <Provider key="provider" store={store}>
-              <ConnectedRouter history={history}>
-                <StaticRouter basename={config.appBasePath} context={context} location={location}>
-                  <ReduxAsyncConnect helpers={helpers} routes={routes} />
-                </StaticRouter>
-              </ConnectedRouter>
-            </Provider>,
-          );
+        const appHTML = ReactDOMServer.renderToString(
+          <Provider key="provider" store={store}>
+            <ConnectedRouter history={history}>
+              <StaticRouter
+                basename={config.appBasePath}
+                context={context}
+                location={location}
+              >
+                <ReduxAsyncConnect helpers={helpers} routes={routes} />
+              </StaticRouter>
+            </ConnectedRouter>
+          </Provider>,
+        );
 
-          // context.url will contain the URL to redirect to if a <Redirect> was used
-          const { url: contextUrl } = context;
+        // context.url will contain the URL to redirect to if a <Redirect> was used
+        const { url: contextUrl } = context;
 
-          if (contextUrl) {
-            res.header('Location', contextUrl);
-            return res.sendStatus(302);
-          }
+        if (contextUrl) {
+          res.header('Location', contextUrl);
+          return res.sendStatus(302);
+        }
 
-          return res.send(`<!doctype html>\n${ReactDOMServer.renderToString(
-            <Html
-              assets={chunks()}
-              component={appHTML}
-              store={store}
-            />,
-          )}`);
-        });
+        return res.send(
+          `<!doctype html>\n${ReactDOMServer.renderToString(
+            <Html assets={chunks()} component={appHTML} store={store} />,
+          )}`,
+        );
+      });
     });
 
   if (config.appPort) {
@@ -132,9 +136,15 @@ export default ({ chunks }) => {
         );
       }
 
-      console.info('==> Open http://%s:%s in a browser to view the app.', config.appHost, config.appPort);
+      console.info(
+        '==> Open http://%s:%s in a browser to view the app.',
+        config.appHost,
+        config.appPort,
+      );
     });
   } else {
-    console.error('==> ERROR: No APP_PORT environment variable has been specified.');
+    console.error(
+      '==> ERROR: No APP_PORT environment variable has been specified.',
+    );
   }
 };

@@ -35,7 +35,9 @@ class Navbar extends Component {
     return (
       <BaseNavbar expand="md" light>
         <Container>
-          <NavbarBrand tag={Link} to="/">{config.package.name}</NavbarBrand>
+          <NavbarBrand tag={Link} to="/">
+            {config.package.name}
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={collapsed} timeout={0} navbar>
             <div className="d-block d-md-inline-block ml-auto text-center">
@@ -51,14 +53,18 @@ class Navbar extends Component {
               <h6>Getting Started</h6>
               <Nav navbar>
                 <NavItem>
-                  <NavLink tag={Link} to="/">Overview</NavLink>
+                  <NavLink tag={Link} to="/">
+                    Overview
+                  </NavLink>
                 </NavItem>
               </Nav>
               <hr />
               <h6>Examples</h6>
               <Nav navbar>
                 <NavItem>
-                  <NavLink tag={Link} to="/404">404 Not Found</NavLink>
+                  <NavLink tag={Link} to="/404">
+                    404 Not Found
+                  </NavLink>
                 </NavItem>
               </Nav>
             </div>

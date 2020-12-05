@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const merge = require('webpack-merge');
+const TerserPlugin = require('terser-webpack-plugin');
+const { merge } = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
 const common = require('./webpack.config.common');
@@ -10,9 +10,7 @@ const paths = require('./paths');
 module.exports = merge(common, {
   devtool: 'hidden-source-map',
   entry: {
-    client: [
-      path.join(paths.src, 'client.js'),
-    ],
+    client: [path.join(paths.src, 'client.jsx')],
     vendor: [
       'bootstrap-loader',
       path.join(paths.src, 'assets/scss/vendor.scss'),
@@ -99,7 +97,10 @@ module.exports = merge(common, {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.join(paths.src, 'assets/scss/sass-resources.scss'),
+              resources: path.join(
+                paths.src,
+                'assets/scss/sass-resources.scss',
+              ),
             },
           },
         ],
@@ -108,17 +109,7 @@ module.exports = merge(common, {
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        uglifyOptions: {
-          compress: {
-            drop_console: true,
-          },
-          warnings: false,
-        },
-        sourceMap: true,
-      }),
+      new TerserPlugin(),
       new OptimizeCssAssetsPlugin({
         canPrint: false,
         cssProcessor: require('cssnano'),
@@ -134,10 +125,10 @@ module.exports = merge(common, {
     filename: '[name]-[hash].js',
   },
   plugins: [
+    new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name]-[chunkhash].css',
       chunkFilename: 'assets/css/[id].css',
     }),
-    new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
   ],
 });

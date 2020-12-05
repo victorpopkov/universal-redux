@@ -3,9 +3,9 @@
 
   .markdown {
     .heading {
-      border-bottom: 1px solid rgba($black, .1);
+      border-bottom: 1px solid rgba($black, 0.1);
       margin-bottom: 16px;
-      padding-bottom: .3em;
+      padding-bottom: 0.3em;
     }
 
     h1 {
@@ -18,10 +18,10 @@
     }
 
     h2 {
-      border-bottom: 1px solid rgba($black, .1);
+      border-bottom: 1px solid rgba($black, 0.1);
       margin-bottom: 16px;
       margin-top: 1em;
-      padding-bottom: .3em;
+      padding-bottom: 0.3em;
     }
 
     h3,
@@ -40,9 +40,9 @@
         list-style: none;
       }
 
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         display: inline-block;
-        margin: 0 .5em .25em -1.6em;
+        margin: 0 0.5em 0.25em -1.6em;
         vertical-align: middle;
       }
     }
@@ -71,18 +71,18 @@
       background: $gray-100;
     }
 
-    :not(pre) > code:not([class*="language-"]) {
-      background: transparentize($gray-900, .95);
+    :not(pre) > code:not([class*='language-']) {
+      background: transparentize($gray-900, 0.95);
       border-radius: 3px;
       color: darken($slategray, 30%);
-      font-size: .85em;
-      padding: .15em 0;
+      font-size: 0.85em;
+      padding: 0.15em 0;
       white-space: nowrap;
 
       &::before,
       &::after {
         content: '\00a0';
-        letter-spacing: -.2em;
+        letter-spacing: -0.2em;
       }
     }
   }
@@ -91,7 +91,7 @@
 @include media-breakpoint-down(sm) {
   .home {
     .markdown {
-      font-size: .85rem;
+      font-size: 0.85rem;
 
       h1 {
         font-size: $h3-font-size;

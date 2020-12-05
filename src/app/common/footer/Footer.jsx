@@ -9,7 +9,9 @@ const Footer = () => (
       <Row>
         <Col md={12} styleName="content">
           <ul>
-            <li><a href={config.package.repository}>View on GitHub</a></li>
+            <li>
+              <a href={config.package.repository}>View on GitHub</a>
+            </li>
           </ul>
           <div styleName="buttons">
             <iframe

@@ -1,6 +1,6 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
 const common = require('./webpack.config.common');
@@ -11,7 +11,7 @@ module.exports = merge(common, {
   entry: {
     client: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
-      path.join(paths.src, 'client.js'),
+      path.join(paths.src, 'client.jsx'),
     ],
     vendor: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
@@ -29,19 +29,13 @@ module.exports = merge(common, {
           {
             loader: 'babel-loader',
           },
-          {
-            loader: 'eslint-loader',
-          },
         ],
       },
       {
         test: /\.css/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
@@ -72,10 +66,7 @@ module.exports = merge(common, {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
@@ -112,7 +103,10 @@ module.exports = merge(common, {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.join(paths.src, 'assets/scss/sass-resources.scss'),
+              resources: path.join(
+                paths.src,
+                'assets/scss/sass-resources.scss',
+              ),
             },
           },
         ],
@@ -120,9 +114,9 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
-    new StyleLintPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(/webpack-stats\.json$/),
+    new ESLintPlugin(),
+    new StyleLintPlugin(),
   ],
 });

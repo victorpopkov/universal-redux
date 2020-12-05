@@ -9,19 +9,12 @@ const app = new Express();
 const compiler = webpack(webpackConfig);
 const port = config.appDevServerPort;
 
-const serverOptions = {
-  headers: { 'Access-Control-Allow-Origin': '*' },
-  hot: true,
-  inline: true,
-  lazy: false,
-  noInfo: true,
-  publicPath: webpackConfig.output.publicPath,
-  quiet: true,
-  stats: { colors: true },
-};
-
 app
-  .use(require('webpack-dev-middleware')(compiler, serverOptions))
+  .use(
+    require('webpack-dev-middleware')(compiler, {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    }),
+  )
   .use(require('webpack-hot-middleware')(compiler))
   .listen(port, (err) => {
     if (err) {

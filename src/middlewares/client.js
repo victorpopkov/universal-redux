@@ -4,7 +4,8 @@
  * @param client
  * @returns {function(): function(*=): Function}
  */
-export default (client) => () => (next) => (action) => { // { dispatch, getState }
+export default (client) => () => (next) => (action) => {
+  // { dispatch, getState }
   const { promise, types, ...rest } = action;
 
   // if (typeof action === 'function') {

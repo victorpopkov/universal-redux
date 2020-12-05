@@ -156,6 +156,6 @@
     "test": "npm-run-all --continue-on-error lint:*",
     "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
     "watch:client": "node ./webpack/webpack-dev-server.js",
-    "watch:server": "webpack --config ./webpack/webpack.config.server.dev.babel.js --colors --display-error-details --watch"
+    "watch:server": "webpack --config ./webpack/webpack.config.server.dev.babel.js --watch"
   }
 }

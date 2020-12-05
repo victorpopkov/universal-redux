@@ -94,14 +94,16 @@ both system-wide and `.env` specific (take into account that any values in the
 │   │   └── scss/
 │   ├── helpers/
 │   │   ├── ApiClient.js # helper to use `axios` library
-│   │   └── Html.js      # helper for HTML Server-Side Rendering (SSR)
+│   │   └── Html.jsx     # helper for HTML Server-Side Rendering (SSR)
 │   ├── middlewares
 │   │   └── client.js # our tiny client middleware
-│   ├── client.js
+│   ├── store
+│   │   ├── configureStore.js
+│   │   └── dev-tools.js
+│   ├── client.jsx
 │   ├── reducers.js
 │   ├── routes.js
-│   ├── server.js
-│   └── store.js
+│   └── server.jsx
 ├── webpack/ # webpack related configs
 │   ├── paths.js
 │   ├── universal-webpack-settings.json

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Integration with "Code Climate" for code quality and test coverage reports
 - **[maintenance]** Integration with "Codecov" for test coverage reports
+- **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
 - **[maintenance]** This `CHANGELOG.md`
 - Script `lint:prettier` in `package.json`
 
@@ -18,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
 - **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
+- **[maintenance]** Import of `webpack-merge` in webpack configurations
+- **[maintenance]** Usage of `copy-webpack-plugin` in webpack common configurations
+- **[maintenance]** Usage of `webpack-dev-middleware` in webpack configurations
 - Dependencies to match the latest ones
 - Extension `JS` to `JSX` where appropriate
 - Website homepage badges
@@ -26,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Integration with remark in favour of Prettier
 - **[maintenance]** Obsolete dependency `eslint-loader` in favour of `eslint-webpack-plugin`
+- **[maintenance]** Usage of `mini-css-extract-plugin` in webpack dev configurations
 - Dependency `better-npm-run` in favour of `env-cmd`
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
 

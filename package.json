@@ -122,7 +122,7 @@
     "svgo-loader": "^2.2.1",
     "terser-webpack-plugin": "4.2.3",
     "url-loader": "^4.1.1",
-    "webpack": "^4.41.2",
+    "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0",
     "webpack-dev-middleware": "^4.0.2",
     "webpack-hot-middleware": "^2.25.0",

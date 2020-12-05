@@ -1,8 +1,7 @@
 # universal-redux
 
-[![David](https://img.shields.io/david/victorpopkov/universal-redux.svg)](https://david-dm.org/victorpopkov/universal-redux)
-[![David](https://img.shields.io/david/dev/victorpopkov/universal-redux.svg)](https://david-dm.org/victorpopkov/universal-redux?type=dev)
-[![Travis (.org)](https://img.shields.io/travis/victorpopkov/universal-redux.svg)](https://travis-ci.org/victorpopkov/universal-redux)
+[![David][]](https://david-dm.org/victorpopkov/universal-redux)
+[![David Dev][]](https://david-dm.org/victorpopkov/universal-redux?type=dev)
 
 Universal [React](https://github.com/facebook/react) and
 [Redux](https://github.com/reactjs/react-redux) web app boilerplate bundled with
@@ -120,3 +119,6 @@ both system-wide and `.env` specific (take into account that any values in the
 ## License
 
 Released under the [MIT License](https://opensource.org/licenses/MIT).
+
+[david dev]: https://img.shields.io/david/dev/victorpopkov/universal-redux.svg
+[david]: https://img.shields.io/david/victorpopkov/universal-redux.svg

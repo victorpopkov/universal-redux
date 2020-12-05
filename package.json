@@ -126,7 +126,8 @@
     "webpack-cli": "^4.2.0",
     "webpack-dev-middleware": "^4.0.2",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "^5.4.0"
+    "webpack-merge": "^5.4.0",
+    "yarn-audit-fix": "^3.2.12"
   },
   "engines": {
     "node": ">=14.*"
@@ -139,6 +140,7 @@
     "url": "github:victorpopkov/universal-redux"
   },
   "scripts": {
+    "audit:fix": "yarn-audit-fix",
     "build": "env-cmd npm-run-all build:*",
     "build:client": "webpack --config ./webpack/webpack.config.client.prod.babel.js --colors --display-error-details --verbose",
     "build:server": "webpack --config ./webpack/webpack.config.server.prod.babel.js --colors --display-error-details --verbose",

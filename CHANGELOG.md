@@ -11,9 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Integration with "Code Climate" for code quality and test coverage reports
 - **[maintenance]** Integration with "Codecov" for test coverage reports
-- **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
+- **[maintenance]** Integration with Prettier
+- **[maintenance]** Scripts `audit:fix`, `deduplicate` and `lint:prettier` in `package.json`
 - **[maintenance]** This `CHANGELOG.md`
-- Script `lint:prettier` in `package.json`
 
 ### Changed
 

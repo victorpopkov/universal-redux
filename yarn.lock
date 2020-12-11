@@ -1280,10 +1280,10 @@
   resolved "https://registry.yarnpkg.com/@types/find-cache-dir/-/find-cache-dir-3.2.0.tgz#eaaf331699dccf52c47926e4d4f8f3ed8db33f3c"
   integrity sha512-+JeT9qb2Jwzw72WdjU+TSvD5O1QRPWCeRpDJV+guiIq+2hwR0DFGw+nZNbTFjMIVe6Bf4GgAKeB/6Ytx6+MbeQ==
 
-"@types/fs-extra@^9.0.2":
-  version "9.0.4"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.4.tgz#12553138cf0438db9a31cdc8b0a3aa9332eb67aa"
-  integrity sha512-50GO5ez44lxK5MDH90DYHFFfqxH7+fTqEEnvguQRzJ/tY9qFrMSHLiYHite+F3SNmf7+LHC1eMXojuD+E3Qcyg==
+"@types/fs-extra@^9.0.4":
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.5.tgz#2afb76a43a4bef80a363b94b314d0ca1694fc4f8"
+  integrity sha512-wr3t7wIW1c0A2BIJtdVp4EflriVaVVAsCAIHVzzh8B+GiFv9X1xeJjCs4upRXtzp7kQ6lP5xvskjoD4awJ1ZeA==
   dependencies:
     "@types/node" "*"
 
@@ -11969,14 +11969,14 @@ yargs@^13.3.2:
     y18n "^4.0.0"
     yargs-parser "^13.1.2"
 
-yarn-audit-fix@^3.2.12:
-  version "3.2.12"
-  resolved "https://registry.yarnpkg.com/yarn-audit-fix/-/yarn-audit-fix-3.2.12.tgz#552839204b48c346c50c6c08537eec923eaa6477"
-  integrity sha512-rIgu+ueZFl2eWtS+Wo4DrMRSPC4weCQ95sGeXAvxyvBwtiZ9zfIqaKMg3KTSKCmEsxZLmlcZ+lVQfmWfRSvgEA==
+yarn-audit-fix@^3.2.13:
+  version "3.2.13"
+  resolved "https://registry.yarnpkg.com/yarn-audit-fix/-/yarn-audit-fix-3.2.13.tgz#aa71a1edca4e688857f15b6b209472dce79d5ddc"
+  integrity sha512-yPvdF5+v7MDB+/kqpzLSwxlUMBAIH3n9tadlfVpjDWVQ+KHWGxCW9Gk1fK5I7h960VwdCKeR3L6Ik8uwS8nVCw==
   dependencies:
     "@types/bash-glob" "^2.0.0"
     "@types/find-cache-dir" "^3.2.0"
-    "@types/fs-extra" "^9.0.2"
+    "@types/fs-extra" "^9.0.4"
     "@types/npm" "^2.0.31"
     bash-glob "^2.0.0"
     bash-path "^2.0.1"

@@ -11444,10 +11444,10 @@ universal-cookie@^4.0.0, universal-cookie@^4.0.4:
     "@types/cookie" "^0.3.3"
     cookie "^0.4.0"
 
-universal-webpack@^0.6.14:
-  version "0.6.14"
-  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.6.14.tgz#747d7a38ef21ed838c30421d3818f4d21cc15839"
-  integrity sha512-yjOJfSNszm6Syz5rTwUYNEGqYvCprBVoyNA55UqWY5HHlnLlihJ4rhB3aXHnz09rEekGFCnwJnBU9GGHqsrwUA==
+universal-webpack@^0.6.15:
+  version "0.6.15"
+  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.6.15.tgz#e6a7b852b143931b75372ff2e1be3f3c907df18b"
+  integrity sha512-A0RQ5QTXrw+a+irEWtM/Y9nsUoy+hJ4CAMzV0BVwuT9CNPoAN5MszEyaotGTt/U/gE/Kl0XbKWmQTlidPyNxrA==
   dependencies:
     colors "^1.4.0"
     fs-extra "^0.30.0"

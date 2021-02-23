@@ -16,7 +16,7 @@
     "change-case": "^4.1.2",
     "classnames": "^2.2.6",
     "compression": "^1.7.4",
-    "connected-react-router": "^6.8.0",
+    "connected-react-router": "^6.9.1",
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",

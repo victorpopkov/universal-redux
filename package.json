@@ -119,7 +119,7 @@
     "stylelint-scss": "^3.19.0",
     "stylelint-webpack-plugin": "^2.1.1",
     "svgo": "^2.0.3",
-    "svgo-loader": "^2.2.1",
+    "svgo-loader": "^2.2.2",
     "terser-webpack-plugin": "4.2.3",
     "url-loader": "^4.1.1",
     "webpack": "^4.44.2",

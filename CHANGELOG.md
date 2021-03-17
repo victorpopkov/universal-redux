@@ -19,8 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
 - **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
-- **[maintenance]** Dependency `react-hot-loader` to be inside dependencies in `package.json`
+- **[maintenance]** Import of `config` in `api.js`
 - **[maintenance]** Import of `webpack-merge` in webpack configurations
+- **[maintenance]** Most `devDependencies` to be inside `dependencies` in `package.json`
 - **[maintenance]** Replace `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
 - **[maintenance]** Usage of `copy-webpack-plugin` in webpack common configurations
 - **[maintenance]** Usage of `webpack-dev-middleware` in webpack configurations

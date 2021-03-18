@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - **[maintenance]** Author email in `package.json`
+- **[maintenance]** Require of `configuration` in `bin/server.js`
 - Differentiation between some `dependencies` and `devDependencies` in `package.json`
 - Plugin `@babel/plugin-proposal-decorators` order in Babel configurations
 - Plugin `dotenv-webpack` webpack common configurations

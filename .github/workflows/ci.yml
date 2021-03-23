@@ -1,0 +1,132 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [14.x]
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Set a job-wide environment variables
+        run: |
+          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "GITHUB_JOB_NAME=build" >> $GITHUB_ENV
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install
+        run: yarn install --ignore-scripts && npm rebuild node-sass
+      - name: Build
+        id: build
+        run: |
+          # build
+          yarn build
+          export STATUS="$?"
+
+          # env
+          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
+
+          # status
+          if [ "${STATUS}" -eq 0 ]; then
+            exit 0
+          else
+            exit 1
+          fi
+      - name: Prepare success Slack notification
+        if: success()
+        run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"universal-redux","attachments":[{"color":"#2eb886","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has passed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
+      - name: Prepare failure Slack notification
+        if: failure()
+        run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"universal-redux","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
+      - name: Send Slack notification
+        if: always()
+        uses: Ilshidur/action-slack@master
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [14.x]
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Set a job-wide environment variables
+        run: |
+          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "GITHUB_JOB_NAME=lint" >> $GITHUB_ENV
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install
+        run: yarn install --ignore-scripts
+      - name: Lint
+        id: lint
+        run: |
+          # JavaScript
+          export LINT_ISSUES_JS=$(yarn ci:eslint | grep Issues | awk -F' ' '{ print $2 }')
+
+          # Markdown
+          export LINT_ISSUES_MD=$(($(yarn ci:prettier:md | wc -l) - 5))
+          export LINT_ISSUES_MD=$((LINT_ISSUES_MD < 0 ? 0 : LINT_ISSUES_MD))
+
+          # SCSS
+          export LINT_ISSUES_SCSS=$(($(yarn ci:prettier:scss | wc -l) - 5))
+          export LINT_ISSUES_SCSS=$((LINT_ISSUES_SCSS < 0 ? 0 : LINT_ISSUES_SCSS))
+
+          # YAML
+          export LINT_ISSUES_YML=$(($(yarn ci:prettier:yml | wc -l) - 5))
+          export LINT_ISSUES_YML=$((LINT_ISSUES_YML < 0 ? 0 : LINT_ISSUES_YML))
+
+          # Issues
+          export LINT_ISSUES=$((LINT_ISSUES_JS + LINT_ISSUES_MD + LINT_ISSUES_SCSS + LINT_ISSUES_YML))
+
+          # env
+          echo "LINT_ISSUES=${LINT_ISSUES}" >> $GITHUB_ENV
+          echo "LINT_ISSUES_JS=${LINT_ISSUES_JS}" >> $GITHUB_ENV
+          echo "LINT_ISSUES_MD=${LINT_ISSUES_MD}" >> $GITHUB_ENV
+          echo "LINT_ISSUES_SCSS=${LINT_ISSUES_SCSS}" >> $GITHUB_ENV
+          echo "LINT_ISSUES_YML=${LINT_ISSUES_YML}" >> $GITHUB_ENV
+          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
+
+          # lint
+          yarn lint || true
+
+          # status
+          if [ "${LINT_ISSUES}" -eq 0 ]; then
+            exit 0
+          else
+            exit 1
+          fi
+      - name: Prepare success Slack notification
+        if: success()
+        run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"universal-redux","attachments":[{"color":"#2eb886","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has passed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed with no issues on Node.js *{{ NODE_VERSION }}*"}}]}]}'
+      - name: Prepare failure Slack notification
+        if: failure()
+        run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"universal-redux","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed with *{{ LINT_ISSUES }}* issues on Node.js *{{ NODE_VERSION }}*"}},{"type":"section","fields":[{"type":"mrkdwn","text":"*JavaScript (ESLint)*:\n{{ LINT_ISSUES_JS }}"},{"type":"mrkdwn","text":"*Markdown (Prettier)*:\n{{ LINT_ISSUES_MD }}"},{"type":"mrkdwn","text":"*SCSS (Prettier)*:\n{{ LINT_ISSUES_SCSS }}"},{"type":"mrkdwn","text":"*YAML (Prettier)*:\n{{ LINT_ISSUES_YML }}"}]}]}]}'
+      - name: Send Slack notification
+        if: always()
+        uses: Ilshidur/action-slack@master
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

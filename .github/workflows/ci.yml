@@ -41,6 +41,8 @@ jobs:
           else
             exit 1
           fi
+        env:
+          NODE_ENV: production
       - name: Prepare success Slack notification
         if: success()
         run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV

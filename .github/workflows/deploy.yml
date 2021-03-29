@@ -43,6 +43,7 @@ jobs:
           fi
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
+          NODE_ENV: production
       - name: Add Docker certificates to access the remote host
         run: |
           mkdir -p "${DOCKER_CERT_PATH}"

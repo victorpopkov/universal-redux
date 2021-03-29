@@ -24,6 +24,7 @@ jobs:
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
           echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
           echo "GITHUB_JOB_NAME=production" >> $GITHUB_ENV
+          echo "NODE_ENV=production"
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
         run: yarn install --ignore-scripts && npm rebuild node-sass

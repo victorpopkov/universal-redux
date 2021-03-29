@@ -7,7 +7,7 @@ const config = clientConfiguration(baseConfiguration, settings);
 
 config.plugins.push(
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': 'development',
+    'process.env.NODE_ENV': JSON.stringify('development'),
     __CLIENT__: true,
     __DEVELOPMENT__: true,
     __DEVTOOLS__: true,

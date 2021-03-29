@@ -9,7 +9,7 @@ const config = clientConfiguration(baseConfiguration, settings);
 config.plugins.push(
   new CleanWebpackPlugin(),
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': 'production',
+    'process.env.NODE_ENV': JSON.stringify('production'),
     __CLIENT__: true,
     __DEVELOPMENT__: false,
     __DEVTOOLS__: false,

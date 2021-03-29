@@ -3,6 +3,7 @@ const Dotenv = require('dotenv-webpack');
 const config = require('../config');
 const path = require('path');
 const paths = require('./paths');
+const webpack = require('webpack');
 
 const useFonts = [
   {
@@ -73,6 +74,9 @@ module.exports = {
     extensions: ['.json', '.js', '.jsx'],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
     new CopyPlugin({
       patterns: [
         {

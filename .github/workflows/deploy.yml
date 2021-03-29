@@ -15,27 +15,24 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
-      - name: Set a job-wide environment variables
-        run: |
-          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
-          echo "GITHUB_JOB_NAME=production" >> $GITHUB_ENV
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
+      - name: Set a job-wide environment variables
+        run: |
+          echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
+          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "GITHUB_JOB_NAME=production" >> $GITHUB_ENV
+          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
         run: yarn install --ignore-scripts && npm rebuild node-sass
       - name: Build
         id: build
         run: |
           # build
-          export APP_REVISION="$(git rev-parse HEAD)"
           yarn build
           export STATUS="$?"
-
-          # env
-          echo "APP_REVISION=${APP_REVISION}" >> $GITHUB_ENV
-          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
 
           # status
           if [ "${STATUS}" -eq 0 ]; then

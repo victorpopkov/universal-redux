@@ -16,14 +16,15 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
-      - name: Set a job-wide environment variables
-        run: |
-          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
-          echo "GITHUB_JOB_NAME=build" >> $GITHUB_ENV
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
+      - name: Set a job-wide environment variables
+        run: |
+          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "GITHUB_JOB_NAME=build" >> $GITHUB_ENV
+          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
         run: yarn install --ignore-scripts && npm rebuild node-sass
       - name: Build
@@ -32,9 +33,6 @@ jobs:
           # build
           yarn build
           export STATUS="$?"
-
-          # env
-          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
 
           # status
           if [ "${STATUS}" -eq 0 ]; then
@@ -67,14 +65,15 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
-      - name: Set a job-wide environment variables
-        run: |
-          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
-          echo "GITHUB_JOB_NAME=lint" >> $GITHUB_ENV
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
+      - name: Set a job-wide environment variables
+        run: |
+          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "GITHUB_JOB_NAME=lint" >> $GITHUB_ENV
+          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
         run: yarn install --ignore-scripts
       - name: Lint
@@ -104,7 +103,6 @@ jobs:
           echo "LINT_ISSUES_MD=${LINT_ISSUES_MD}" >> $GITHUB_ENV
           echo "LINT_ISSUES_SCSS=${LINT_ISSUES_SCSS}" >> $GITHUB_ENV
           echo "LINT_ISSUES_YML=${LINT_ISSUES_YML}" >> $GITHUB_ENV
-          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
 
           # lint
           yarn lint || true

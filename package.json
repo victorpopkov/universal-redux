@@ -44,6 +44,7 @@
     "normalizr": "^3.6.1",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "path": "^0.12.7",
     "pretty-error": "^3.0.3",
     "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",

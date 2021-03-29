@@ -28,7 +28,7 @@
     "classnames": "^2.2.6",
     "compression": "^1.7.4",
     "connected-react-router": "^6.9.1",
-    "copy-webpack-plugin": "^6.3.2",
+    "copy-webpack-plugin": "^8.1.0",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^7.0.2",
     "env-cmd": "^10.1.0",

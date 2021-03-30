@@ -104,7 +104,7 @@
     "postcss-import": "^14.0.0",
     "postcss-loader": "^5.2.0",
     "postcss-nested": "^4.2.3",
-    "postcss-scss": "^2.0.0",
+    "postcss-scss": "^3.0.5",
     "prettier": "^2.2.1",
     "react-a11y": "^1.1.0",
     "redbox-react": "^1.6.0",

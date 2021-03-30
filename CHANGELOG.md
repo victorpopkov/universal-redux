@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
+- **[maintenance]** Configurations for `babel-plugin-inline-react-svg` in `.babelrc`
 - **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
 - **[maintenance]** Import of `config` in `api.js`
 - **[maintenance]** Import of `webpack-merge` in webpack configurations

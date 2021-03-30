@@ -19,9 +19,11 @@
       {
         "svgo": {
           "plugins": [
-            { "cleanupIDs": false },
-            { "removeAttrs": { "attrs": "(data-name)" } },
-            { "removeUselessStrokeAndFill": false }
+            {
+              "name": "removeAttrs",
+              "params": { "attrs": "(data-name)" }
+            },
+            "cleanupIDs"
           ]
         }
       }

@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- **[maintenance]** Integration with "Code Climate" for code quality and test coverage reports
-- **[maintenance]** Integration with "Codecov" for test coverage reports
+- **[maintenance]** Integration with "GitHub Actions" for CI building and linting
+- **[maintenance]** Integration with "GitHub Actions" for production deploying
 - **[maintenance]** Integration with Prettier
 - **[maintenance]** Scripts `audit:fix`, `deduplicate` and `lint:prettier` in `package.json`
 - **[maintenance]** This `CHANGELOG.md`
@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **[maintenance]** Usage of `webpack-dev-middleware` in webpack configurations
 - Dependencies to match the latest ones
 - Extension `JS` to `JSX` where appropriate
+- Jumbotron to include the version and revision
 - Website homepage badges
 
 ### Removed

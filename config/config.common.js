@@ -47,6 +47,8 @@ module.exports = {
       ],
       link: [{ rel: 'shortcut icon', href: `${appBasePath}/favicon.ico` }],
     },
+    revision: process.env.APP_REVISION,
+    version: process.env.APP_VERSION || packageJson.version,
   },
   package: {
     dependencies: packageJson.dependencies,

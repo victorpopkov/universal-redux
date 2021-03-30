@@ -9,7 +9,8 @@ import {
 } from 'reactstrap';
 import React from 'react';
 import config from '@Config';
-import LogoReact from './logo_react.svg'; // eslint-disable-line sort-imports
+import JumbotronVersion from './JumbotronVersion'; // eslint-disable-line sort-imports
+import LogoReact from './logo_react.svg';
 import LogoReactstrap from './logo_reactstrap.svg';
 import LogoRedux from './logo_redux.svg';
 
@@ -17,7 +18,12 @@ const Jumbotron = () => (
   <BaseJumbotron className="m-0 pb-5 pt-5" styleName="jumbotron" tag="section">
     <Container>
       <h1>{config.package.name}</h1>
-      <h6 className="mb-4">{`Latest version: ${config.package.version}`}</h6>
+      <JumbotronVersion
+        className="mb-4"
+        name={config.app.name}
+        revision={config.app.revision}
+        version={config.app.version}
+      />
       <ul className="mb-4" styleName="versions">
         <li>
           <LogoReact id="logo-react" />

@@ -18,7 +18,7 @@
     "@babel/register": "^7.13.14",
     "@babel/runtime": "^7.13.10",
     "axios": "^0.21.1",
-    "babel-plugin-inline-react-svg": "^1.1.2",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-plugin-react-css-modules": "^5.2.6",
     "babel-plugin-webpack-alias": "^2.1.2",

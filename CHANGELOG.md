@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- App configuration `app.title` to `app.name`
 - Configurations for `babel-plugin-inline-react-svg`
 - Configurations for `copy-webpack-plugin`
 - Configurations for `dotenv-webpack`

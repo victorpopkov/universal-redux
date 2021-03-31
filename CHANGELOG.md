@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Configurations for ESLint to work with Prettier
 - Configurations for stylelint to work with Prettier
 - Dependencies to match the latest ones
+- Environment variable `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
 - Extension `JS` to `JSX` where appropriate
 - Import of `config` in `api.js`
 - Import of `webpack-merge` in webpack configurations

@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
+- Configurations `.babelrc` in favour of `babel.config.js`
 - Deprecated `better-npm-run` in favour of `env-cmd`
 - Deprecated `eslint-loader` in favour of `eslint-webpack-plugin`
 - Deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`

@@ -40,12 +40,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
 - Integration with remark in favour of Prettier
 - Usage of `mini-css-extract-plugin` in webpack dev configurations
+- Usage of `process.env.NODE_ENV` in `webpack.DefinePlugin()`
 
 ### Fixed
 
 - **[maintenance]** Author email in `package.json`
 - Differentiation between some `dependencies` and `devDependencies` in `package.json`
-- Issue with wrong values for `process.env.NODE_ENV` in `DefinePlugin`
 - Order of `@babel/plugin-proposal-decorators` in Babel configurations
 - Require of `configuration` in `bin/server.js`
 

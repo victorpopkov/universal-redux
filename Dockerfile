@@ -8,7 +8,7 @@ ENV APP_PUBLIC_PATH="/universal-redux/"
 ENV BABEL_ENV="production"
 ENV NODE_ENV="production"
 ENV NODE_PATH="/app/src"
-ENV UNIVERSAL_WEBPACK_CSS_LOADER_V3="true"
+ENV UNIVERSAL_WEBPACK_CSS_LOADER_V4="true"
 
 # Project
 COPY ./ /app/

@@ -124,14 +124,14 @@ export default ({ chunks }) => {
       if (proxy) {
         console.info(
           '---\n==> %s is running, talking to API server through proxy (%s => %s).',
-          config.app.title,
+          config.app.name,
           `${config.appApiProxyPath}`,
           `${config.appApiProxyTarget}`,
         );
       } else {
         console.info(
           '---\n==> %s is running, talking to API server directly (%s).',
-          config.app.title,
+          config.app.name,
           `${config.appApiTarget}`,
         );
       }

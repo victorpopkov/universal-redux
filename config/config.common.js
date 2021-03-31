@@ -32,7 +32,7 @@ const appDescription = packageJson.description;
 
 module.exports = {
   app: {
-    title: appName,
+    name: appName,
     description: appDescription,
     head: {
       titleTemplate: `${appName} | %s`,

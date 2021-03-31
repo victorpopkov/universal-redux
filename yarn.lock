@@ -4258,6 +4258,13 @@ generic-names@^2.0.1:
   dependencies:
     loader-utils "^1.1.0"
 
+generic-names@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/generic-names/-/generic-names-3.0.0.tgz#c69a01700098e1215d5a0b820ac21ddd70a78dbb"
+  integrity sha512-4zZck5fpODoHpbiPaQqwhSWKk+dxHeCL7U1UpQsYwl9w5iNU4+K6uBHifOe7e0FCOuKMUiGUXxwJdsqHZBCVew==
+  dependencies:
+    loader-utils "^2.0.0"
+
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"

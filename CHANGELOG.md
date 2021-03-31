@@ -17,36 +17,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
-- **[maintenance]** Configurations for `babel-plugin-inline-react-svg` in `.babelrc`
-- **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
-- **[maintenance]** Import of `config` in `api.js`
-- **[maintenance]** Import of `webpack-merge` in webpack configurations
-- **[maintenance]** Most `devDependencies` to be inside `dependencies` in `package.json`
-- **[maintenance]** Replace `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
-- **[maintenance]** Usage of `copy-webpack-plugin` in webpack common configurations
-- **[maintenance]** Usage of `webpack-dev-middleware` in webpack configurations
+- Configurations for `babel-plugin-inline-react-svg`
+- Configurations for `copy-webpack-plugin`
+- Configurations for `dotenv-webpack`
+- Configurations for `webpack-dev-middleware`
+- Configurations for ESLint to work with Prettier
+- Configurations for stylelint to work with Prettier
 - Dependencies to match the latest ones
 - Extension `JS` to `JSX` where appropriate
+- Import of `config` in `api.js`
+- Import of `webpack-merge` in webpack configurations
 - Jumbotron to include the version and revision
+- Most `devDependencies` to be inside `dependencies` in `package.json`
 - Website homepage badges
 
 ### Removed
 
-- **[maintenance]** Integration with remark in favour of Prettier
-- **[maintenance]** Obsolete dependency `eslint-loader` in favour of `eslint-webpack-plugin`
-- **[maintenance]** Usage of `mini-css-extract-plugin` in webpack dev configurations
-- Dependency `better-npm-run` in favour of `env-cmd`
+- Deprecated `better-npm-run` in favour of `env-cmd`
+- Deprecated `eslint-loader` in favour of `eslint-webpack-plugin`
+- Deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
+- Integration with remark in favour of Prettier
+- Usage of `mini-css-extract-plugin` in webpack dev configurations
 
 ### Fixed
 
 - **[maintenance]** Author email in `package.json`
-- **[maintenance]** Issue with wrong values for `process.env.NODE_ENV` in `DefinePlugin`
-- **[maintenance]** Require of `configuration` in `bin/server.js`
 - Differentiation between some `dependencies` and `devDependencies` in `package.json`
-- Plugin `@babel/plugin-proposal-decorators` order in Babel configurations
-- Plugin `dotenv-webpack` webpack common configurations
+- Issue with wrong values for `process.env.NODE_ENV` in `DefinePlugin`
+- Order of `@babel/plugin-proposal-decorators` in Babel configurations
+- Require of `configuration` in `bin/server.js`
 
 ## 0.1.0 - 2018-10-12
 

@@ -8,14 +8,7 @@ module.exports = (api) => {
   api.assertVersion('^7.4.5');
 
   const presets = [
-    [
-      '@babel/env',
-      {
-        targets: {
-          browsers: ['last 2 versions'],
-        },
-      },
-    ],
+    ['@babel/env', { targets: { browsers: ['last 2 versions'] } }],
     '@babel/react',
   ];
 

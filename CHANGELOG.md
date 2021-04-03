@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Import of `webpack-merge` in webpack configurations
 - Jumbotron to include the version and revision
 - Most `devDependencies` to be inside `dependencies` in `package.json`
+- Sidebar to become hidden on tablets
 - Website homepage badges
 
 ### Removed

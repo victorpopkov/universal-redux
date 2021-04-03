@@ -43,7 +43,7 @@ class HomeContainer extends Component {
   }
 
   markdownHeading = (props) => {
-    const { children, level } = props; // eslint-disable-line react/prop-types
+    const { children, level } = props;
 
     if (level === 1) {
       return (
@@ -63,7 +63,7 @@ class HomeContainer extends Component {
     let elementProps = {};
 
     if (props.checked !== null) {
-      const { checked } = props; // eslint-disable-line react/prop-types
+      const { checked } = props;
 
       checkbox = React.createElement('input', {
         disabled: true,
@@ -78,6 +78,16 @@ class HomeContainer extends Component {
     }
 
     return React.createElement('li', elementProps, checkbox, props.children);
+  };
+
+  markdownTable = (props) => {
+    const { children } = props;
+
+    return (
+      <div className="table-responsive">
+        {React.createElement('table', {}, children)}
+      </div>
+    );
   };
 
   reloadMarkdown() {
@@ -116,6 +126,7 @@ class HomeContainer extends Component {
           renderers={{
             heading: this.markdownHeading,
             listItem: this.markdownListItem,
+            table: this.markdownTable,
           }}
           styleName="markdown"
         >

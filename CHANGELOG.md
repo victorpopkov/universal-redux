@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **[maintenance]** Integration with Prettier
 - **[maintenance]** Scripts `audit:fix`, `deduplicate` and `lint:prettier` in `package.json`
 - **[maintenance]** This `CHANGELOG.md`
+- Common `GitHub` component
+- GitHub buttons in the common `Header` component
 
 ### Changed
 
@@ -21,12 +23,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Configurations for `babel-plugin-inline-react-svg`
 - Configurations for `copy-webpack-plugin`
 - Configurations for `dotenv-webpack`
+- Configurations for `eslint` to work with Prettier
+- Configurations for `stylelint` to work with Prettier
 - Configurations for `webpack-dev-middleware`
-- Configurations for ESLint to work with Prettier
-- Configurations for stylelint to work with Prettier
 - Dependencies to match the latest ones
 - Environment variable `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
 - Extension `JS` to `JSX` where appropriate
+- GitHub buttons in the common `Footer` component
 - Import of `config` in `api.js`
 - Import of `webpack-merge` in webpack configurations
 - Jumbotron to include the version and revision
@@ -41,6 +44,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Deprecated `better-npm-run` in favour of `env-cmd`
 - Deprecated `eslint-loader` in favour of `eslint-webpack-plugin`
 - Deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
+- Deprecated `window.devToolsExtension` in favour of `window.__REDUX_DEVTOOLS_EXTENSION__`
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
 - Integration with remark in favour of Prettier
 - Obsolete common `Progress` component

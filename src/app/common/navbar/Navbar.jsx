@@ -11,6 +11,7 @@ import {
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import config from '@Config';
+import GitHub from '../github/GitHub';
 
 class Navbar extends Component {
   constructor(props) {
@@ -46,6 +47,9 @@ class Navbar extends Component {
                 className="d-flex align-content-center align-items-center"
                 navbar
               >
+                <NavItem className="mr-0 mr-lg-2">
+                  <GitHub className="mb-sm-2" />
+                </NavItem>
                 <NavItem>
                   <NavLink href={config.package.repository}>GitHub</NavLink>
                 </NavItem>

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import { ImmutableLoadingBar as LoadingBar } from 'react-redux-loading-bar';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
 import { renderRoutes } from 'react-router-config';
-import { Footer, Navbar, Progress } from './common'; // eslint-disable-line sort-imports
+import { Footer, Navbar } from './common'; // eslint-disable-line sort-imports
 import config from '../../config';
 
 @hot(module)
@@ -18,7 +19,7 @@ class App extends Component {
     return (
       <div className="app">
         <Helmet link={link} meta={meta} titleTemplate={titleTemplate} />
-        <Progress />
+        <LoadingBar className="loading" />
         <Navbar />
         {renderRoutes(routes)}
         <Footer />

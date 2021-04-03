@@ -1,13 +1,13 @@
-import Progress from 'react-progress-2';
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import actions from './actions';
 
-const notifyProgressShow = (caller) => (dispatch) => {
-  if (__CLIENT__ && Progress && !caller.inBackground) Progress.show();
+const notifyProgressShow = () => (dispatch) => {
+  if (__CLIENT__) dispatch(showLoading());
   dispatch(actions.notifyProgressShow);
 };
 
-const notifyProgressHide = (caller) => (dispatch) => {
-  if (__CLIENT__ && Progress && !caller.inBackground) Progress.hide();
+const notifyProgressHide = () => (dispatch) => {
+  if (__CLIENT__) dispatch(hideLoading());
   dispatch(actions.notifyProgressHide());
 };
 

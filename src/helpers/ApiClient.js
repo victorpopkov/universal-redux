@@ -7,16 +7,6 @@ import config from '@Config';
 export default class ApiClient {
   static methods = ['get', 'post', 'put', 'patch', 'del'];
 
-  formatUrl = (path) => {
-    const adjustedPath = path[0] !== '/' ? `/${path}` : path;
-
-    if (config.appApiProxyDisabled || __SERVER__) {
-      return `${config.appApiTarget + adjustedPath}`;
-    }
-
-    return `${config.appBasePath + config.appApiProxyPath + adjustedPath}`;
-  };
-
   constructor(req) {
     const cookies = (req && req.universalCookies) || new Cookies();
 
@@ -31,8 +21,8 @@ export default class ApiClient {
         ) =>
           new Promise((resolve, reject) => {
             let request = {
-              method,
               url: this.formatUrl(path),
+              method,
               params,
               data,
               cancelToken,
@@ -51,6 +41,7 @@ export default class ApiClient {
 
             if (files && files.files && files.files.length > 0) {
               const formData = new FormData();
+
               files.files.forEach((f) => {
                 formData.append(files.name || f.name, f);
               });
@@ -62,49 +53,53 @@ export default class ApiClient {
                     'Content-Type': 'multipart/form-data',
                   },
                 })
-                .then((response) => {
-                  if (token && response.status === 401) {
-                    cookies.remove('token');
-                  }
-
-                  const camelized = camelizeKeys(response.data);
-                  resolve(schema ? normalize(camelized, schema) : camelized);
-                })
-                .catch((error) => {
-                  if (!axios.isCancel(error)) {
-                    if (error.response) {
-                      reject(
-                        camelizeKeys(error.response.data) || error.response,
-                      );
-                    } else {
-                      reject(error);
-                    }
-                  }
-                });
+                .then((response) =>
+                  this.onSuccess(token, response, cookies, resolve, schema),
+                )
+                .catch((error) => this.onError(error, reject));
 
               return;
             }
 
             axios
               .request(request)
-              .then((response) => {
-                if (token && response.status === 401) {
-                  cookies.remove('token');
-                }
-
-                const camelized = camelizeKeys(response.data);
-                resolve(schema ? normalize(camelized, schema) : camelized);
-              })
-              .catch((error) => {
-                if (!axios.isCancel(error)) {
-                  if (error.response) {
-                    reject(camelizeKeys(error.response.data) || error.response);
-                  } else {
-                    reject(error);
-                  }
-                }
-              });
+              .then((response) =>
+                this.onSuccess(token, response, cookies, resolve, schema),
+              )
+              .catch((error) => this.onError(error, reject));
           })),
     );
   }
+
+  formatUrl = (path) => {
+    const adjustedPath = path[0] !== '/' ? `/${path}` : path;
+
+    if (config.appApiProxyDisabled || __SERVER__) {
+      return `${config.appApiTarget + adjustedPath}`;
+    }
+
+    return `${config.appBasePath + config.appApiProxyPath + adjustedPath}`;
+  };
+
+  onError = (error, reject) => {
+    if (!axios.isCancel(error)) {
+      if (error.response) {
+        reject(camelizeKeys(error.response.data) || error.response);
+      } else {
+        reject(error);
+      }
+    }
+  };
+
+  onSuccess = (token, response, cookies, resolve, schema) => {
+    if (token && response.status === 401) {
+      cookies.remove('token');
+    }
+
+    const camelized = camelizeKeys(response.data);
+    resolve(schema ? normalize(camelized, schema) : camelized);
+  };
+
+  // timeout = (ms) => (x) =>
+  //   new Promise((resolve) => setTimeout(() => resolve(x), ms));
 }

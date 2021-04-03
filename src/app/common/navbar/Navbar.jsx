@@ -33,22 +33,25 @@ class Navbar extends Component {
     const { collapsed } = this.state;
 
     return (
-      <BaseNavbar expand="md" light>
+      <BaseNavbar expand="xl" light>
         <Container>
           <NavbarBrand tag={Link} to="/">
             {config.package.name}
           </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={collapsed} timeout={0} navbar>
-            <div className="d-block d-md-inline-block ml-auto text-center">
-              <hr className="d-block d-sm-none" />
-              <Nav navbar>
+            <div className="d-block d-lg-inline-block ml-auto text-center">
+              <hr className="d-block d-md-none" />
+              <Nav
+                className="d-flex align-content-center align-items-center"
+                navbar
+              >
                 <NavItem>
                   <NavLink href={config.package.repository}>GitHub</NavLink>
                 </NavItem>
               </Nav>
             </div>
-            <div className="d-md-none d-sm-block ml-auto text-center">
+            <div className="d-block d-lg-none ml-auto text-center">
               <hr />
               <h6>Getting Started</h6>
               <Nav navbar>

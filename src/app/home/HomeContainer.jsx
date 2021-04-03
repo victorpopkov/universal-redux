@@ -145,7 +145,7 @@ class HomeContainer extends Component {
         <Jumbotron />
         <Container>
           <Row>
-            <Col md={9}>{this.renderMarkdown()}</Col>
+            <Col lg={9}>{this.renderMarkdown()}</Col>
             <Sidebar />
           </Row>
         </Container>

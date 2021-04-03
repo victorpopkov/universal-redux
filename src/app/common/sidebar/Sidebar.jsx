@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const Sidebar = () => (
-  <Col className="d-none d-md-block" md={3}>
+  <Col className="d-none d-lg-block" md={3}>
     <h5 className="pb-2">Getting Started</h5>
     <Nav vertical>
       <NavItem>

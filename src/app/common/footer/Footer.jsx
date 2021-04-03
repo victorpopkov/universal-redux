@@ -2,35 +2,19 @@ import './Footer.scss';
 import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import config from '@Config';
+import GitHub from '../github/GitHub';
 
 const Footer = () => (
   <footer className="footer" styleName="footer">
     <Container>
       <Row>
         <Col md={12} styleName="content">
-          <ul>
+          <ul className="mb-2 mb-md-0 mr-0 mr-md-4">
             <li>
               <a href={config.package.repository}>View on GitHub</a>
             </li>
           </ul>
-          <div styleName="buttons">
-            <iframe
-              frameBorder="0"
-              height="20px"
-              scrolling="0"
-              src={`https://ghbtns.com/github-btn.html?user=victorpopkov&repo=${config.package.name}&type=star&count=true`}
-              title="GitHub Stars"
-              width="80px"
-            />
-            <iframe
-              frameBorder="0"
-              height="20px"
-              scrolling="0"
-              src={`https://ghbtns.com/github-btn.html?user=victorpopkov&repo=${config.package.name}&type=watch&count=true&v=2`}
-              title="GitHub Watchers"
-              width="90px"
-            />
-          </div>
+          <GitHub />
         </Col>
       </Row>
     </Container>

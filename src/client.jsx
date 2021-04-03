@@ -50,8 +50,8 @@ if (process.env.NODE_ENV !== 'production') {
   }
 }
 
-// noinspection JSUnresolvedVariable
-if (__DEVTOOLS__ && !window.devToolsExtension) {
+// eslint-disable-next-line no-underscore-dangle
+if (__DEVTOOLS__ && !window.__REDUX_DEVTOOLS_EXTENSION__) {
   ReactDOM.render(
     <Provider key="provider" store={store}>
       <ConnectedRouter history={history}>

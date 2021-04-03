@@ -13,11 +13,12 @@ const devTools = (middlewares) => {
 
   middlewares.push(logger);
 
+  // eslint-disable-next-line no-underscore-dangle
+  const fn = window.__REDUX_DEVTOOLS_EXTENSION__;
+
   return compose(
     applyMiddleware(...middlewares),
-    window.devToolsExtension
-      ? window.devToolsExtension()
-      : DevTools.instrument(), // DevTools
+    fn ? fn() : DevTools.instrument(), // DevTools
     persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
   );
 };

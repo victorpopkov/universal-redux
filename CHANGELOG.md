@@ -36,11 +36,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 
 - Configurations `.babelrc` in favour of `babel.config.js`
+- Dependency `react-progress-2` in favour of `react-redux-loading-bar`
 - Deprecated `better-npm-run` in favour of `env-cmd`
 - Deprecated `eslint-loader` in favour of `eslint-webpack-plugin`
 - Deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
 - Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
 - Integration with remark in favour of Prettier
+- Obsolete common `Progress` component
 - Usage of `mini-css-extract-plugin` in webpack dev configurations
 - Usage of `process.env.NODE_ENV` in `webpack.DefinePlugin()`
 

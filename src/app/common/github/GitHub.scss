@@ -1,0 +1,31 @@
+.github {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+
+  a,
+  span {
+    display: inline-block;
+    line-height: 0;
+    margin: 0 ($grid-gutter-width / 4) 0 0;
+    vertical-align: middle;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .github {
+    a,
+    span {
+      margin: 0 ($grid-gutter-width / 4) ($grid-gutter-width / 4) 0;
+      vertical-align: middle;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -27,7 +27,7 @@ jobs:
           echo "NODE_ENV=development" >> $GITHUB_ENV
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
-        run: yarn install --ignore-scripts && npm rebuild node-sass
+        run: yarn install --ignore-scripts
       - name: Build
         id: build
         run: |

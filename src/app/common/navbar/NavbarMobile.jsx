@@ -22,10 +22,7 @@ const NavbarMobile = () => (
       <Col sm={4}>
         <hr />
         <h6>Getting Started</h6>
-        <Nav navbar>
-          {navItem('Overview', '/')}
-          {navItem('404 Not Found', '/404')}
-        </Nav>
+        <Nav navbar>{navItem('Overview', '/')}</Nav>
       </Col>
       <Col sm={4}>
         <hr />

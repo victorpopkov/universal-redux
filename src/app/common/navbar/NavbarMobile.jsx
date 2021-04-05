@@ -15,7 +15,9 @@ const NavbarMobile = () => (
       <Col sm={4}>
         <hr />
         <h6>Navigation</h6>
-        <Nav navbar>{navItem('GitHub', config.package.repository)}</Nav>
+        <Nav navbar>
+          {navItem('GitHub', config.package.repository, null, true)}
+        </Nav>
       </Col>
       <Col sm={4}>
         <hr />

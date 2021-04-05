@@ -1,0 +1,11 @@
+.mobile {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+}
+
+@include media-breakpoint-up(lg) {
+  .mobile {
+    display: none;
+  }
+}

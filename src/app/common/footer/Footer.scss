@@ -2,7 +2,7 @@
   margin-top: $grid-gutter-width;
   text-align: center;
 
-  :global(.container) {
+  :global .container {
     box-shadow: 0 -1px 0 transparentize($black, 0.9);
   }
 
@@ -13,14 +13,14 @@
 
   ul {
     display: inline-block;
-    height: 20px;
-    line-height: 20px;
+    line-height: 1.5;
     list-style: none;
     padding: 0;
     vertical-align: middle;
   }
 
   li {
+    line-height: 1.5;
     margin-right: $grid-gutter-width / 2;
 
     &:last-child {
@@ -30,6 +30,7 @@
 
   a {
     display: inline-block;
+    line-height: 1.5;
     vertical-align: middle;
   }
 }

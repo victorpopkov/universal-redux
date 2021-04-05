@@ -1,31 +1,22 @@
 .github {
   display: inline-block;
+  line-height: 1.5;
   text-align: left;
   vertical-align: middle;
 
   a,
   span {
     display: inline-block;
-    line-height: 0;
-    margin: 0 ($grid-gutter-width / 4) 0 0;
     vertical-align: middle;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
   }
-}
 
-@include media-breakpoint-down(sm) {
-  .github {
-    a,
-    span {
-      margin: 0 ($grid-gutter-width / 4) ($grid-gutter-width / 4) 0;
-      vertical-align: middle;
+  a {
+    line-height: 1.5;
+    padding: $nav-link-padding-y $navbar-nav-link-padding-x;
+  }
 
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
+  span {
+    line-height: 0;
+    padding: $nav-link-padding-y 0.25rem;
   }
 }

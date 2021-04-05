@@ -18,7 +18,9 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Helmet link={link} meta={meta} titleTemplate={titleTemplate} />
+        <Helmet link={link} meta={meta} titleTemplate={titleTemplate}>
+          <script async defer src="https://buttons.github.io/buttons.js" />
+        </Helmet>
         <LoadingBar className="loading" />
         <Navbar />
         {renderRoutes(routes)}

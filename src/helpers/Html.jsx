@@ -40,7 +40,6 @@ const Html = ({ assets, component, store }) => {
       </head>
       <body>
         <div dangerouslySetInnerHTML={{ __html: component }} id="content" />
-        <script async defer src="https://buttons.github.io/buttons.js" />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.__PRELOADED_STATE__=${JSON.stringify(

@@ -68,8 +68,8 @@ module.exports = {
   resolve: {
     modules: ['node_modules', 'src'],
     alias: {
-      '@Config': path.resolve(paths.root, 'config/'),
-      '@Root': path.resolve(paths.root),
+      '@Config': paths.config,
+      '@Root': paths.root,
     },
     extensions: ['.json', '.js', '.jsx'],
   },

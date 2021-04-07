@@ -1,7 +1,7 @@
 {
   "name": "universal-redux",
   "description": "Universal React and Redux web app boilerplate bundled with webpack.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Victor Popkov",
     "email": "victor@popkov.me"

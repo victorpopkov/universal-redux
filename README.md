@@ -62,9 +62,9 @@ Most of them are just the references to the environment variables which can be
 both system-wide and `.env` specific (take into account that any values in the
 `.env` will override the system-wide ones).
 
-### Environment variables
+### Environment Variables
 
-| Environment variable     | Default value           | Description                                                                                                                                                                                                                                         |
+| Environment variable     | Default                 | Description                                                                                                                                                                                                                                         |
 | ------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `APP_API_PORT`           | `3030`                  | The API port.                                                                                                                                                                                                                                       |
 | `APP_API_PROXY_DISABLED` | `0`                     | The API proxy is disabled or not. When the value is set to `1` all other `APP_API_PROXY_*` variables can be safely removed as the app will talk to the API directly.                                                                                |
@@ -77,7 +77,7 @@ both system-wide and `.env` specific (take into account that any values in the
 | `APP_PORT`               | `3000`                  | The app port.                                                                                                                                                                                                                                       |
 | `APP_PUBLIC_PATH`        | `/`                     | The app public path (**with a trailing slash**) to serve static assets and scripts.                                                                                                                                                                 |
 
-## Directory structure
+## Directory Structure
 
 ```bash
 .

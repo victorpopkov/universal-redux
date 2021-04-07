@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.2.0][] - 2021-04-07
+
 ### Added
 
 - **[maintenance]** Integration with "GitHub Actions" for CI building and linting
@@ -63,3 +65,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 First release.
 
 [unreleased]: https://github.com/victorpopkov/universal-redux/compare/v0.1.0...HEAD
+[0.2.0]: https://github.com/victorpopkov/universal-redux/compare/v0.1.0...v0.2.0

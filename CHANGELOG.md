@@ -62,4 +62,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 First release.
 
-[unreleased]: https://github.com/victorpopkov/react-ui-icheck/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/victorpopkov/universal-redux/compare/v0.1.0...HEAD

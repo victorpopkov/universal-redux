@@ -122,12 +122,12 @@ class HomeContainer extends Component {
         <h2>{markdown.get('error')}</h2>
       ) : (
         <Markdown
-          plugins={[gfm]}
-          renderers={{
-            heading: this.markdownHeading,
+          components={{
+            h1: this.markdownHeading,
             listItem: this.markdownListItem,
             table: this.markdownTable,
           }}
+          plugins={[gfm]}
           styleName="markdown"
         >
           {markdown.get('content')}

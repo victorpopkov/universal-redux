@@ -4,7 +4,7 @@ require('@babel/register');
 
 const dotenv = require('dotenv');
 const startServer = require('universal-webpack/server');
-const settings = require('../webpack/universal-webpack-settings');
+const settings = require('../webpack/universal-webpack-settings.json');
 
 let configuration;
 if (process.env.NODE_ENV === 'production') {

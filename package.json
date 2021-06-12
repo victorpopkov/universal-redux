@@ -30,7 +30,7 @@
     "connected-react-router": "^6.9.1",
     "copy-webpack-plugin": "^9.0.0",
     "css-minimizer-webpack-plugin": "^3.0.1",
-    "cssnano": "^5.0.5",
+    "cssnano": "^5.0.6",
     "dotenv": "^9.0.2",
     "dotenv-webpack": "^7.0.3",
     "env-cmd": "^10.1.0",

@@ -56,7 +56,7 @@ jobs:
           SLACK_CUSTOM_PAYLOAD: '{"channel":"universal-redux","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
       - name: Send Slack notification
         if: always()
-        uses: Ilshidur/action-slack@master
+        uses: Ilshidur/action-slack@2.1.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
@@ -130,6 +130,6 @@ jobs:
           SLACK_CUSTOM_PAYLOAD: '{"channel":"universal-redux","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed with *{{ LINT_ISSUES }}* issues on Node.js *{{ NODE_VERSION }}*"}},{"type":"section","fields":[{"type":"mrkdwn","text":"*JavaScript (ESLint)*:\n{{ LINT_ISSUES_JS }}"},{"type":"mrkdwn","text":"*Markdown (Prettier)*:\n{{ LINT_ISSUES_MD }}"},{"type":"mrkdwn","text":"*SCSS (Prettier)*:\n{{ LINT_ISSUES_SCSS }}"},{"type":"mrkdwn","text":"*YAML (Prettier)*:\n{{ LINT_ISSUES_YML }}"}]}]}]}'
       - name: Send Slack notification
         if: always()
-        uses: Ilshidur/action-slack@master
+        uses: Ilshidur/action-slack@2.1.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

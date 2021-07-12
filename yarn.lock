@@ -7808,10 +7808,10 @@ react-popper@^1.3.6:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-redux-loading-bar@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-redux-loading-bar/-/react-redux-loading-bar-5.0.0.tgz#fffbc2b893c556b7b4c577743427507ee6dbc1f3"
-  integrity sha512-orxhhnuTDHUJ8sWBf7NHc9iIvPx8+8LVmMmC9ka3UcXKbMRaPdaYfH2wCikOwVV6gxhRceFA/zaSLSdnGrF41Q==
+react-redux-loading-bar@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-redux-loading-bar/-/react-redux-loading-bar-5.0.2.tgz#e62d527892b0a7682baa2ebbb3fd34c0b807e485"
+  integrity sha512-M+gK/Q79UG3iVljv6myRJptdQ5sIKdYDigeukwGocvWLCgWFdtpeP8IY8lBIYsqHXtuFBP/gj7E3qvGwCtcpRQ==
   dependencies:
     prop-types "^15.7.2"
     react-lifecycles-compat "^3.0.4"

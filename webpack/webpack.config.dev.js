@@ -72,12 +72,12 @@ module.exports = merge(common, {
       },
       {
         test: /\.scss?$/,
-        include: [/node_modules/],
+        include: [/node_modules|src\/assets\/scss/],
         use: scssLoaders('global'),
       },
       {
         test: /\.scss?$/,
-        exclude: [/node_modules/],
+        exclude: [/node_modules|src\/assets\/scss/],
         use: scssLoaders('local'),
       },
     ],

@@ -10,9 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - Dependencies to match the latest ones
+- SCSS assets to be become imported globally
 
 ### Removed
 
+- Dependency `bootstrap-loader` in favour of the custom Bootstrap import
 - Dependency `optimize-css-assets-webpack-plugin` in favour of `css-minimizer-webpack-plugin`
 
 ## [0.2.0][] - 2021-04-07

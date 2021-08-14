@@ -61,7 +61,7 @@
     "react-router": "^5.2.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
-    "reactstrap": "^8.9.0",
+    "reactstrap": "^9.0.0-0",
     "redux": "^4.1.1",
     "redux-actions": "^2.6.5",
     "redux-connect": "^10.0.0",

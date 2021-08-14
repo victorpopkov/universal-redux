@@ -39,10 +39,10 @@ const scssLoaders = (mode) => [
 module.exports = merge(common, {
   devtool: 'hidden-source-map',
   entry: {
-    client: [path.join(paths.src, 'client.jsx')],
-    vendor: [
-      'bootstrap-loader',
-      path.join(paths.src, 'assets/scss/vendor.scss'),
+    vendor: [path.join(paths.src, 'assets/scss/vendor.scss')],
+    client: [
+      path.join(paths.src, 'assets/scss/style.scss'),
+      path.join(paths.src, 'client.jsx'),
     ],
   },
   mode: 'production',

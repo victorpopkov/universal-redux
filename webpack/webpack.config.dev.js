@@ -44,7 +44,6 @@ module.exports = merge(common, {
     ],
     vendor: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
-      'bootstrap-loader',
       path.join(paths.src, 'assets/scss/vendor.scss'),
     ],
   },

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Bootstrap from `4.6.0` to `5.1.0`
 - Dependencies to match the latest ones
 - SCSS assets to be become imported globally
 

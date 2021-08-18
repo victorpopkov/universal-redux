@@ -1,21 +1,19 @@
-import './Jumbotron.scss';
-import {
-  Jumbotron as BaseJumbotron,
-  Button,
-  Col,
-  Container,
-  Row,
-  UncontrolledTooltip,
-} from 'reactstrap';
+import { Button, Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
 import React from 'react';
 import config from '@Config';
+import classNames from 'classnames';
 import JumbotronVersion from './JumbotronVersion'; // eslint-disable-line sort-imports
 import LogoReact from './logo_react.svg';
 import LogoReactstrap from './logo_reactstrap.svg';
 import LogoRedux from './logo_redux.svg';
+import styles from './Jumbotron.scss';
 
 const Jumbotron = () => (
-  <BaseJumbotron className="m-0 pb-5 pt-5" styleName="jumbotron" tag="section">
+  <Col
+    className={classNames('py-5', 'text-center', styles.jumbotron)}
+    lg={12}
+    tag="section"
+  >
     <Container>
       <h1>{config.package.name}</h1>
       <JumbotronVersion
@@ -24,7 +22,7 @@ const Jumbotron = () => (
         revision={config.app.revision}
         version={config.app.version}
       />
-      <ul className="mb-4" styleName="versions">
+      <ul className={classNames('mb-4', styles.versions)}>
         <li>
           <LogoReact id="logo-react" />
           <UncontrolledTooltip placement="bottom" target="logo-react">
@@ -63,7 +61,7 @@ const Jumbotron = () => (
         </Col>
       </Row>
     </Container>
-  </BaseJumbotron>
+  </Col>
 );
 
 export default Jumbotron;

@@ -7,6 +7,8 @@ const webpack = require('webpack');
 const common = require('./webpack.config.common');
 const paths = require('./paths');
 
+const performanceSize = 256 * 4 * 1000;
+
 const cssLoaders = (mode) => [
   MiniCssExtractPlugin.loader,
   {
@@ -69,12 +71,12 @@ module.exports = merge(common, {
       },
       {
         test: /\.scss?$/,
-        include: [/node_modules|src\/assets\/scss/],
+        include: [/node_modules|src\/assets/],
         use: scssLoaders('global'),
       },
       {
         test: /\.scss?$/,
-        exclude: [/node_modules|src\/assets\/scss/],
+        exclude: [/node_modules|src\/assets/],
         use: scssLoaders('local'),
       },
     ],
@@ -84,18 +86,17 @@ module.exports = merge(common, {
       new TerserPlugin(),
       new CssMinimizerPlugin({
         minimizerOptions: {
-          preset: [
-            'default',
-            {
-              discardComments: { removeAll: true },
-            },
-          ],
+          preset: ['default', { discardComments: { removeAll: true } }],
         },
       }),
     ],
   },
   output: {
     filename: '[name].[chunkhash].js',
+  },
+  performance: {
+    maxAssetSize: performanceSize,
+    maxEntrypointSize: performanceSize,
   },
   plugins: [
     new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),

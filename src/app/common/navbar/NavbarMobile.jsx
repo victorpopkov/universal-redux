@@ -7,7 +7,7 @@ import config from '../../../../config';
 import navItem from './navItem';
 
 const NavbarMobile = () => (
-  <div className="d-block d-lg-none ml-auto text-center">
+  <div className="d-block d-lg-none ms-auto text-center">
     <Row>
       <Col sm={12}>
         <GitHub />

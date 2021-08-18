@@ -6,7 +6,7 @@ import config from '../../../../config';
 import navItem from './navItem';
 
 const NavbarMenu = () => (
-  <div className="d-none d-lg-inline-block ml-auto text-center">
+  <div className="d-none d-lg-inline-block ms-auto text-center">
     <Nav className="d-flex align-content-center align-items-center" navbar>
       <GitHub className="mb-sm-2" />
       {navItem('GitHub', config.package.repository, null, true)}

@@ -9,7 +9,7 @@ const Footer = () => (
     <Container>
       <Row>
         <Col md={12} styleName="content">
-          <ul className="mb-2 mb-md-0 mr-0 mr-md-4">
+          <ul className="mb-2 mb-sm-0 me-0 me-sm-4">
             <li>
               <a href={config.package.repository}>View on GitHub</a>
             </li>

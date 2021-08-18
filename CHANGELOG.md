@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Bump dependencies
 - Change `css-loader` mode from `local` to `global`
 - Migrate Bootstrap from `4.6.0` to `5.1.0`
+- Rename output CSS and JS
+- Replace SCSS division slashes with `sass:math`
 - Replace `bootstrap-loader` with a custom Bootstrap import
 - Replace `optimize-css-assets-webpack-plugin` with `css-minimizer-webpack-plugin`
 

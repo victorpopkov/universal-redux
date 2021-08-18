@@ -50,7 +50,7 @@
     blockquote {
       border-left: 4px solid $gray-300;
       color: $gray-600;
-      padding: 0 ($grid-gutter-width / 2);
+      padding: 0 math.div($grid-gutter-width, 2);
     }
 
     table {

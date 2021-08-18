@@ -3,6 +3,8 @@
 //
 // Paths should be relative to the path where project package.json is located.
 //
+@use 'sass:math';
+
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/variables';

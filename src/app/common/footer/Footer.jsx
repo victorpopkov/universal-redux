@@ -14,7 +14,9 @@ const Footer = () => (
               <a href={config.package.repository}>View on GitHub</a>
             </li>
           </ul>
-          <GitHub />
+          <div styleName="github">
+            <GitHub />
+          </div>
         </Col>
       </Row>
     </Container>

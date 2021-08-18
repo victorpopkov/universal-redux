@@ -1073,6 +1073,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.14.6":
+  version "7.15.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
+  integrity sha512-OvwMLqNXkCXSz1kSm58sEsNuhqOx/fKpnUnKnFB5v8uDda5bLNEHNgKPvhDN6IU0LDcnHQ90LlJ0Q6jnyBSIBA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.14.5":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.14.5.tgz#a9bc9d8b33354ff6e55a9c60d1109200a68974f4"
@@ -9742,11 +9749,12 @@ universal-cookie@^4.0.0, universal-cookie@^4.0.4:
     "@types/cookie" "^0.3.3"
     cookie "^0.4.0"
 
-universal-webpack@^0.6.15:
-  version "0.6.15"
-  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.6.15.tgz#e6a7b852b143931b75372ff2e1be3f3c907df18b"
-  integrity sha512-A0RQ5QTXrw+a+irEWtM/Y9nsUoy+hJ4CAMzV0BVwuT9CNPoAN5MszEyaotGTt/U/gE/Kl0XbKWmQTlidPyNxrA==
+universal-webpack@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.7.0.tgz#885d0294cb5a897f75eedcd295054bf242f09d58"
+  integrity sha512-WQKff4mpl3y1gGnFt1CUL7uoVsxUvDn5cldYbL6w44qOor8muTOVB6tVxNiALhfkc4j3bOC8aoG4oce4msdvEA==
   dependencies:
+    "@babel/runtime" "^7.14.6"
     colors "^1.4.0"
     fs-extra "^0.30.0"
     minimist "^1.2.5"

@@ -9,67 +9,61 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Bootstrap from `4.6.0` to `5.1.0`
-- Dependencies to match the latest ones
-- SCSS assets to be become imported globally
-
-### Removed
-
-- Dependency `bootstrap-loader` in favour of the custom Bootstrap import
-- Dependency `optimize-css-assets-webpack-plugin` in favour of `css-minimizer-webpack-plugin`
+- Bump dependencies
+- Change `css-loader` mode from `local` to `global`
+- Migrate Bootstrap from `4.6.0` to `5.1.0`
+- Replace `bootstrap-loader` with a custom Bootstrap import
+- Replace `optimize-css-assets-webpack-plugin` with `css-minimizer-webpack-plugin`
 
 ## [0.2.0][] - 2021-04-07
 
 ### Added
 
-- **[maintenance]** Integration with "GitHub Actions" for CI building and linting
-- **[maintenance]** Integration with "GitHub Actions" for production deploying
-- **[maintenance]** Integration with Prettier
-- **[maintenance]** Scripts `audit:fix`, `deduplicate` and `lint:prettier` in `package.json`
-- **[maintenance]** This `CHANGELOG.md`
-- Common `GitHub` component
-- GitHub buttons in the common `Header` component
+- **[maintenance]** Add [GitHub Actions][] workflow
+- **[maintenance]** Add [Prettier][] integration
+- **[maintenance]** Add `CHANGELOG.md`
+- **[maintenance]** Add `audit:fix`, `deduplicate` and `lint:prettier` scripts
+- Add jumbotron website version and revision
+- Add navbar [GitHub][] buttons
 
 ### Changed
 
-- App configuration `app.title` to `app.name`
-- Configurations for `babel-plugin-inline-react-svg`
-- Configurations for `copy-webpack-plugin`
-- Configurations for `dotenv-webpack`
-- Configurations for `eslint` to work with Prettier
-- Configurations for `stylelint` to work with Prettier
-- Configurations for `webpack-dev-middleware`
-- Dependencies to match the latest ones
-- Environment variable `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
-- Extension `JS` to `JSX` where appropriate
-- GitHub buttons in the common `Footer` component
-- Import of `config` in `api.js`
-- Import of `webpack-merge` in webpack configurations
-- Jumbotron to include the version and revision
-- Most `devDependencies` to be inside `dependencies` in `package.json`
-- Sidebar to become hidden on tablets
-- Website homepage badges
+- Bump dependencies
+- Change [ESLint][] and [stylelint][] configurations to work with [Prettier][]
+- Change `babel-plugin-inline-react-svg` configurations
+- Change `copy-webpack-plugin` configurations
+- Change `dotenv-webpack` configurations
+- Change `webpack-dev-middleware` configurations
+- Change footer [GitHub][] buttons
+- Change homepage badges
+- Hide sidebar on tablets
+- Move most `devDependencies` to `dependencies`
+- Rename `app.title` to `app.name`
+- Reorder `api.js` `config` import
+- Reorder `webpack-merge` import
+- Replace [remark][] with [Prettier][]
+- Replace `.babelrc` with `babel.config.js`
+- Replace `.env.dist` with `.env.dev` and `.env.prod`
+- Replace `JS` extension with `JSX` where appropriate
+- Replace `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
+- Replace `react-progress-2` with `react-redux-loading-bar`
+- Replace deprecated `better-npm-run` with `env-cmd`
+- Replace deprecated `eslint-loader` with `eslint-webpack-plugin`
+- Replace deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
+- Replace deprecated `window.devToolsExtension` with `window.__REDUX_DEVTOOLS_EXTENSION__`
 
 ### Removed
 
-- Configurations `.babelrc` in favour of `babel.config.js`
-- Dependency `react-progress-2` in favour of `react-redux-loading-bar`
-- Deprecated `better-npm-run` in favour of `env-cmd`
-- Deprecated `eslint-loader` in favour of `eslint-webpack-plugin`
-- Deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
-- Deprecated `window.devToolsExtension` in favour of `window.__REDUX_DEVTOOLS_EXTENSION__`
-- Environment file `.env.dist` in favour of `.env.dev` and `.env.prod`
-- Integration with remark in favour of Prettier
-- Obsolete common `Progress` component
-- Usage of `mini-css-extract-plugin` in webpack dev configurations
-- Usage of `process.env.NODE_ENV` in `webpack.DefinePlugin()`
+- Remove `process.env.NODE_ENV` from `webpack.DefinePlugin()`
+- Remove obsolete `Progress` component
+- Remove unused `mini-css-extract-plugin` from webpack dev configurations
 
 ### Fixed
 
-- **[maintenance]** Author email in `package.json`
-- Differentiation between some `dependencies` and `devDependencies` in `package.json`
-- Order of `@babel/plugin-proposal-decorators` in Babel configurations
-- Require of `configuration` in `bin/server.js`
+- **[maintenance]** Fix `package.json` author email
+- Fix `.babelrc` `@babel/plugin-proposal-decorators` order
+- Fix `bin/server.js` `configuration` require
+- Fix some `dependencies` and `devDependencies` differentiation
 
 ## 0.1.0 - 2018-10-12
 
@@ -77,3 +71,11 @@ First release.
 
 [unreleased]: https://github.com/victorpopkov/universal-redux/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/victorpopkov/universal-redux/compare/v0.1.0...v0.2.0
+[eslint]: https://eslint.org/
+[github actions]: https://github.com/features/actions
+[github]: https://github.com/
+[prettier]: https://prettier.io/
+[remark]: https://remark.js.org/
+[stylelint]: https://stylelint.io/
+[travis ci]: https://travis-ci.org/
+[webpack]: https://webpack.js.org/

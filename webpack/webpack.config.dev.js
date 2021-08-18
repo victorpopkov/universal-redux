@@ -38,13 +38,14 @@ const scssLoaders = (mode) => [
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   entry: {
-    client: [
-      'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
-      path.join(paths.src, 'client.jsx'),
-    ],
     vendor: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
       path.join(paths.src, 'assets/scss/vendor.scss'),
+    ],
+    client: [
+      'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
+      path.join(paths.src, 'client.jsx'),
+      path.join(paths.scss, 'style.scss'),
     ],
   },
   mode: 'development',
@@ -61,22 +62,22 @@ module.exports = merge(common, {
       },
       {
         test: /\.css?$/,
-        include: [/node_modules/],
+        include: [/node_modules|src\/assets/],
         use: cssLoaders('global'),
       },
       {
         test: /\.css?$/,
-        exclude: [/node_modules/],
+        exclude: [/node_modules|src\/assets/],
         use: cssLoaders('local'),
       },
       {
         test: /\.scss?$/,
-        include: [/node_modules|src\/assets\/scss/],
+        include: [/node_modules|src\/assets/],
         use: scssLoaders('global'),
       },
       {
         test: /\.scss?$/,
-        exclude: [/node_modules|src\/assets\/scss/],
+        exclude: [/node_modules|src\/assets/],
         use: scssLoaders('local'),
       },
     ],

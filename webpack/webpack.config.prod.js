@@ -41,8 +41,8 @@ module.exports = merge(common, {
   entry: {
     vendor: [path.join(paths.src, 'assets/scss/vendor.scss')],
     client: [
-      path.join(paths.src, 'assets/scss/style.scss'),
       path.join(paths.src, 'client.jsx'),
+      path.join(paths.scss, 'style.scss'),
     ],
   },
   mode: 'production',
@@ -59,12 +59,12 @@ module.exports = merge(common, {
       },
       {
         test: /\.css?$/,
-        include: [/node_modules/],
+        include: [/node_modules|src\/assets/],
         use: cssLoaders('global'),
       },
       {
         test: /\.css?$/,
-        exclude: [/node_modules/],
+        exclude: [/node_modules|src\/assets/],
         use: cssLoaders('local'),
       },
       {

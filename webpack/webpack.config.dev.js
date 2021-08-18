@@ -45,7 +45,7 @@ module.exports = merge(common, {
     client: [
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
       path.join(paths.src, 'client.jsx'),
-      path.join(paths.scss, 'style.scss'),
+      path.join(paths.scss, 'app.scss'),
     ],
   },
   mode: 'development',

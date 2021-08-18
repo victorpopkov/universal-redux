@@ -42,7 +42,7 @@ module.exports = merge(common, {
     vendor: [path.join(paths.src, 'assets/scss/vendor.scss')],
     client: [
       path.join(paths.src, 'client.jsx'),
-      path.join(paths.scss, 'style.scss'),
+      path.join(paths.scss, 'app.scss'),
     ],
   },
   mode: 'production',

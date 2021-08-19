@@ -1,7 +1,4 @@
-const genericNames = require('generic-names');
 const path = require('path');
-
-const CSS_MODULE_LOCAL_IDENT_NAME = '[local]___[hash:base64:5]';
 
 module.exports = (api) => {
   api.cache(true);
@@ -45,18 +42,6 @@ module.exports = (api) => {
         languages: ['bash', 'markdown'],
         theme: 'default',
         css: true,
-      },
-    ],
-    [
-      'react-css-modules',
-      {
-        generateScopedName: genericNames(CSS_MODULE_LOCAL_IDENT_NAME),
-        filetypes: {
-          '.scss': {
-            plugins: ['postcss-nested'],
-            syntax: 'postcss-scss',
-          },
-        },
       },
     ],
   ];

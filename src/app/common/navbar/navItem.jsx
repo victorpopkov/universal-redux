@@ -1,16 +1,16 @@
-import './navItem.scss';
 import { NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import styles from './navItem.scss';
 
 export default (name, to, className, isHref) => (
   <NavItem className={className}>
     {!isHref ? (
-      <NavLink styleName="link" tag={Link} to={to}>
+      <NavLink className={styles.link} tag={Link} to={to}>
         {name}
       </NavLink>
     ) : (
-      <NavLink href={to} styleName="link">
+      <NavLink className={styles.link} href={to}>
         {name}
       </NavLink>
     )}

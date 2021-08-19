@@ -1,9 +1,9 @@
-import './GitHub.scss';
 import React from 'react';
 import config from '@Config';
+import styles from './GitHub.scss';
 
 const GitHub = () => (
-  <div styleName="github">
+  <div className={styles.github}>
     <a
       aria-label={`Star victorpopkov/${config.package.name} on GitHub`}
       className="github-button"

@@ -120,7 +120,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.20.1",
     "stylelint-webpack-plugin": "^2.2.2",
-    "svgo": "^2.3.1",
+    "svgo": "^2.5.0",
     "svgo-loader": "^3.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.52.0",

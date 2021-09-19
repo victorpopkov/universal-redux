@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Replace SCSS division slashes with `sass:math`
 - Replace `bootstrap-loader` with a custom Bootstrap import
 - Replace `optimize-css-assets-webpack-plugin` with `css-minimizer-webpack-plugin`
+- Replace `styleName` with `className`
+
+### Removed
+
+- Remove `babel-plugin-react-css-modules`
+- Remove `generic-names`
 
 ## [0.2.0][] - 2021-04-07
 

@@ -97,6 +97,7 @@ jobs:
           DOCKER_TLS_VERIFY: 1
           # docker stack
           DOCKER_STACK_NAME: github_universal_redux
+          DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           # traefik
           TRAEFIK_HOSTNAME: github.victorpopkov.com
           TRAEFIK_NAME: github-universal-redux

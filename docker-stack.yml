@@ -8,6 +8,12 @@ services:
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
       - '/etc/timezone:/etc/timezone:ro'
+    logging:
+      driver: loki
+      options:
+        loki-url: '${LOKI_URL}'
+        loki-external-labels: 'job=logs,logs_provider=morgan,traefik_service=${TRAEFIK_NAME}@docker'
+        loki-pipeline-stage-file: '${LOKI_PIPELINE_STAGE_FILE}'
     deploy:
       mode: global
       placement:

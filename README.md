@@ -68,6 +68,7 @@ and most are just the environment variables.
 | `APP_BASE_PATH`          |                         | App base path (**without a trailing slash**).                                                                                                                                     |
 | `APP_DEV_SERVER_PORT`    | `3001`                  | [webpack-dev-server][] port.<br>_Only in development mode._                                                                                                                       |
 | `APP_HOST`               | `0.0.0.0`               |                                                                                                                                                                                   |
+| `APP_MORGAN_FORMAT`      | `combined`              | [Morgan][] HTTP request logger middleware format.                                                                                                                                 |
 | `APP_PORT`               | `3000`                  |                                                                                                                                                                                   |
 | `APP_PUBLIC_PATH`        | `/`                     | App public path (**with a trailing slash**) to serve static assets and scripts.                                                                                                   |
 
@@ -123,6 +124,7 @@ Released under the [MIT License](https://opensource.org/licenses/MIT).
 [http://localhost:3000]: http://localhost:3000
 [http://localhost:8080]: http://localhost:8080
 [immutable.js]: https://immutable-js.com/
+[morgan]: https://github.com/expressjs/morgan
 [react-router]: https://github.com/remix-run/react-router
 [react]: https://github.com/facebook/react
 [reactstrap]: https://reactstrap.github.io

@@ -21,6 +21,9 @@ const appBasePath = process.env.APP_BASE_PATH
 const appDevServerPort =
   Number.parseInt(process.env.APP_DEV_SERVER_PORT, 10) || 3001;
 const appHost = process.env.APP_HOST || '0.0.0.0';
+const appMorganFormat = process.env.APP_MORGAN_FORMAT
+  ? process.env.APP_MORGAN_FORMAT
+  : 'combined';
 const appPort = Number.parseInt(process.env.APP_PORT, 10) || 3000;
 const appPublicPath = process.env.APP_PUBLIC_PATH
   ? `${removeTrailingSlash(process.env.APP_PUBLIC_PATH)}/`
@@ -66,6 +69,7 @@ module.exports = {
   appBasePath,
   appDevServerPort,
   appHost,
+  appMorganFormat,
   appPort,
   appPublicPath,
 };

@@ -8,39 +8,27 @@ import { StaticRouter } from 'react-router-dom';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
-import favicon from 'serve-favicon';
 import http from 'http';
-import httpProxy from 'http-proxy';
 import { parse as parseUrl } from 'url';
-import path from 'path';
 import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
 import Html from './helpers/Html';
 import config from '../config';
 import configureStore from './store/configureStore';
 import routes from './routes';
+import setupApiProxy from './server/api-proxy';
+import setupStatic from './server/static';
+import setupFavicon from './server/favicon';
+import setupLogging from './server/logging';
 
 export default ({ chunks }) => {
   const app = new Express();
   const server = new http.Server(app);
 
-  // paths
-  const pathBuild = path.resolve(__dirname, '../build/');
-  const pathFavicon = __DEVELOPMENT__
-    ? path.resolve(__dirname, 'assets/favicon/favicon.ico')
-    : path.resolve(pathBuild, 'assets/favicon/favicon.ico');
-
-  let proxy = null;
-  if (!config.appApiProxyDisabled) {
-    proxy = httpProxy.createProxyServer({
-      changeOrigin: true,
-      target: config.appApiProxyTarget,
-      ws: false,
-    });
-
-    app.use(config.appApiProxyPath, (req, res) => {
-      proxy.web(req, res);
-    });
-  }
+  // order is important
+  setupApiProxy(app);
+  setupLogging(app);
+  setupStatic(app);
+  setupFavicon(app);
 
   app
     .use(
@@ -51,8 +39,6 @@ export default ({ chunks }) => {
     )
     .use(compression())
     .use(cookiesMiddleware())
-    .use(Express.static(pathBuild))
-    .use(favicon(pathFavicon))
     .get('*', (req, res) => {
       const url = req.originalUrl || req.url;
       const apiClient = new ApiClient(req);
@@ -121,7 +107,7 @@ export default ({ chunks }) => {
         console.error(err);
       }
 
-      if (proxy) {
+      if (!config.appApiProxyDisabled) {
         console.info(
           '---\n==> %s is running, talking to API server through proxy (%s => %s).',
           config.app.name,
@@ -137,7 +123,7 @@ export default ({ chunks }) => {
       }
 
       console.info(
-        '==> Open http://%s:%s in a browser to view the app.',
+        '==> Open http://%s:%s in a browser to view the app.\n---',
         config.appHost,
         config.appPort,
       );

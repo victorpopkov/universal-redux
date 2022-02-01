@@ -13,11 +13,18 @@
     "__DEVTOOLS__": true,
     "socket": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "plugins": ["react", "import"],
   "rules": {
-    "import/no-unresolved": 0,
-    "no-console": 0
+    "import/no-unresolved": [2, { "ignore": ["@Config"] }],
+    "no-console": 0,
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
   },
   "settings": {
     "import/resolve": {

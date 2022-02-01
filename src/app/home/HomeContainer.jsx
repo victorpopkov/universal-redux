@@ -83,6 +83,7 @@ class HomeContainer extends Component {
     return React.createElement('li', elementProps, checkbox, props.children);
   };
 
+  // eslint-disable-next-line class-methods-use-this
   markdownTable = (props) => {
     const { children } = props;
 

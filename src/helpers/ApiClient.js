@@ -71,6 +71,7 @@ export default class ApiClient {
     );
   }
 
+  // eslint-disable-next-line class-methods-use-this
   formatUrl = (path) => {
     const adjustedPath = path[0] !== '/' ? `/${path}` : path;
 
@@ -81,6 +82,7 @@ export default class ApiClient {
     return `${config.appBasePath + config.appApiProxyPath + adjustedPath}`;
   };
 
+  // eslint-disable-next-line class-methods-use-this
   onError = (error, reject) => {
     if (!axios.isCancel(error)) {
       if (error.response) {
@@ -91,6 +93,7 @@ export default class ApiClient {
     }
   };
 
+  // eslint-disable-next-line class-methods-use-this
   onSuccess = (token, response, cookies, resolve, schema) => {
     if (token && response.status === 401) {
       cookies.remove('token');

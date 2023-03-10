@@ -15,7 +15,7 @@ jobs:
         node_version: [14.x]
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set a job-wide environment variables
         run: |
           echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
@@ -23,7 +23,7 @@ jobs:
           echo "NODE_ENV=development" >> $GITHUB_ENV
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
       - name: Install
@@ -60,14 +60,14 @@ jobs:
         node_version: [14.x]
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set a job-wide environment variables
         run: |
           echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
           echo "GITHUB_JOB_NAME=lint" >> $GITHUB_ENV
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
       - name: Install

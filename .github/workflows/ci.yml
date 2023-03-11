@@ -18,7 +18,6 @@ jobs:
     timeout-minutes: 15
     strategy:
       matrix:
-        os: [ubuntu-latest]
         node_version: [14.x]
     steps:
       - name: Check out
@@ -64,7 +63,6 @@ jobs:
     timeout-minutes: 15
     strategy:
       matrix:
-        os: [ubuntu-latest]
         node_version: [14.x]
     steps:
       - name: Check out

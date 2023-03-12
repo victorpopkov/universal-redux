@@ -146,7 +146,7 @@
     "build": "env-cmd --silent npm-run-all build:*",
     "build:client": "webpack --config ./webpack/webpack.config.client.prod.babel.js",
     "build:server": "webpack --config ./webpack/webpack.config.server.prod.babel.js",
-    "ci:eslint": "eslint --config ./.eslintrc --ext js,jsx --format ./.github/eslint-issues.js .",
+    "ci:eslint": "eslint --ext='js,jsx' --format='./.github/eslint-output.js' .",
     "ci:prettier:md": "prettier --check './**/*.md'",
     "ci:prettier:scss": "prettier --check './**/*.scss'",
     "ci:prettier:yml": "prettier --check './**/*.yml'",

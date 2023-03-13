@@ -79,9 +79,7 @@ jobs:
             {REF}
             Node.js: ${{ matrix.node_version }}
             ESLint issues: Checking...
-            Markdown (Prettier): Checking...
-            SCSS (Prettier): Checking...
-            YAML (Prettier): Checking...
+            Prettier issues: Checking...
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         with:
@@ -92,26 +90,12 @@ jobs:
         id: lint
         run: |
           yarn ci:eslint || true
+          yarn ci:prettier || true
           yarn lint || true
       - name: Lint results
         id: lint-results
         run: |
-          # export
-          export LINT_ISSUES_MD=$(($(yarn ci:prettier:md | wc -l) - 5))
-          export LINT_ISSUES_MD=$((LINT_ISSUES_MD < 0 ? 0 : LINT_ISSUES_MD))
-          export LINT_ISSUES_SCSS=$(($(yarn ci:prettier:scss | wc -l) - 5))
-          export LINT_ISSUES_SCSS=$((LINT_ISSUES_SCSS < 0 ? 0 : LINT_ISSUES_SCSS))
-          export LINT_ISSUES_YML=$(($(yarn ci:prettier:yml | wc -l) - 5))
-          export LINT_ISSUES_YML=$((LINT_ISSUES_YML < 0 ? 0 : LINT_ISSUES_YML))
-          export LINT_ISSUES=$((${{ steps.lint.outputs.eslint-issues || 0 }} + LINT_ISSUES_MD + LINT_ISSUES_SCSS + LINT_ISSUES_YML))
-
-          # outputs
-          echo "issues=${LINT_ISSUES}" >> $GITHUB_OUTPUT
-          echo "issues-md=${LINT_ISSUES_MD}" >> $GITHUB_OUTPUT
-          echo "issues-scss=${LINT_ISSUES_SCSS}" >> $GITHUB_OUTPUT
-          echo "issues-yml=${LINT_ISSUES_YML}" >> $GITHUB_OUTPUT
-
-          # status
+          export LINT_ISSUES=$((${{ steps.lint.outputs.eslint-issues || 0 }} + ${{ steps.lint.outputs.prettier-issues || 0 }}))
           if [ "${LINT_ISSUES}" -eq 0 ]; then exit 0; else exit 1; fi
       - name: Update Slack notification
         uses: codedsolar/slack-action@v1
@@ -124,6 +108,4 @@ jobs:
             {REF}
             Node.js: ${{ matrix.node_version }}
             ESLint issues: ${{ steps.lint.outputs.eslint-issues || 'Skipped' }}
-            Markdown (Prettier): ${{ steps.lint-results.outputs.issues-md }}
-            SCSS (Prettier): ${{ steps.lint-results.outputs.issues-scss }}
-            YAML (Prettier): ${{ steps.lint-results.outputs.issues-yml }}
+            Prettier issues: ${{ steps.lint.outputs.prettier-issues || 'Skipped' }}

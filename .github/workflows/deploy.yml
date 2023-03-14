@@ -5,10 +5,13 @@ on:
     branches:
       - main
 
+permissions: read-all
+
 jobs:
   production:
     environment: production
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       matrix:
         node_version: [14.x]

@@ -7,6 +7,11 @@ on:
 
 permissions: read-all
 
+env:
+  SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+  SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
+  SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+
 jobs:
   production:
     environment: production
@@ -21,15 +26,23 @@ jobs:
       - name: Set a job-wide environment variables
         run: |
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
-          echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
           echo "DOCKER_IMAGE=${{ secrets.PRIVATE_REGISTRY }}/universal-redux" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
-          echo "GITHUB_JOB_NAME=production" >> $GITHUB_ENV
-          echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: ${{ matrix.node_version }}
+      - name: Send Slack notification
+        uses: codedsolar/slack-action@v1
+        if: ${{ github.event_name != 'pull_request' }}
+        id: slack
+        with:
+          status: in-progress
+          fields: |
+            {STATUS}
+            {REF}
+            Node.js: ${{ steps.node.outputs.node-version }}
       - name: Install
         run: yarn install --ignore-scripts
         env:
@@ -131,18 +144,13 @@ jobs:
           TRAEFIK_HOSTNAME: github.victorpopkov.com
           TRAEFIK_NAME: github-universal-redux
           TRAEFIK_PATH_PREFIX: /universal-redux/
-      - name: Prepare success Slack notification
-        if: success()
-        run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV
-        env:
-          SLACK_CUSTOM_PAYLOAD: '{"channel":"${{ secrets.SLACK_CHANNEL }}","attachments":[{"color":"#2eb886","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has passed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
-      - name: Prepare failure Slack notification
-        if: failure()
-        run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV
-        env:
-          SLACK_CUSTOM_PAYLOAD: '{"channel":"${{ secrets.SLACK_CHANNEL }}","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
-      - name: Send Slack notification
-        if: ${{ !env.ACT && always() }}
-        uses: Ilshidur/action-slack@2.1.0
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      - name: Update Slack notification
+        uses: codedsolar/slack-action@v1
+        if: ${{ github.event_name != 'pull_request' && always() }}
+        with:
+          status: ${{ job.status }}
+          timestamp: ${{ steps.slack.outputs.slack-timestamp }}
+          fields: |
+            {STATUS}
+            {REF}
+            Node.js: ${{ steps.node.outputs.node-version }}

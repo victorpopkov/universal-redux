@@ -27,8 +27,6 @@ jobs:
       - name: Set a job-wide environment variables
         run: |
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
-          echo "DOCKER_IMAGE=${{ secrets.DOCKER_REGISTRY_HOST }}/universal-redux" >> $GITHUB_ENV
-          echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         id: node
@@ -84,13 +82,13 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           flavor: latest=true
-          images: ${{ env.DOCKER_IMAGE }}
+          images: ${{ secrets.DOCKER_REGISTRY_HOST }}/universal-redux
           labels: maintainer=victor@popkov.me
       - name: Build an image
         uses: docker/build-push-action@v4
         with:
           build-args: APP_REVISION=${{ env.APP_REVISION }}
-          cache-from: type=registry,ref=${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_IMAGE_TAG }}
+          cache-from: type=registry,ref=${{ fromJSON(steps.meta.outputs.json).tags[0] }}
           cache-to: type=inline
           context: .
           file: ./Dockerfile
@@ -124,6 +122,7 @@ jobs:
         env:
           DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
+          DOCKER_IMAGE: ${{ fromJSON(steps.meta.outputs.json).tags[0] }}
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           DOCKER_TLS_VERIFY: 1
           LOKI_PIPELINE_STAGE_FILE: ${{ secrets.LOKI_PIPELINE_STAGE_FILE }}

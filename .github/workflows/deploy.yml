@@ -27,7 +27,7 @@ jobs:
       - name: Set a job-wide environment variables
         run: |
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
-          echo "DOCKER_IMAGE=${{ secrets.PRIVATE_REGISTRY }}/universal-redux" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE=${{ secrets.DOCKER_REGISTRY_HOST }}/universal-redux" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
@@ -76,9 +76,9 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.PRIVATE_REGISTRY }}
-          username: ${{ secrets.PRIVATE_REGISTRY_USERNAME }}
-          password: ${{ secrets.PRIVATE_REGISTRY_PASSWORD }}
+          registry: ${{ secrets.DOCKER_REGISTRY_HOST }}
+          username: ${{ secrets.DOCKER_REGISTRY_USER }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASS }}
       - name: Generate an image metadata
         id: meta
         uses: docker/metadata-action@v4
@@ -114,24 +114,23 @@ jobs:
       - name: Deploy Docker Stack
         if: ${{ !env.ACT }}
         run: |
-          docker stack rm "${DOCKER_STACK_NAME}"
+          docker stack rm "${{ secrets.DOCKER_STACK_NAME }}"
           docker stack deploy \
             --with-registry-auth \
             --resolve-image=always \
             --compose-file=docker-stack.yml \
             --prune \
-            "${DOCKER_STACK_NAME}"
+            "${{ secrets.DOCKER_STACK_NAME }}"
         env:
           DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
-          DOCKER_STACK_NAME: github_universal_redux
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           DOCKER_TLS_VERIFY: 1
-          LOKI_PIPELINE_STAGE_FILE: /etc/loki/pipelines/morgan.yml
+          LOKI_PIPELINE_STAGE_FILE: ${{ secrets.LOKI_PIPELINE_STAGE_FILE }}
           LOKI_URL: ${{ secrets.LOKI_URL }}
-          TRAEFIK_HOSTNAME: github.victorpopkov.com
-          TRAEFIK_NAME: github-universal-redux
-          TRAEFIK_PATH_PREFIX: /universal-redux/
+          TRAEFIK_HOSTNAME: ${{ secrets.APP_HOSTNAME }}
+          TRAEFIK_NAME: ${{ secrets.TRAEFIK_NAME }}
+          TRAEFIK_PATH_PREFIX: ${{ secrets.APP_PUBLIC_PATH }}
       - name: Update Slack notification
         uses: codedsolar/slack-action@v1
         if: ${{ github.event_name != 'pull_request' && always() }}

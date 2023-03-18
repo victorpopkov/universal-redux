@@ -29,9 +29,6 @@ jobs:
         id: docker
         run: |
           echo "cert-path=/home/runner/.docker/deploy" >> $GITHUB_OUTPUT
-      - name: Set a job-wide environment variables
-        run: |
-          echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         id: node
@@ -92,7 +89,7 @@ jobs:
       - name: Build an image
         uses: docker/build-push-action@v4
         with:
-          build-args: APP_REVISION=${{ env.APP_REVISION }}
+          build-args: APP_REVISION=${{ github.sha }}
           cache-from: type=registry,ref=${{ fromJSON(steps.meta.outputs.json).tags[0] }}
           cache-to: type=inline
           context: .

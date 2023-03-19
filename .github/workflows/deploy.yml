@@ -89,7 +89,10 @@ jobs:
       - name: Build an image
         uses: docker/build-push-action@v4
         with:
-          build-args: APP_REVISION=${{ github.sha }}
+          build-args: |
+            APP_BASE_PATH=${{ secrets.APP_PUBLIC_PATH }}
+            APP_PUBLIC_PATH=${{ secrets.APP_PUBLIC_PATH }}
+            APP_REVISION=${{ github.sha }}
           cache-from: type=registry,ref=${{ fromJSON(steps.meta.outputs.json).tags[0] }}
           cache-to: type=inline
           context: .

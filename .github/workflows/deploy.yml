@@ -9,7 +9,6 @@ on:
 permissions: read-all
 
 env:
-  NODE_ENV: development
   SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
   SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
   SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
@@ -19,9 +18,6 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    strategy:
-      matrix:
-        node_version: [14.x]
     steps:
       - name: Check out
         uses: actions/checkout@v3
@@ -29,45 +25,12 @@ jobs:
         id: docker
         run: |
           echo "cert-path=/home/runner/.docker/deploy" >> $GITHUB_OUTPUT
-      - name: Set up Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v3
-        id: node
-        with:
-          node-version: ${{ matrix.node_version }}
       - name: Send Slack notification
         uses: codedsolar/slack-action@v1
         if: ${{ github.event_name != 'pull_request' }}
         id: slack
         with:
           status: in-progress
-          fields: |
-            {STATUS}
-            {REF}
-            Node.js: ${{ steps.node.outputs.node-version }}
-      - name: Install dependencies
-        run: yarn install --ignore-scripts
-      - name: Build
-        id: build
-        run: yarn build
-        env:
-          # environment
-          BABEL_ENV: production
-          NODE_ENV: production
-          # general
-          APP_BASE_PATH: /universal-redux
-          APP_HOST: 0.0.0.0
-          APP_MORGAN_FORMAT: ${{ secrets.APP_MORGAN_FORMAT }}
-          APP_PORT: 8080
-          APP_PUBLIC_PATH: /universal-redux/
-          # api
-          APP_API_PORT: 3030
-          APP_API_PROXY_DISABLED: 0
-          APP_API_PROXY_PATH: /api
-          APP_API_PROXY_TARGET: http://0.0.0.0:3030
-          APP_API_TARGET: http://0.0.0.0:3030
-          # other
-          NODE_PATH: ./src
-          UNIVERSAL_WEBPACK_CSS_LOADER_V4: true
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -139,7 +102,3 @@ jobs:
         with:
           status: ${{ job.status }}
           timestamp: ${{ steps.slack.outputs.slack-timestamp }}
-          fields: |
-            {STATUS}
-            {REF}
-            Node.js: ${{ steps.node.outputs.node-version }}

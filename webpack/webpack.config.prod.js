@@ -99,7 +99,6 @@ module.exports = merge(common, {
     maxEntrypointSize: performanceSize,
   },
   plugins: [
-    new webpack.IgnorePlugin({ resourceRegExp: /(\/config)|(\.\/dev)$/ }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[chunkhash].css',
       chunkFilename: 'assets/css/[id].css',

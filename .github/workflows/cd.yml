@@ -1,4 +1,4 @@
-name: Deploy
+name: CD
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 permissions: read-all
 
 jobs:
-  production:
+  deploy:
     environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 30

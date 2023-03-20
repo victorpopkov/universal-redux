@@ -29,16 +29,14 @@ services:
         - 'traefik.enable=true'
         # Traefik (Services)
         - 'traefik.http.services.${TRAEFIK_NAME}.loadbalancer.server.port=8080'
-        # Traefik (Middlewares)
-        - 'traefik.http.middlewares.${TRAEFIK_NAME}-stripprefix.stripprefix.prefixes=${TRAEFIK_PATH_PREFIX}'
         # Traefik (Routers - HTTP)
         - 'traefik.http.routers.${TRAEFIK_NAME}-http.entrypoints=web'
-        - 'traefik.http.routers.${TRAEFIK_NAME}-http.middlewares=http-to-https,real-ip'
+        - 'traefik.http.routers.${TRAEFIK_NAME}-http.middlewares=github-http'
         - 'traefik.http.routers.${TRAEFIK_NAME}-http.rule=Host(`${TRAEFIK_HOSTNAME}`) && PathPrefix(`${TRAEFIK_PATH_PREFIX}`)'
         - 'traefik.http.routers.${TRAEFIK_NAME}-http.service=${TRAEFIK_NAME}'
         # Traefik (Routers - HTTPS)
         - 'traefik.http.routers.${TRAEFIK_NAME}-https.entrypoints=websecure'
-        - 'traefik.http.routers.${TRAEFIK_NAME}-https.middlewares=real-ip,${TRAEFIK_NAME}-stripprefix'
+        - 'traefik.http.routers.${TRAEFIK_NAME}-https.middlewares=github-https'
         - 'traefik.http.routers.${TRAEFIK_NAME}-https.rule=Host(`${TRAEFIK_HOSTNAME}`) && PathPrefix(`${TRAEFIK_PATH_PREFIX}`)'
         - 'traefik.http.routers.${TRAEFIK_NAME}-https.service=${TRAEFIK_NAME}'
 

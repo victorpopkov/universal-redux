@@ -8,11 +8,6 @@ on:
 
 permissions: read-all
 
-env:
-  SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
-  SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
-  SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-
 jobs:
   production:
     environment: production
@@ -25,12 +20,6 @@ jobs:
         id: docker
         run: |
           echo "cert-path=/home/runner/.docker/deploy" >> $GITHUB_OUTPUT
-      - name: Send Slack notification
-        uses: codedsolar/slack-action@v1
-        if: ${{ github.event_name != 'pull_request' }}
-        id: slack
-        with:
-          status: in-progress
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -96,9 +85,3 @@ jobs:
           TRAEFIK_HOSTNAME: ${{ secrets.APP_HOSTNAME }}
           TRAEFIK_NAME: ${{ secrets.TRAEFIK_NAME }}
           TRAEFIK_PATH_PREFIX: ${{ secrets.APP_PUBLIC_PATH }}
-      - name: Update Slack notification
-        uses: codedsolar/slack-action@v1
-        if: ${{ github.event_name != 'pull_request' && always() }}
-        with:
-          status: ${{ job.status }}
-          timestamp: ${{ steps.slack.outputs.slack-timestamp }}

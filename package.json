@@ -144,25 +144,25 @@
   "scripts": {
     "audit:fix": "yarn-audit-fix",
     "build": "env-cmd --silent npm-run-all build:*",
-    "build:client": "webpack --config ./webpack/webpack.config.client.prod.babel.js",
-    "build:server": "webpack --config ./webpack/webpack.config.server.prod.babel.js",
+    "build:client": "webpack --config='./webpack/webpack.config.client.prod.babel.js'",
+    "build:server": "webpack --config='./webpack/webpack.config.server.prod.babel.js'",
     "ci:eslint": "eslint --ext='js,jsx' --format='./.github/eslint-output.js' .",
     "ci:prettier": "node ./.github/prettier-output.js",
     "deduplicate": "yarn-deduplicate && yarn install",
     "dev": "env-cmd --silent npm-run-all universal-webpack:prepare development",
     "development": "npm-run-all --parallel watch:* start:dev:*",
     "lint": "npm-run-all --continue-on-error lint:*",
-    "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx ./src/ ./api/",
+    "lint:eslint": "eslint --ext='js,jsx' .",
     "lint:prettier": "prettier --check .",
-    "lint:stylelint": "stylelint ./src/**/*.css ./src/**/*.scss",
+    "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
     "start": "env-cmd --silent npm-run-all --parallel start:prod:*",
     "start:dev:api": "node ./bin/api.js",
-    "start:dev:server": "nodemon ./bin/server.js --watch ./src --watch ./build --no-update-notifier",
+    "start:dev:server": "nodemon ./bin/server.js --watch='./src/' --watch='./build/' --no-update-notifier",
     "start:prod:api": "node ./bin/api.js",
     "start:prod:server": "node ./bin/server.js",
     "test": "npm-run-all --continue-on-error lint:*",
-    "universal-webpack:prepare": "universal-webpack --settings ./webpack/universal-webpack-settings.json prepare",
+    "universal-webpack:prepare": "universal-webpack --settings='./webpack/universal-webpack-settings.json' prepare",
     "watch:client": "node ./webpack/webpack-dev-server.js",
-    "watch:server": "webpack --config ./webpack/webpack.config.server.dev.babel.js --watch"
+    "watch:server": "webpack --config='./webpack/webpack.config.server.dev.babel.js' --watch"
   }
 }

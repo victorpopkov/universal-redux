@@ -9,7 +9,7 @@
 .prettierignore
 .prettierrc
 .remarkrc
-.stylelintrc
+.stylelintrc.js
 .vscode/
 .yarn/
 

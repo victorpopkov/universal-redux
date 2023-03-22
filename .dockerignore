@@ -7,7 +7,7 @@
 .gitignore
 .idea/
 .prettierignore
-.prettierrc
+.prettierrc.js
 .remarkrc
 .stylelintrc.js
 .vscode/

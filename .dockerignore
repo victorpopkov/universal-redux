@@ -1,7 +1,6 @@
 .dockerignore
 .editorconfig
 .env*
-.eslintignore
 .eslintrc.js
 .git/
 .github/

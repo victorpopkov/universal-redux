@@ -56,8 +56,8 @@ ENV UNIVERSAL_WEBPACK_CSS_LOADER_V4="${UNIVERSAL_WEBPACK_CSS_LOADER_V4}"
 
 WORKDIR /srv/universal-redux/
 COPY . .
-RUN NODE_ENV="development" yarn install --ignore-scripts \
-  && yarn cache clean \
+RUN yarn cache clean \
+  && NODE_ENV="development" yarn install --ignore-scripts --network-timeout 240000 \
   && yarn build
 
 CMD ["/usr/local/bin/yarn", "start"]

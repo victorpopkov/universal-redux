@@ -6,6 +6,9 @@ on:
       - develop
       - main
 
+concurrency:
+  group: cd-${{ github.ref }}
+  cancel-in-progress: true
 permissions: read-all
 
 jobs:

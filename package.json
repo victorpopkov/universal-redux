@@ -72,7 +72,7 @@
     "terser-webpack-plugin": "5.3.7",
     "universal-cookie": "^4.0.4",
     "universal-cookie-express": "^4.0.3",
-    "universal-webpack": "^0.7.0",
+    "universal-webpack": "^0.8.5",
     "url": "^0.11.0",
     "webpack-merge": "^5.8.0"
   },

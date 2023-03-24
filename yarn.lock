@@ -9089,10 +9089,10 @@ universal-cookie@^4.0.0, universal-cookie@^4.0.4:
     "@types/cookie" "^0.3.3"
     cookie "^0.4.0"
 
-universal-webpack@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.7.0.tgz#885d0294cb5a897f75eedcd295054bf242f09d58"
-  integrity sha512-WQKff4mpl3y1gGnFt1CUL7uoVsxUvDn5cldYbL6w44qOor8muTOVB6tVxNiALhfkc4j3bOC8aoG4oce4msdvEA==
+universal-webpack@^0.8.5:
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/universal-webpack/-/universal-webpack-0.8.5.tgz#ed4ee7cc53a834ed7a0e76e33c8cf55f86d9cbdb"
+  integrity sha512-GjrV2+5kbYNW5tBHnISfyZBzDbP/Pw+i4k6pG9ZBqMHSM253p7m56b5ZKGIGismiM2KC/W1srZH568JlZFdBog==
   dependencies:
     "@babel/runtime" "^7.14.6"
     colors "^1.4.0"

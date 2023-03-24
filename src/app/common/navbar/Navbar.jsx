@@ -1,7 +1,6 @@
 import {
   Navbar as BaseNavbar,
   Collapse,
-  Container,
   NavbarBrand,
   NavbarToggler,
 } from 'reactstrap';
@@ -32,17 +31,15 @@ class Navbar extends Component {
     const { collapsed } = this.state;
 
     return (
-      <BaseNavbar expand="lg" light>
-        <Container>
-          <NavbarBrand tag={Link} to="/">
-            {config.package.name}
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} />
-          <Collapse isOpen={collapsed} timeout={0} navbar>
-            <NavbarMenu />
-            <NavbarMobile />
-          </Collapse>
-        </Container>
+      <BaseNavbar container="md" expand="lg" light>
+        <NavbarBrand tag={Link} to="/">
+          {config.package.name}
+        </NavbarBrand>
+        <NavbarToggler onClick={this.toggleNavbar} />
+        <Collapse isOpen={collapsed} timeout={0} navbar>
+          <NavbarMenu />
+          <NavbarMobile />
+        </Collapse>
       </BaseNavbar>
     );
   }

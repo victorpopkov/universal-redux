@@ -1,7 +1,7 @@
 .mobile {
   display: block;
-  text-align: center;
   margin-left: auto;
+  text-align: center;
 }
 
 @include media-breakpoint-up(lg) {

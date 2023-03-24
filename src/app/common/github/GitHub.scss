@@ -11,12 +11,12 @@
   }
 
   a {
-    line-height: 1.5;
     padding: $nav-link-padding-y $navbar-nav-link-padding-x;
+    line-height: 1.5;
   }
 
   span {
-    line-height: 0;
     padding: $nav-link-padding-y 0.25rem;
+    line-height: 0;
   }
 }

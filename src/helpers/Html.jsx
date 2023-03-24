@@ -39,7 +39,11 @@ const Html = ({ assets, component, store }) => {
         {head.script.toComponent()}
       </head>
       <body>
-        <div dangerouslySetInnerHTML={{ __html: component }} id="content" />
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: component }}
+          id="content"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.__PRELOADED_STATE__=${JSON.stringify(

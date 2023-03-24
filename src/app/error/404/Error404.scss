@@ -4,7 +4,7 @@
   }
 
   h2 {
-    margin: 0 0 math.div($grid-gutter-width, 2);
+    margin: 0 0 divide($grid-gutter-width, 2);
   }
 }
 
@@ -15,8 +15,8 @@
     }
 
     h2 {
+      margin: 0 0 divide($grid-gutter-width, 2);
       font-size: $h4-font-size;
-      margin: 0 0 math.div($grid-gutter-width, 2);
     }
   }
 }

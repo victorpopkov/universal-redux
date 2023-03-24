@@ -3,33 +3,33 @@
 
   .markdown {
     .heading {
-      border-bottom: 1px solid rgba($black, 0.1);
-      margin-bottom: 16px;
       padding-bottom: 0.3em;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba($black, 0.1);
     }
 
     h1 {
       flex-grow: 1;
+      padding-right: 10px;
       margin: 0;
       overflow: hidden;
-      padding-right: 10px;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
     h2 {
-      border-bottom: 1px solid rgba($black, 0.1);
-      margin-bottom: 16px;
-      margin-top: 1em;
       padding-bottom: 0.3em;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba($black, 0.1);
     }
 
     h3,
     h4,
     h5,
     h6 {
-      margin-bottom: 16px;
       margin-top: 1em;
+      margin-bottom: 16px;
     }
 
     ul,
@@ -40,7 +40,7 @@
         list-style: none;
       }
 
-      input[type='checkbox'] {
+      input {
         display: inline-block;
         margin: 0 0.5em 0.25em -1.6em;
         vertical-align: middle;
@@ -48,9 +48,9 @@
     }
 
     blockquote {
-      border-left: 4px solid $gray-300;
+      padding: 0 divide($grid-gutter-width, 2);
       color: $gray-600;
-      padding: 0 math.div($grid-gutter-width, 2);
+      border-left: 4px solid $gray-300;
     }
 
     table {
@@ -59,8 +59,8 @@
 
     th,
     td {
-      border: 1px solid $gray-400;
       padding: 6px 13px;
+      border: 1px solid $gray-400;
     }
 
     th {
@@ -72,17 +72,17 @@
     }
 
     :not(pre) > code:not([class*='language-']) {
+      padding: 0.15em 0;
+      font-size: 0.85em;
+      color: darken($slategray, 30%);
+      white-space: nowrap;
       background: transparentize($gray-900, 0.95);
       border-radius: 3px;
-      color: darken($slategray, 30%);
-      font-size: 0.85em;
-      padding: 0.15em 0;
-      white-space: nowrap;
 
       &::before,
       &::after {
-        content: '\00a0';
         letter-spacing: -0.2em;
+        content: '\00a0';
       }
     }
   }

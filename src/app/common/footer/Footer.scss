@@ -7,8 +7,8 @@
   }
 
   .content {
-    padding-bottom: $grid-gutter-width;
     padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
   }
 
   .github {
@@ -18,15 +18,15 @@
 
   ul {
     display: inline-block;
-    line-height: 1.5;
-    list-style: none;
     padding: 0;
+    line-height: 1.5;
     vertical-align: middle;
+    list-style: none;
   }
 
   li {
+    margin-right: divide($grid-gutter-width, 2);
     line-height: 1.5;
-    margin-right: math.div($grid-gutter-width, 2);
 
     &:last-child {
       margin-right: 0;
@@ -42,12 +42,12 @@
 
 @include media-breakpoint-down(sm) {
   .footer {
-    margin-top: math.div($grid-gutter-width, 2);
+    margin-top: divide($grid-gutter-width, 2);
     vertical-align: middle;
 
     .content {
-      padding-bottom: math.div($grid-gutter-width, 2);
-      padding-top: math.div($grid-gutter-width, 2);
+      padding-top: divide($grid-gutter-width, 2);
+      padding-bottom: divide($grid-gutter-width, 2);
     }
 
     ul {

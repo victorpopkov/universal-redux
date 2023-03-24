@@ -1,6 +1,12 @@
 module.exports = {
-  extends: ['stylelint-config-prettier'],
+  extends: ['stylelint-config-twbs-bootstrap'],
   customSyntax: 'postcss-scss',
-  plugins: ['stylelint-order', 'stylelint-scss'],
   ignoreFiles: ['build/**/*.css'],
+  rules: {
+    'number-leading-zero': false,
+    'selector-pseudo-class-no-unknown': [
+      true,
+      { ignorePseudoClasses: ['global'] },
+    ],
+  },
 };

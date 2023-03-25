@@ -16,7 +16,7 @@ const Footer = () => (
             </li>
           </ul>
           <div className={styles.github}>
-            <GitHub />
+            <GitHub githubRef={config.package.githubRef} />
           </div>
         </Col>
       </Row>

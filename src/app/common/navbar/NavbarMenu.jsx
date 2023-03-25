@@ -2,8 +2,8 @@ import { Nav } from 'reactstrap';
 import React from 'react';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
+import config from '@Config';
 import GitHub from '../github/GitHub';
-import config from '../../../../config';
 import navItem from './navItem';
 import styles from './NavbarMenu.scss';
 
@@ -18,7 +18,7 @@ const NavbarMenu = () => (
       )}
       navbar
     >
-      <GitHub className="mb-sm-2" />
+      <GitHub className="mb-sm-2" githubRef={config.package.githubRef} />
       {navItem('GitHub', config.package.repository, null, true)}
     </Nav>
   </div>

@@ -1,5 +1,5 @@
 import morgan from 'morgan';
-import config from '../../config';
+import config from '@Config';
 
 morgan.token('cf-connecting-ip', (req) => req.headers['cf-connecting-ip']);
 morgan.token('cf-ipcountry', (req) => req.headers['cf-ipcountry']);

@@ -1,5 +1,5 @@
 import httpProxy from 'http-proxy';
-import config from '../../config';
+import config from '@Config';
 
 export default (app) => {
   if (!config.appApiProxyDisabled) {

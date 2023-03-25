@@ -1,21 +1,22 @@
 require('@babel/register');
 
 const Express = require('express');
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.client.dev.babel');
+const middleware = require('webpack-dev-middleware'); // eslint-disable-line import/no-extraneous-dependencies
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
+const devClient = require('./webpack.config.client.dev.babel');
 const config = require('../config');
 
 const app = new Express();
-const compiler = webpack(webpackConfig);
+const compiler = webpack(devClient);
 const port = config.appDevServerPort;
 
 app
   .use(
-    require('webpack-dev-middleware')(compiler, {
+    middleware(compiler, {
       headers: { 'Access-Control-Allow-Origin': '*' },
     }),
   )
-  .use(require('webpack-hot-middleware')(compiler))
+  .use(middleware(compiler))
   .listen(port, (err) => {
     if (err) {
       console.error(err);

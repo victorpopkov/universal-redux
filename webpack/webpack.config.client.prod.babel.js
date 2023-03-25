@@ -1,10 +1,10 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-import { clientConfiguration } from 'universal-webpack';
-import webpack from 'webpack';
-import baseConfiguration from './webpack.config.prod';
-import settings from './universal-webpack-settings';
+const { clientConfiguration } = require('universal-webpack');
+const webpack = require('webpack');
+const baseProd = require('./webpack.config.prod');
+const settings = require('./universal-webpack-settings.json');
 
-const config = clientConfiguration(baseConfiguration, settings);
+const config = clientConfiguration(baseProd, settings);
 
 config.plugins.push(
   new CleanWebpackPlugin(),

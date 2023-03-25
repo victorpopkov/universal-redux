@@ -1,9 +1,9 @@
-import { clientConfiguration } from 'universal-webpack';
-import webpack from 'webpack';
-import baseConfiguration from './webpack.config.dev';
-import settings from './universal-webpack-settings';
+const { clientConfiguration } = require('universal-webpack');
+const webpack = require('webpack');
+const baseDev = require('./webpack.config.dev');
+const settings = require('./universal-webpack-settings.json');
 
-const config = clientConfiguration(baseConfiguration, settings);
+const config = clientConfiguration(baseDev, settings);
 
 config.plugins.push(
   new webpack.DefinePlugin({

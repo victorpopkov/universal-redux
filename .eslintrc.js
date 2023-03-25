@@ -13,7 +13,7 @@ module.exports = {
     __DEVTOOLS__: true,
     socket: true,
   },
-  ignorePatterns: ['build/', 'webpack/*'],
+  ignorePatterns: ['build/'],
   parser: '@babel/eslint-parser',
   plugins: ['react', 'import'],
   rules: {

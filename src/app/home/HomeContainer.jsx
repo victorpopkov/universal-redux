@@ -84,6 +84,17 @@ class HomeContainer extends Component {
   };
 
   // eslint-disable-next-line class-methods-use-this
+  markdownParagraph = (props) => {
+    const { children } = props;
+
+    if (children.length === 7 && children[0].type === 'a') {
+      return null;
+    }
+
+    return React.createElement('p', {}, children);
+  };
+
+  // eslint-disable-next-line class-methods-use-this
   markdownTable = (props) => {
     const { children } = props;
 
@@ -129,6 +140,7 @@ class HomeContainer extends Component {
           className={styles.markdown}
           components={{
             h1: this.markdownHeading,
+            p: this.markdownParagraph,
             listItem: this.markdownListItem,
             table: this.markdownTable,
           }}

@@ -25,19 +25,31 @@ const Jumbotron = () => (
       <ul className={classNames('mb-4', styles.versions)}>
         <li>
           <LogoReact id="logo-react" />
-          <UncontrolledTooltip placement="bottom" target="logo-react">
+          <UncontrolledTooltip
+            fade={false}
+            placement="bottom"
+            target="logo-react"
+          >
             {`React ${config.package.dependencies.react}`}
           </UncontrolledTooltip>
         </li>
         <li>
           <LogoRedux id="logo-redux" />
-          <UncontrolledTooltip placement="bottom" target="logo-redux">
+          <UncontrolledTooltip
+            fade={false}
+            placement="bottom"
+            target="logo-redux"
+          >
             {`Redux ${config.package.dependencies.redux}`}
           </UncontrolledTooltip>
         </li>
         <li>
           <LogoReactstrap id="logo-reactstrap" />
-          <UncontrolledTooltip placement="bottom" target="logo-reactstrap">
+          <UncontrolledTooltip
+            fade={false}
+            placement="bottom"
+            target="logo-reactstrap"
+          >
             {`Bootstrap ${config.package.dependencies.bootstrap}`}
             <br />
             {`Reactstrap ${config.package.dependencies.reactstrap}`}

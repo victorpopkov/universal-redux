@@ -1,28 +1,46 @@
 import { Button, Col, Container, Row, UncontrolledTooltip } from 'reactstrap';
+import PropTypes from 'prop-types';
 import React from 'react';
 import config from '@Config';
 import classNames from 'classnames';
-import JumbotronVersion from './JumbotronVersion'; // eslint-disable-line sort-imports
 import LogoReact from './logo_react.svg';
 import LogoReactstrap from './logo_reactstrap.svg';
 import LogoRedux from './logo_redux.svg';
+import Version from '../version/Version';
 import styles from './Jumbotron.scss';
 
-const Jumbotron = () => (
+const Jumbotron = ({
+  latestDevRevision,
+  latestDevVersion,
+  latestStableRevision,
+  latestStableVersion,
+}) => (
   <Col
     className={classNames('py-5', 'text-center', styles.jumbotron)}
     lg={12}
     tag="section"
   >
     <Container>
-      <h1>{config.package.name}</h1>
-      <JumbotronVersion
-        className="mb-4"
-        name={config.app.name}
-        revision={config.app.revision}
-        version={config.app.version}
-      />
-      <ul className={classNames('mb-4', styles.versions)}>
+      <h1 className="mb-3">{config.package.name}</h1>
+      {latestStableRevision && latestStableVersion && (
+        <Version
+          className="me-2"
+          color="primary"
+          githubRef={config.package.githubRef}
+          revision={latestStableRevision}
+          title="Latest Stable"
+          version={`v${latestStableVersion}`}
+        />
+      )}
+      {latestDevRevision && latestDevVersion && (
+        <Version
+          githubRef={config.package.githubRef}
+          revision={latestDevRevision}
+          title="Latest Development"
+          version={`v${latestDevVersion}`}
+        />
+      )}
+      <ul className={classNames('mt-3 mb-3', styles.versions)}>
         <li>
           <LogoReact id="logo-react" />
           <UncontrolledTooltip
@@ -75,5 +93,19 @@ const Jumbotron = () => (
     </Container>
   </Col>
 );
+
+Jumbotron.propTypes = {
+  latestDevRevision: PropTypes.string,
+  latestDevVersion: PropTypes.string,
+  latestStableRevision: PropTypes.string,
+  latestStableVersion: PropTypes.string,
+};
+
+Jumbotron.defaultProps = {
+  latestDevRevision: null,
+  latestDevVersion: null,
+  latestStableRevision: null,
+  latestStableVersion: null,
+};
 
 export default Jumbotron;

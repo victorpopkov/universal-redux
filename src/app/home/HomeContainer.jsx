@@ -143,10 +143,22 @@ class HomeContainer extends Component {
   }
 
   render() {
+    const {
+      latestDevRevision,
+      latestDevVersion,
+      latestStableRevision,
+      latestStableVersion,
+    } = this.props;
+
     return (
       <main className={styles.home} role="main">
         <Helmet title="Universal web app boilerplate" />
-        <Jumbotron />
+        <Jumbotron
+          latestDevRevision={latestDevRevision}
+          latestDevVersion={latestDevVersion}
+          latestStableRevision={latestStableRevision}
+          latestStableVersion={latestStableVersion}
+        />
         <Container>
           <Row>
             <Col lg={9}>{this.renderMarkdown()}</Col>
@@ -159,11 +171,19 @@ class HomeContainer extends Component {
 }
 
 HomeContainer.propTypes = {
+  latestDevRevision: PropTypes.string,
+  latestDevVersion: PropTypes.string,
+  latestStableRevision: PropTypes.string,
+  latestStableVersion: PropTypes.string,
   loadMarkdown: PropTypes.func,
   markdown: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 HomeContainer.defaultProps = {
+  latestDevRevision: null,
+  latestDevVersion: null,
+  latestStableRevision: null,
+  latestStableVersion: null,
   loadMarkdown: null,
   markdown: null,
 };

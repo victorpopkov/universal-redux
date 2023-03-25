@@ -3,8 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
-const webpack = require('webpack');
-const common = require('./webpack.config.common');
+const base = require('../webpack.base.config');
 const paths = require('./paths');
 
 const performanceSize = 256 * 4 * 1000;
@@ -38,7 +37,7 @@ const scssLoaders = (mode) => [
   },
 ];
 
-module.exports = merge(common, {
+module.exports = merge(base, {
   devtool: 'hidden-source-map',
   entry: {
     vendor: [path.join(paths.src, 'assets/scss/vendor.scss')],

@@ -101,17 +101,17 @@ and most are just the environment variables.
 │   ├── reducers.js
 │   ├── routes.js
 │   └── server.jsx
-└── webpack/ # webpack related configs
-    ├── paths.js
-    ├── universal-webpack-settings.json
-    ├── webpack.config.client.dev.babel.js  # universal-webpack client (development)
-    ├── webpack.config.client.prod.babel.js # universal-webpack client (production)
-    ├── webpack.config.common.js            # common for all environments
-    ├── webpack.config.dev.js               # development environment
-    ├── webpack.config.prod.js              # production environment
-    ├── webpack.config.server.dev.babel.js  # universal-webpack server (development)
-    ├── webpack.config.server.prod.babel.js # universal-webpack server (production)
-    └── webpack-dev-server.js               # development server with HMR configs
+├── webpack/ # webpack configs
+│   ├── paths.js
+│   ├── universal-webpack-settings.json
+│   ├── webpack.config.client.dev.babel.js  # universal-webpack client (development)
+│   ├── webpack.config.client.prod.babel.js # universal-webpack client (production)
+│   ├── webpack.config.dev.js               # development environment
+│   ├── webpack.config.prod.js              # production environment
+│   ├── webpack.config.server.dev.babel.js  # universal-webpack server (development)
+│   ├── webpack.config.server.prod.babel.js # universal-webpack server (production)
+│   └── webpack-dev-server.js               # development server with HMR configs
+└── webpack.base.config.js
 ```
 
 ## License

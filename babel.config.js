@@ -14,7 +14,7 @@ module.exports = (api) => {
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     [
       'webpack-alias',
-      { config: path.join(__dirname, '/webpack/webpack.config.common.js') },
+      { config: path.join(__dirname, 'webpack.base.config.js') },
     ],
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-proposal-function-bind',

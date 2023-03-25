@@ -1,9 +1,9 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const config = require('../config');
 const path = require('path');
-const paths = require('./paths');
-const webpack = require('webpack');
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
+const config = require('./config');
+const paths = require('./webpack/paths');
 
 const useFonts = [
   {

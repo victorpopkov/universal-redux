@@ -3,7 +3,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
-const common = require('./webpack.config.common');
+const base = require('../webpack.base.config');
 const paths = require('./paths');
 
 const cssLoaders = (mode) => [
@@ -35,7 +35,7 @@ const scssLoaders = (mode) => [
   },
 ];
 
-module.exports = merge(common, {
+module.exports = merge(base, {
   devtool: 'inline-source-map',
   entry: {
     vendor: [

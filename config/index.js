@@ -1,12 +1,15 @@
 const merge = require('lodash/merge');
-const config = require('./config.common');
-const dev = require('./config.dev');
-const prod = require('./config.prod');
+const config = require('./common');
+const dev = require('./dev');
+const prod = require('./prod');
 
-if (process.env.NODE_ENV === 'production') {
-  merge(config, prod);
-} else {
-  merge(config, dev);
+switch (process.env.NODE_ENV) {
+  case 'production':
+    merge(config, prod);
+    break;
+  default:
+    merge(config, dev);
+    break;
 }
 
 module.exports = config;

@@ -4,8 +4,8 @@ import { ImmutableLoadingBar as LoadingBar } from 'react-redux-loading-bar';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
 import { renderRoutes } from 'react-router-config';
+import config from '@Config';
 import { Footer, Navbar } from './common'; // eslint-disable-line sort-imports
-import config from '../../config';
 
 @hot(module)
 // eslint-disable-next-line react/prefer-stateless-function
@@ -24,7 +24,7 @@ class App extends Component {
         <LoadingBar className="loading" />
         <Navbar />
         {renderRoutes(routes)}
-        <Footer />
+        <Footer repository={config.package.repository} />
       </div>
     );
   }

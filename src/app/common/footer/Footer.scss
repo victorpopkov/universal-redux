@@ -2,47 +2,38 @@
   margin-top: $grid-gutter-width;
   text-align: center;
 
-  :global .container {
-    box-shadow: 0 -1px 0 transparentize($black, 0.9);
-  }
-
-  .content {
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
-  }
-
-  .github {
+  h6 {
     display: inline-block;
-    height: 3rem;
   }
 
   ul {
     display: inline-block;
     padding: 0;
-    line-height: 1.5;
+    margin: 0 1rem;
     vertical-align: middle;
     list-style: none;
   }
 
   li {
     margin-right: divide($grid-gutter-width, 2);
-    line-height: 1.5;
 
     &:last-child {
       margin-right: 0;
     }
   }
 
-  a {
-    display: inline-block;
-    line-height: 1.5;
-    vertical-align: middle;
+  :global {
+    .container {
+      padding: 1rem 0;
+      box-shadow: 0 -1px 0 transparentize($black, 0.9);
+    }
   }
 }
 
 @include media-breakpoint-down(sm) {
   .footer {
     margin-top: divide($grid-gutter-width, 2);
+    font-size: 0.85em;
     vertical-align: middle;
 
     .content {
@@ -52,11 +43,18 @@
 
     ul {
       display: block;
+      margin: 0 0 0.25rem;
       text-align: center;
     }
 
     li {
       display: inline-block;
+    }
+
+    :global {
+      .container {
+        padding: 0.5rem 0;
+      }
     }
   }
 }

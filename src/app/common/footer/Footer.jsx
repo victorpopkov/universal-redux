@@ -1,27 +1,27 @@
 import { Col, Container, Row } from 'reactstrap';
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import config from '@Config';
-import GitHub from '../github/GitHub';
 import styles from './Footer.scss';
 
-const Footer = () => (
+const Footer = ({ repository }) => (
   <footer className={classNames(styles.footer, 'footer')}>
     <Container>
-      <Row>
-        <Col md={12} className={styles.content}>
-          <ul className="mb-2 mb-sm-0 me-0 me-sm-4">
+      <Row className="align-items-center">
+        <Col className={styles.content} md={12}>
+          <ul>
             <li>
-              <a href={config.package.repository}>View on GitHub</a>
+              <a href={repository}>View on GitHub</a>
             </li>
           </ul>
-          <div className={styles.github}>
-            <GitHub githubRef={config.package.githubRef} />
-          </div>
         </Col>
       </Row>
     </Container>
   </footer>
 );
+
+Footer.propTypes = {
+  repository: PropTypes.string.isRequired,
+};
 
 export default Footer;

@@ -11,7 +11,7 @@ import cookiesMiddleware from 'universal-cookie-express';
 import http from 'http';
 import { parse as parseUrl } from 'url';
 import config from '@Config';
-import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
+import ApiClient from './helpers/ApiClient';
 import Html from './helpers/Html';
 import configureStore from './store/configureStore';
 import routes from './routes';

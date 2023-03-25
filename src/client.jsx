@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { ReduxAsyncConnect } from 'redux-connect';
 import { BrowserRouter as Router } from 'react-router-dom';
 import config from '@Config';
-import ApiClient from './helpers/ApiClient'; // eslint-disable-line sort-imports
+import ApiClient from './helpers/ApiClient';
 import configureStore from './store/configureStore';
 import routes from './routes';
 

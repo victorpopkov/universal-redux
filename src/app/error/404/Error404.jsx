@@ -2,7 +2,7 @@ import { Button, Container } from 'reactstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
+import { hot } from 'react-hot-loader';
 import styles from './Error404.scss';
 
 const Error404 = () => (

@@ -7,7 +7,7 @@ import { combineReducers } from 'redux-immutablejs';
 import { connectRouter } from 'connected-react-router/immutable';
 import { fromJS } from 'immutable';
 import { loadingBarReducer } from 'react-redux-loading-bar';
-import * as appReducers from './app/reducers'; // eslint-disable-line sort-imports
+import * as appReducers from './app/reducers';
 
 // Set the mutability/immutability functions
 setToImmutableStateFunc((mutableState) => fromJS(mutableState));

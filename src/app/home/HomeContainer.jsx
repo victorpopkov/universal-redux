@@ -6,9 +6,9 @@ import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
+import { hot } from 'react-hot-loader';
 import gfm from 'remark-gfm';
-import * as duckMarkdown from '../markdown/duck/index'; // eslint-disable-line sort-imports
+import * as duckMarkdown from '../markdown/duck/index';
 import { Jumbotron, Sidebar } from '../common';
 import styles from './HomeContainer.scss';
 

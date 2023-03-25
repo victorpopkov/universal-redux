@@ -32,6 +32,7 @@ const appPublicPath = process.env.APP_PUBLIC_PATH
 // Other
 const appName = packageJson.name;
 const appDescription = packageJson.description;
+const githubRef = packageJson.repository.url.replace(/^github:/, '');
 
 module.exports = {
   app: {
@@ -58,8 +59,9 @@ module.exports = {
     description: packageJson.description,
     homepage: packageJson.homepage,
     name: packageJson.name,
-    repository: 'https://github.com/victorpopkov/universal-redux',
+    repository: `https://github.com/${githubRef}`,
     version: packageJson.version,
+    githubRef,
   },
   appApiPort,
   appApiProxyDisabled,

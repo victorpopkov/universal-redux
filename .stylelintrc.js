@@ -3,7 +3,7 @@ module.exports = {
   customSyntax: 'postcss-scss',
   ignoreFiles: ['build/**/*.css'],
   rules: {
-    'number-leading-zero': false,
+    'number-leading-zero': null,
     'selector-pseudo-class-no-unknown': [
       true,
       { ignorePseudoClasses: ['global'] },

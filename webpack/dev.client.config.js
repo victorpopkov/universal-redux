@@ -1,17 +1,16 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+/* eslint-disable import/no-extraneous-dependencies */
 const { clientConfiguration } = require('universal-webpack');
 const webpack = require('webpack');
-const baseProd = require('./webpack.config.prod');
+const baseDev = require('./dev.base.config');
 const settings = require('./universal-webpack-settings.json');
 
-const config = clientConfiguration(baseProd, settings);
+const config = clientConfiguration(baseDev, settings);
 
 config.plugins.push(
-  new CleanWebpackPlugin(),
   new webpack.DefinePlugin({
     __CLIENT__: true,
-    __DEVELOPMENT__: false,
-    __DEVTOOLS__: false,
+    __DEVELOPMENT__: true,
+    __DEVTOOLS__: true,
     __SERVER__: false,
   }),
 );

@@ -1,9 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { serverConfiguration } = require('universal-webpack');
 const webpack = require('webpack');
-const baseDev = require('./webpack.config.dev');
+const baseProd = require('./prod.base.config');
 const settings = require('./universal-webpack-settings.json');
 
-const config = serverConfiguration(baseDev, settings);
+const config = serverConfiguration(baseProd, settings);
 
 config.plugins.push(
   new webpack.DefinePlugin({

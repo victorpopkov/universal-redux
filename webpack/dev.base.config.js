@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { merge } = require('webpack-merge');

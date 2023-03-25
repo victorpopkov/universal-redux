@@ -3,7 +3,7 @@ require('@babel/register');
 const Express = require('express');
 const middleware = require('webpack-dev-middleware'); // eslint-disable-line import/no-extraneous-dependencies
 const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
-const devClient = require('./webpack.config.client.dev.babel');
+const devClient = require('./dev.client.config');
 const config = require('../config');
 
 const app = new Express();

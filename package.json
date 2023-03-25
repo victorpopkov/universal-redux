@@ -142,8 +142,8 @@
   "scripts": {
     "audit:fix": "yarn-audit-fix",
     "build": "env-cmd --silent npm-run-all build:*",
-    "build:client": "webpack --config='./webpack/webpack.config.client.prod.babel.js'",
-    "build:server": "webpack --config='./webpack/webpack.config.server.prod.babel.js'",
+    "build:client": "webpack --config='./webpack/prod.client.config.js'",
+    "build:server": "webpack --config='./webpack/prod.server.config.js'",
     "ci:eslint": "eslint --ext='js,jsx' --format='./.github/eslint-output.js' .",
     "ci:prettier": "node ./.github/prettier-output.js",
     "deduplicate": "yarn-deduplicate && yarn install",
@@ -161,6 +161,6 @@
     "test": "npm-run-all --continue-on-error lint:*",
     "universal-webpack:prepare": "universal-webpack --settings='./webpack/universal-webpack-settings.json' prepare",
     "watch:client": "node ./webpack/webpack-dev-server.js",
-    "watch:server": "webpack --config='./webpack/webpack.config.server.dev.babel.js' --watch"
+    "watch:server": "webpack --config='./webpack/dev.server.config.js' --watch"
   }
 }

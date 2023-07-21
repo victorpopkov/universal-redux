@@ -1378,12 +1378,31 @@
   dependencies:
     "@sinclair/typebox" "^0.25.16"
 
+"@jest/schemas@^29.6.0":
+  version "29.6.0"
+  resolved "https://registry.yarnpkg.com/@jest/schemas/-/schemas-29.6.0.tgz#0f4cb2c8e3dca80c135507ba5635a4fd755b0040"
+  integrity sha512-rxLjXyJBTL4LQeJW3aKo0M/+GkCOXsO+8i9Iu7eDb6KwtP65ayoDsitrdPBtujxQ88k4wI2FNYfa6TOGwSn6cQ==
+  dependencies:
+    "@sinclair/typebox" "^0.27.8"
+
 "@jest/types@^29.5.0":
   version "29.5.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-29.5.0.tgz#f59ef9b031ced83047c67032700d8c807d6e1593"
   integrity sha512-qbu7kN6czmVRc3xWFQcAN03RAUamgppVUdXrvl1Wr3jlNF93o9mJbGcDWrwGB6ht44u7efB1qCFgVQmca24Uog==
   dependencies:
     "@jest/schemas" "^29.4.3"
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^17.0.8"
+    chalk "^4.0.0"
+
+"@jest/types@^29.6.1":
+  version "29.6.1"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-29.6.1.tgz#ae79080278acff0a6af5eb49d063385aaa897bf2"
+  integrity sha512-tPKQNMPuXgvdOn2/Lg9HNfUvjYVGolt04Hp03f5hAk878uwOLikN+JzeLY0HcVgKgFl9Hs3EIqpu3WX27XNhnw==
+  dependencies:
+    "@jest/schemas" "^29.6.0"
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/istanbul-reports" "^3.0.0"
     "@types/node" "*"
@@ -1489,6 +1508,11 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.25.24.tgz#8c7688559979f7079aacaf31aa881c3aa410b718"
   integrity sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==
 
+"@sinclair/typebox@^0.27.8":
+  version "0.27.8"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
+  integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
@@ -1520,10 +1544,10 @@
     "@types/estree" "*"
     "@types/json-schema" "*"
 
-"@types/eslint@^8.4.10":
-  version "8.21.3"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.21.3.tgz#5794b3911f0f19e34e3a272c49cbdf48d6f543f2"
-  integrity sha512-fa7GkppZVEByMWGbTtE5MbmXWJTVbrjjaS8K6uQj+XtuuUv1fsuPAxhygfqLmsb/Ufb3CV8deFCpiMfAgi00Sw==
+"@types/eslint@^8.37.0":
+  version "8.44.0"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.44.0.tgz#55818eabb376e2272f77fbf5c96c43137c3c1e53"
+  integrity sha512-gsF+c/0XOguWgaOgvFs+xnnRqt9GwgTvIks36WpE6ueeI4KCEHHd8K/CKHqhOqrJKsYH8m27kRzQEvWXAwXUTw==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -3534,13 +3558,13 @@ eslint-visitor-keys@^3.4.1:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.1.tgz#c22c48f48942d08ca824cc526211ae400478a994"
   integrity sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==
 
-eslint-webpack-plugin@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-webpack-plugin/-/eslint-webpack-plugin-4.0.0.tgz#f77f37b2bbb8ad5c4197b5e55f5f2a49365a1a81"
-  integrity sha512-eM9ccGRWkU+btBSVfABRn8CjT7jZ2Q+UV/RfErMDVCFXpihEbvajNrLltZpwTAcEoXSqESGlEPIUxl7PoDlLWw==
+eslint-webpack-plugin@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-webpack-plugin/-/eslint-webpack-plugin-4.0.1.tgz#f0f0e9afff2801d8bd41eac88e5409821ecbaccb"
+  integrity sha512-fUFcXpui/FftGx3NzvWgLZXlLbu+m74sUxGEgxgoxYcUtkIQbS6SdNNZkS99m5ycb23TfoNYrDpp1k/CK5j6Hw==
   dependencies:
-    "@types/eslint" "^8.4.10"
-    jest-worker "^29.4.1"
+    "@types/eslint" "^8.37.0"
+    jest-worker "^29.5.0"
     micromatch "^4.0.5"
     normalize-path "^3.0.0"
     schema-utils "^4.0.0"
@@ -4657,6 +4681,18 @@ jest-util@^29.5.0:
     graceful-fs "^4.2.9"
     picomatch "^2.2.3"
 
+jest-util@^29.6.1:
+  version "29.6.1"
+  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-29.6.1.tgz#c9e29a87a6edbf1e39e6dee2b4689b8a146679cb"
+  integrity sha512-NRFCcjc+/uO3ijUVyNOQJluf8PtGCe/W6cix36+M3cTFgiYqFOOW5MgN4JOOcvbUhcKTYVd1CvHz/LWi8d16Mg==
+  dependencies:
+    "@jest/types" "^29.6.1"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    ci-info "^3.2.0"
+    graceful-fs "^4.2.9"
+    picomatch "^2.2.3"
+
 jest-worker@^27.4.5:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.5.1.tgz#8d146f0900e8973b106b6f73cc1e9a8cb86f8db0"
@@ -4666,13 +4702,23 @@ jest-worker@^27.4.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest-worker@^29.1.2, jest-worker@^29.4.1, jest-worker@^29.4.2:
+jest-worker@^29.1.2, jest-worker@^29.4.2:
   version "29.5.0"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-29.5.0.tgz#bdaefb06811bd3384d93f009755014d8acb4615d"
   integrity sha512-NcrQnevGoSp4b5kg+akIpthoAFHxPBcb5P6mYPY0fUNT+sSvmtu6jlkEle3anczUKIKEbMxFimk9oTP/tpIPgA==
   dependencies:
     "@types/node" "*"
     jest-util "^29.5.0"
+    merge-stream "^2.0.0"
+    supports-color "^8.0.0"
+
+jest-worker@^29.5.0:
+  version "29.6.1"
+  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-29.6.1.tgz#64b015f0e985ef3a8ad049b61fe92b3db74a5319"
+  integrity sha512-U+Wrbca7S8ZAxAe9L6nb6g8kPdia5hj32Puu5iOqBCMTMWFHXuK6dOV2IFrpedbTV8fjMFLdWNttQTBL6u2MRA==
+  dependencies:
+    "@types/node" "*"
+    jest-util "^29.6.1"
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 

@@ -1,3 +1,5 @@
+import http from 'http';
+import { parse as parseUrl } from 'url';
 import { ReduxAsyncConnect, loadOnServer } from 'redux-connect';
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import Express from 'express';
@@ -8,8 +10,6 @@ import { StaticRouter } from 'react-router-dom';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import cookiesMiddleware from 'universal-cookie-express';
-import http from 'http';
-import { parse as parseUrl } from 'url';
 import config from '@Config';
 import ApiClient from './helpers/ApiClient';
 import Html from './helpers/Html';

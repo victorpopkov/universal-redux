@@ -1,5 +1,5 @@
-import favicon from 'serve-favicon';
 import path from 'path';
+import favicon from 'serve-favicon';
 
 export default (app) => {
   app.use(

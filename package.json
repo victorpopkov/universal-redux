@@ -28,7 +28,7 @@
     "compression": "^1.7.4",
     "connected-react-router": "^6.9.3",
     "copy-webpack-plugin": "^11.0.0",
-    "css-minimizer-webpack-plugin": "^4.2.2",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "cssnano": "^5.1.15",
     "dotenv-webpack": "^8.0.1",
     "env-cmd": "^10.1.0",

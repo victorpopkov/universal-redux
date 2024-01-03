@@ -22,7 +22,7 @@
     "babel-plugin-prismjs": "^2.1.0",
     "babel-plugin-webpack-alias": "^2.1.2",
     "body-parser": "^1.20.2",
-    "bootstrap": "5.3.1",
+    "bootstrap": "5.3.2",
     "change-case": "^4.1.2",
     "classnames": "^2.3.2",
     "compression": "^1.7.4",

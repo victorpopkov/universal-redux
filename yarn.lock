@@ -7868,7 +7868,7 @@ svgo@^3.0.0, svgo@^3.0.2:
     csso "^5.0.5"
     picocolors "^1.0.0"
 
-svgo@^3.0.5:
+svgo@^3.0.5, svgo@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.2.0.tgz#7a5dff2938d8c6096e00295c2390e8e652fa805d"
   integrity sha512-4PP6CMW/V7l/GmKRKzsLR8xxjdHTV4IMvhTnpuHwwBazSIlw5W/5SmPjN8Dwyt7lKbSJrRDgp4t9ph0HgChFBQ==

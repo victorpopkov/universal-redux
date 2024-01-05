@@ -124,7 +124,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-middleware": "^6.1.1",
+    "webpack-dev-middleware": "^7.0.0",
     "webpack-hot-middleware": "^2.25.4",
     "yarn-audit-fix": "^9.3.12",
     "yarn-deduplicate": "^6.0.2"

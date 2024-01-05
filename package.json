@@ -99,7 +99,7 @@
     "less": "^4.2.0",
     "less-loader": "^11.1.4",
     "nodemon": "^2.0.22",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.33",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.3.3",
     "postcss-nested": "^6.0.1",

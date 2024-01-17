@@ -11,79 +11,86 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Bump dependencies
 - Change `css-loader` mode from `local` to `global`
-- Migrate Bootstrap from `4.6.0` to `5.1.0`
-- Rename output CSS and JS
+- Migrate [Bootstrap] from `v4` to `v5`
+- Rename output CSS and JS files
+- Replace [optimize-css-assets-webpack-plugin] with [css-minimizer-webpack-plugin]
 - Replace SCSS division slashes with `sass:math`
-- Replace `bootstrap-loader` with a custom Bootstrap import
-- Replace `optimize-css-assets-webpack-plugin` with `css-minimizer-webpack-plugin`
-- Replace `styleName` with `className`
 
 ### Removed
 
-- Remove `babel-plugin-react-css-modules`
-- Remove `generic-names`
+- Remove [babel-plugin-react-css-modules] in favour of using `className` instead
+- Remove [bootstrap-loader] in favour of custom [Bootstrap] SCSS imports
+- Remove [generic-names] as we no longer use [babel-plugin-react-css-modules]
 
 ## [0.2.0] - 2021-04-07
 
 ### Added
 
-- **[maintenance]** Add [GitHub Actions] workflow
-- **[maintenance]** Add [Prettier] integration
-- **[maintenance]** Add `CHANGELOG.md`
-- **[maintenance]** Add `audit:fix`, `deduplicate` and `lint:prettier` scripts
-- Add jumbotron website version and revision
 - Add navbar [GitHub] buttons
+- Add website version and revision in jumbotron
 
 ### Changed
 
+- Bump `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
 - Bump dependencies
+- Change [babel-plugin-inline-react-svg] configurations
 - Change [ESLint] and [stylelint] configurations to work with [Prettier]
-- Change `babel-plugin-inline-react-svg` configurations
-- Change `copy-webpack-plugin` configurations
-- Change `dotenv-webpack` configurations
-- Change `webpack-dev-middleware` configurations
+- Change [webpack-dev-middleware] configurations
 - Change footer [GitHub] buttons
 - Change homepage badges
 - Hide sidebar on tablets
-- Move most `devDependencies` to `dependencies`
+- Improve differentiation between `dependencies` and `devDependencies`
+- Migrate [copy-webpack-plugin] from `v4` to `v8`
+- Migrate [webpack-merge] from `v4` to `v5`
 - Rename `app.title` to `app.name`
-- Reorder `api.js` `config` import
-- Reorder `webpack-merge` import
+- Rename `JS` extension to `JSX` where appropriate
+- Replace [react-progress-2] with [react-redux-loading-bar]
 - Replace [remark] with [Prettier]
-- Replace `.babelrc` with `babel.config.js`
-- Replace `.env.dist` with `.env.dev` and `.env.prod`
-- Replace `JS` extension with `JSX` where appropriate
-- Replace `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
-- Replace `react-progress-2` with `react-redux-loading-bar`
-- Replace deprecated `better-npm-run` with `env-cmd`
-- Replace deprecated `eslint-loader` with `eslint-webpack-plugin`
-- Replace deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
+- Replace deprecated [better-npm-run] with [env-cmd]
+- Replace deprecated [eslint-loader] with [eslint-webpack-plugin]
+- Replace deprecated [uglifyjs-webpack-plugin] with [terser-webpack-plugin]
 - Replace deprecated `window.devToolsExtension` with `window.__REDUX_DEVTOOLS_EXTENSION__`
 
 ### Removed
 
+- Remove `.babelrc` in favour of `babel.config.js`
+- Remove `.env.dist` in favour of `.env.dev` and `.env.prod`
 - Remove `process.env.NODE_ENV` from `webpack.DefinePlugin()`
-- Remove obsolete `Progress` component
-- Remove unused `mini-css-extract-plugin` from webpack dev configurations
 
 ### Fixed
 
-- **[maintenance]** Fix `package.json` author email
-- Fix `.babelrc` `@babel/plugin-proposal-decorators` order
-- Fix `bin/server.js` `configuration` require
-- Fix some `dependencies` and `devDependencies` differentiation
+- Fix `@babel/plugin-proposal-decorators` order in `.babelrc`
+- Fix `configuration` require in `bin/server.js`
 
 ## 0.1.0 - 2018-10-12
 
 First release.
 
-[unreleased]: https://github.com/victorpopkov/universal-redux/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/victorpopkov/universal-redux/compare/v0.1.0...v0.2.0
+[babel-plugin-inline-react-svg]: https://github.com/airbnb/babel-plugin-inline-react-svg
+[babel-plugin-react-css-modules]: https://github.com/gajus/babel-plugin-react-css-modules
+[better-npm-run]: https://github.com/benoror/better-npm-run
+[bootstrap-loader]: https://github.com/shakacode/bootstrap-loader
+[bootstrap]: https://getbootstrap.com/
+[copy-webpack-plugin]: https://github.com/webpack-contrib/copy-webpack-plugin
+[css-minimizer-webpack-plugin]: https://github.com/webpack-contrib/css-minimizer-webpack-plugin
+[env-cmd]: https://github.com/toddbluhm/env-cmd
+[eslint-loader]: https://github.com/webpack-contrib/eslint-loader
+[eslint-webpack-plugin]: https://github.com/webpack-contrib/eslint-webpack-plugin
 [eslint]: https://eslint.org/
+[generic-names]: https://github.com/css-modules/generic-names
 [github actions]: https://github.com/features/actions
 [github]: https://github.com/
+[optimize-css-assets-webpack-plugin]: https://github.com/NMFR/optimize-css-assets-webpack-plugin
 [prettier]: https://prettier.io/
+[react-progress-2]: https://github.com/milworm/react-progress-2
+[react-redux-loading-bar]: https://github.com/mironov/react-redux-loading-bar
 [remark]: https://remark.js.org/
 [stylelint]: https://stylelint.io/
+[terser-webpack-plugin]: https://github.com/webpack-contrib/terser-webpack-plugin
 [travis ci]: https://travis-ci.org/
+[uglifyjs-webpack-plugin]: https://github.com/webpack-contrib/uglifyjs-webpack-plugin
+[unreleased]: https://github.com/victorpopkov/universal-redux/compare/v0.2.0...HEAD
+[webpack-dev-middleware]: https://github.com/webpack/webpack-dev-middleware
+[webpack-merge]: https://github.com/survivejs/webpack-merge
 [webpack]: https://webpack.js.org/

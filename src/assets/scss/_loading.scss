@@ -14,7 +14,9 @@
     width: 100px;
     height: 100%;
     content: '';
-    box-shadow: 0 0 10px $primary, 0 0 5px $primary;
+    box-shadow:
+      0 0 10px $primary,
+      0 0 5px $primary;
     opacity: 1;
     transform: rotate(3deg) translate(0, -4px);
   }

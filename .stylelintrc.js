@@ -8,5 +8,7 @@ module.exports = {
       true,
       { ignorePseudoClasses: ['global'] },
     ],
+    'value-list-comma-newline-after': null,
+    'value-list-comma-space-after': null,
   },
 };

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Bump [Node.js] requirement from `v14` to `v18`.
 - Bump dependencies
 - Change `css-loader` mode from `local` to `global`
 - Migrate [Bootstrap] from `v4` to `v5`
@@ -31,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Bump [Node.js] requirement from `v10` to `v14`.
 - Bump `UNIVERSAL_WEBPACK_CSS_LOADER_V3` to `UNIVERSAL_WEBPACK_CSS_LOADER_V4`
 - Bump dependencies
 - Change [babel-plugin-inline-react-svg] configurations
@@ -81,6 +83,7 @@ First release.
 [generic-names]: https://github.com/css-modules/generic-names
 [github actions]: https://github.com/features/actions
 [github]: https://github.com/
+[node.js]: https://nodejs.org/en
 [optimize-css-assets-webpack-plugin]: https://github.com/NMFR/optimize-css-assets-webpack-plugin
 [prettier]: https://prettier.io/
 [react-progress-2]: https://github.com/milworm/react-progress-2

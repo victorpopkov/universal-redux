@@ -3,12 +3,14 @@ module.exports = {
   customSyntax: 'postcss-scss',
   ignoreFiles: ['build/**/*.css'],
   rules: {
-    'number-leading-zero': null,
+    '@stylistic/declaration-colon-newline-after': null,
+    '@stylistic/number-leading-zero': null,
+    '@stylistic/string-quotes': 'single',
+    '@stylistic/value-list-comma-newline-after': null,
+    '@stylistic/value-list-comma-space-after': null,
     'selector-pseudo-class-no-unknown': [
       true,
       { ignorePseudoClasses: ['global'] },
     ],
-    'value-list-comma-newline-after': null,
-    'value-list-comma-space-after': null,
   },
 };

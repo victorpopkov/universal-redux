@@ -44,20 +44,8 @@ if (process.env.NODE_ENV !== 'production') {
   if (!dest || !fc || !fc.attributes) {
     // || !fc.attributes['data-react-checksum']
     console.error(
-      'Server-side React render was discarded. Make sure that your initial render does ' +
-        'not contain any client-side code.',
+      'Server-side React render was discarded. Make sure that your initial ' +
+        'render does not contain any client-side code.',
     );
   }
-}
-
-// eslint-disable-next-line no-underscore-dangle
-if (__DEVTOOLS__ && !window.__REDUX_DEVTOOLS_EXTENSION__) {
-  ReactDOM.render(
-    <Provider key="provider" store={store}>
-      <ConnectedRouter history={history}>
-        <Router>{reduxAsyncConnect}</Router>
-      </ConnectedRouter>
-    </Provider>,
-    dest,
-  );
 }

@@ -6,7 +6,6 @@ import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { asyncConnect } from 'redux-connect';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import gfm from 'remark-gfm';
 import * as duckMarkdown from '../markdown/duck/index';
 import { Jumbotron, Sidebar } from '../common';
@@ -31,7 +30,6 @@ import styles from './HomeContainer.scss';
     loadMarkdown: duckMarkdown.duckOperations.loadMarkdown,
   },
 )
-@hot(module)
 class HomeContainer extends Component {
   constructor(props) {
     super(props);

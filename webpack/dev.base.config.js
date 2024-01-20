@@ -44,6 +44,7 @@ module.exports = merge(base, {
       path.join(paths.src, 'assets/scss/vendor.scss'),
     ],
     client: [
+      'react-hot-loader/patch',
       'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true',
       path.join(paths.src, 'client.jsx'),
       path.join(paths.scss, 'app.scss'),

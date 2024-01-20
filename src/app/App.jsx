@@ -3,12 +3,10 @@ import Helmet from 'react-helmet';
 import { ImmutableLoadingBar as LoadingBar } from 'react-redux-loading-bar';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { hot } from 'react-hot-loader';
 import { renderRoutes } from 'react-router-config';
 import config from '@Config';
 import { Footer, Navbar } from './common';
 
-@hot(module)
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   componentDidMount() {

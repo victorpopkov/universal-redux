@@ -1,3 +1,4 @@
+/* eslint-disable import/no-import-module-exports */
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import { Provider } from 'react-redux';
 import React from 'react';
@@ -8,6 +9,7 @@ import config from '@Config';
 import ApiClient from './helpers/ApiClient';
 import configureStore from './store/configureStore';
 import routes from './routes';
+/* eslint-enable import/no-import-module-exports */
 
 /* eslint-disable no-underscore-dangle */
 const preloadedState = window.__PRELOADED_STATE__;
@@ -24,18 +26,16 @@ const helpers = {
   history,
 };
 
-const reduxAsyncConnect = (
-  <ReduxAsyncConnect helpers={helpers} routes={routes} />
-);
-
-ReactDOM.hydrate(
-  <Provider key="provider" store={store}>
-    <ConnectedRouter history={history}>
-      <Router basename={config.appBasePath}>{reduxAsyncConnect}</Router>
-    </ConnectedRouter>
-  </Provider>,
-  dest,
-);
+const render = (Component) => {
+  ReactDOM.hydrate(
+    <Provider key="provider" store={store}>
+      <ConnectedRouter history={history}>
+        <Router basename={config.appBasePath}>{Component}</Router>
+      </ConnectedRouter>
+    </Provider>,
+    dest,
+  );
+};
 
 if (process.env.NODE_ENV !== 'production') {
   window.React = React; // enable debugger
@@ -48,4 +48,14 @@ if (process.env.NODE_ENV !== 'production') {
         'render does not contain any client-side code.',
     );
   }
+}
+
+render(<ReduxAsyncConnect helpers={helpers} routes={routes} />);
+
+if (module.hot) {
+  module.hot.accept('./routes', () => {
+    // eslint-disable-next-line global-require
+    const NextApp = require('./routes').default;
+    render(<ReduxAsyncConnect helpers={helpers} routes={NextApp} />);
+  });
 }

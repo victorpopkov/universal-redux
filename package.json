@@ -126,7 +126,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^7.0.0",
     "webpack-hot-middleware": "^2.26.0",
-    "yarn-audit-fix": "^9.3.12",
+    "yarn-audit-fix": "^10.0.7",
     "yarn-deduplicate": "^6.0.2"
   },
   "engines": {

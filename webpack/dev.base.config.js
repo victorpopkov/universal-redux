@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+// const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { merge } = require('webpack-merge');
 const webpack = require('webpack');
 const base = require('../webpack.base.config');
@@ -87,6 +87,6 @@ module.exports = merge(base, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin({ resourceRegExp: /webpack-stats\.json$/ }),
     new ESLintPlugin(),
-    new StyleLintPlugin(),
+    // new StyleLintPlugin(),
   ],
 });

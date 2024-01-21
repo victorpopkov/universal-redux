@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import event from './event/reducers'; // eslint-disable-line sort-imports
+import event from './event/reducers';
 import markdown from './markdown/duck/reducers';
 
 // eslint-disable-next-line default-param-last

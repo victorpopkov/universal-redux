@@ -1,4 +1,3 @@
-/* eslint-disable import/no-import-module-exports */
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import { Provider } from 'react-redux';
 import React from 'react';
@@ -9,12 +8,9 @@ import config from '@Config';
 import ApiClient from './helpers/ApiClient';
 import configureStore from './store/configureStore';
 import routes from './routes';
-/* eslint-enable import/no-import-module-exports */
 
-/* eslint-disable no-underscore-dangle */
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
-/* eslint-enable no-underscore-dangle */
 
 const apiClient = new ApiClient();
 const dest = document.getElementById('content');

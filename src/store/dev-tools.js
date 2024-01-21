@@ -2,7 +2,7 @@ import { applyMiddleware, compose } from 'redux';
 import { Iterable } from 'immutable';
 import { createLogger } from 'redux-logger'; // eslint-disable-line import/no-extraneous-dependencies
 import { persistState } from 'redux-devtools'; // eslint-disable-line import/no-extraneous-dependencies
-import DevTools from '../app/common/dev-tools/DevTools'; // eslint-disable-line sort-imports
+import DevTools from '../app/common/dev-tools/DevTools';
 
 const devTools = (middlewares) => {
   const logger = createLogger({
@@ -13,7 +13,6 @@ const devTools = (middlewares) => {
 
   middlewares.push(logger);
 
-  // eslint-disable-next-line no-underscore-dangle
   const fn = window.__REDUX_DEVTOOLS_EXTENSION__;
 
   return compose(

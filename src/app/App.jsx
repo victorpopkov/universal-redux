@@ -7,7 +7,6 @@ import { renderRoutes } from 'react-router-config';
 import config from '@Config';
 import { Footer, Navbar } from './common';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   componentDidMount() {
     this.latestDevRevision = null;

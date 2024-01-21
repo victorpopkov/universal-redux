@@ -1,4 +1,3 @@
-/* eslint-disable import/no-import-module-exports */
 import { applyMiddleware, createStore } from 'redux';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 import Cookies from 'universal-cookie';
@@ -6,10 +5,9 @@ import { fromJS } from 'immutable';
 import notify from 'redux-notify';
 import { routerMiddleware } from 'connected-react-router/immutable';
 import thunk from 'redux-thunk';
-import client from '../middlewares/client'; // eslint-disable-line sort-imports
+import client from '../middlewares/client';
 import createRootReducer from '../reducers';
 import events from '../app/events';
-/* eslint-enable import/no-import-module-exports */
 
 export default (apiClient, data, req, location) => {
   const history = __SERVER__

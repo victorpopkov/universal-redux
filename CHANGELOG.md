@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Add CORS headers to the webpack development server
+
 ### Changed
 
 - Bump [Node.js] requirement from `v14` to `v18`.
@@ -22,6 +26,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove [babel-plugin-react-css-modules] in favour of using `className` instead
 - Remove [bootstrap-loader] in favour of custom [Bootstrap] SCSS imports
 - Remove [generic-names] as we no longer use [babel-plugin-react-css-modules]
+
+### Fixed
+
+- Fix HMR (Hot Module Replacement)
 
 ## [0.2.0] - 2021-04-07
 

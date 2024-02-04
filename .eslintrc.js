@@ -24,7 +24,7 @@ module.exports = {
       {
         exceptions: [
           path.join(__dirname, 'src/client.jsx'),
-          path.join(__dirname, 'src/store/configureStore.js'),
+          path.join(__dirname, 'src/store/index.js'),
         ],
       },
     ],

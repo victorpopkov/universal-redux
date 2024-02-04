@@ -13,7 +13,7 @@ import cookiesMiddleware from 'universal-cookie-express';
 import config from '@Config';
 import ApiClient from './helpers/ApiClient';
 import Html from './helpers/Html';
-import configureStore from './store/configureStore';
+import configureStore from './store';
 import routes from './routes';
 import setupApiProxy from './server/api-proxy';
 import setupStatic from './server/static';

@@ -95,8 +95,8 @@ and most are just the environment variables.
 │   ├── middlewares
 │   │   └── client.js # our tiny client middleware
 │   ├── store
-│   │   ├── configureStore.js
 │   │   └── dev-tools.js
+│   │   ├── index.js
 │   ├── client.jsx
 │   ├── reducers.js
 │   ├── routes.js

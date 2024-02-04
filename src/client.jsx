@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import config from '@Config';
 import ApiClient from './helpers/ApiClient';
-import configureStore from './store/configureStore';
+import configureStore from './store';
 import routes from './routes';
 
 const preloadedState = window.__PRELOADED_STATE__;

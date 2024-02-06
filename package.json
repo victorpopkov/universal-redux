@@ -70,7 +70,7 @@
     "serialize-javascript": "^6.0.2",
     "serve-favicon": "^2.5.0",
     "terser-webpack-plugin": "5.3.10",
-    "universal-cookie": "^4.0.4",
+    "universal-cookie": "^7.0.2",
     "universal-cookie-express": "^4.0.3",
     "universal-webpack": "^0.8.5",
     "url": "^0.11.3",

@@ -98,7 +98,7 @@
     "json-loader": "^0.5.7",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
-    "nodemon": "^3.0.3",
+    "nodemon": "^3.1.4",
     "postcss": "^8.4.34",
     "postcss-import": "^16.0.0",
     "postcss-loader": "^8.1.0",

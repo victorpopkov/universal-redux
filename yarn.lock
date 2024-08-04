@@ -8386,10 +8386,10 @@ unist-util-visit@^2.0.0:
     unist-util-is "^4.0.0"
     unist-util-visit-parents "^3.0.0"
 
-universal-cookie-express@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/universal-cookie-express/-/universal-cookie-express-7.0.2.tgz#86703db434a7f496e319f4affcff29898db3d25f"
-  integrity sha512-ZiQLamrVAyNb/ROMRkF1mQuVBiwROlvfYjzctqPmzvX1YZjxgpmZ/9IMnVWuLTSdF4r+KS4Hn8kuyCk8lgkg8w==
+universal-cookie-express@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/universal-cookie-express/-/universal-cookie-express-7.2.0.tgz#e512e2a5db8624b9330056324ad166bdb472c1fd"
+  integrity sha512-JC8ADzPexzv1xZhCOvRPWHeKCCYsoEUxS3f2dJV4kRXZMCss5VQ0DWKAeoONg+P3OOoee0NMqcOIkvRaNWagUw==
   dependencies:
     universal-cookie "^7.0.0"
 

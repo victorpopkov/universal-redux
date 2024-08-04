@@ -8401,10 +8401,18 @@ universal-cookie@^4.0.0:
     "@types/cookie" "^0.3.3"
     cookie "^0.4.0"
 
-universal-cookie@^7.0.0, universal-cookie@^7.0.2:
+universal-cookie@^7.0.0:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-7.0.2.tgz#490221c790bc13694347340a758ac65adbaa30b8"
   integrity sha512-EC9PA+1nojhJtVnKW2Z7WYah01jgYJApqhX+Y8XU97TnFd7KaoxWTHiTZFtfpfV50jEF1L8V5p64ZxIx3Q67dg==
+  dependencies:
+    "@types/cookie" "^0.6.0"
+    cookie "^0.6.0"
+
+universal-cookie@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-7.2.0.tgz#1f3fa9c575d863ac41b4e42272d240ae2d32c047"
+  integrity sha512-PvcyflJAYACJKr28HABxkGemML5vafHmiL4ICe3e+BEKXRMt0GaFLZhAwgv637kFFnnfiSJ8e6jknrKkMrU+PQ==
   dependencies:
     "@types/cookie" "^0.6.0"
     cookie "^0.6.0"
